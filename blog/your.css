@@ -1,28 +1,44 @@
+html{
+	background-image:url(roboto52.png);
+	background-position:left top;
+	background-size:500px 773px;
+	background-repeat:repeat-y;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 130%;
+	}
+
+
 section{
-	background-color:#9CF;
-	margin-left:100px;
+	background-color:#000;
+	color:#FFF;
+	margin-left:500px;
+	margin-right:300px;
 	
 	
 	}
 	
 	
 h1{
-	
-	
-	margin-left:100px
-	
+	margin-left:100px;
+	margin-right:100px;
+	margin-top:50px;
 	}
 
 
 h2{
-	
+	margin-left:100px;
+	margin-right:100px;
 	
 	}
 
 
 h4{
 	
-	
+	margin-left:100px;
+	margin-right:100px;
 	
 	
 	}	
