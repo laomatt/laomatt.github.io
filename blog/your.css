@@ -2,7 +2,8 @@ html{
 	background-image:url(roboto52.png);
 	background-position:left top;
 	background-size:500px 773px;
-	background-repeat:repeat-y;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	padding: 0px;
@@ -14,31 +15,29 @@ html{
 section{
 	background-color:#000;
 	color:#FFF;
-	margin-left:500px;
-	margin-right:300px;
+	margin-left:30%;
+	margin-right:20%;
 	
 	
 	}
 	
 	
 h1{
-	margin-left:100px;
-	margin-right:100px;
-	margin-top:50px;
+	margin-left:30%;
+	margin-right:10%;
+	margin-top:10%;
 	}
 
 
 h2{
-	margin-left:100px;
-	margin-right:100px;
+		margin-left:30%;
+	margin-right:10%;
 	
 	}
 
 
 h4{
-	
-	margin-left:100px;
-	margin-right:100px;
-	
+		margin-left:30%;
+	margin-right:10%;
 	
 	}	
