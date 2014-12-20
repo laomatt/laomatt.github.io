@@ -1,0 +1,60 @@
+table{
+width:100%;
+height: 100%;
+}
+#techblogpage{
+background-image: url("../websitebg.png");
+background-repeat: true;
+background-size: 100%;
+
+}
+
+#techlogo{
+background-color: transparent;
+width: 30%;
+
+}
+
+#top{
+
+height: 200px;
+
+}
+
+#websiteheader
+{
+  background-color: transparent;
+
+width: 70%;
+height: 10%;
+
+}
+
+
+#social
+{
+width: 20%;
+background-color: transparent;
+
+}
+
+#space
+{
+vertical-align: top;
+background-color: transparent;
+
+}
+
+#blog
+{
+vertical-align: top;
+background-color: transparent;
+
+
+}
+
+#bottom{
+
+height: 900px;
+
+}
