@@ -30,6 +30,12 @@ height: 30px;
 
 }
 
+#header{
+position: center;
+text-align: center;
+
+
+}
 
 #social
 {
@@ -45,10 +51,21 @@ background-color: transparent;
 
 }
 
+h1{
+font-size: 60px;
+
+}
+
+main{
+margin-left: 20%;
+
+}
+
 #blog
 {
+
 vertical-align: top;
-background-color: transparent;
+/*background-image: url("../bg2.png");*/
 
 
 }
