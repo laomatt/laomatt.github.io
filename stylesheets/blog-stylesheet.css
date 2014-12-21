@@ -4,14 +4,49 @@ height: 100%;
 }
 #techblogpage{
 background-image: url("../websitebg.png");
-background-repeat: true;
+background-repeat: repeat-y;
 background-size: 100%;
 
 }
+#mainpage{
+ background-image: url("../websitebgmain.png");
+background-repeat: repeat-y;
+background-size: 100%;
+
+}
+#cultblogpage{
+ background-image: url("../websitebgcult.png");
+background-repeat: repeat-y;
+background-size: 100%;
+
+}
+#mainlogo{
+ background-image: url("../robotz4.png");
+
+background-size: 100%;
+width: 30%;
+background-repeat: no-repeat;
+
+}
+
+#maintext{}
+
+
 
 #techlogo{
-background-color: transparent;
+  background-image: url("../blog/roboto6.png");
+
+background-size: 100%;
 width: 30%;
+background-repeat: no-repeat;
+}
+
+#cultlogo{
+background-image: url("../blog/cultroboto.png");
+background-size: 100%;
+width: 30%;
+background-repeat: no-repeat;
+
 
 }
 
