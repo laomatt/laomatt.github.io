@@ -9,7 +9,9 @@ background-size: 100%;
 
 }
 #mainpage{
- background-image: url("../websitebgmain.png");
+/* background-image: url("../websitebgmain.png");*/
+
+background-color: white;
 background-repeat: repeat-y;
 background-size: 100%;
 
