@@ -8,6 +8,13 @@ background-repeat: repeat-y;
 background-size: 100%;
 
 }
+
+p{
+margin-right: 20%;
+
+
+}
+
 #mainpage{
 /* background-image: url("../websitebgmain.png");*/
 
@@ -109,6 +116,5 @@ vertical-align: top;
 
 #bottom{
 
-height: 9000px;
 
 }
