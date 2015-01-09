@@ -1,0 +1,161 @@
+<!DOCTYPE html><head>
+  <title>Matt Lao Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<html id="tech">
+
+<div>
+<div id="techlogo">
+<div id="social">
+    <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"></a></div>
+
+  <div id="toc">
+    <hr>
+    <p id="navbar"><a href="#">Home</a> | <a href="#">Portfolio</a> | <a href="#">Blogs</a> | <a href="#">Contact</a> | <a href="#">About</a></p>
+    <hr>
+  <h2>Technical blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+
+  <h2>Cultural blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  </div>
+</div>
+<div id="techblogbody">
+  <div id="header">
+
+
+    <div id="blogcontent">
+      <h1>Arrays and Hashes</h1>
+      <h2>Whats the difference?</h2>
+       <p>The best way to summarize the coparison between these two types of objects is that one, hash, is a more specific version of an array.  An array has one set of values, while a hash has two sets of values.  An array is a group or elements, while a hash is type of collection of elements that contain keys and values.</p>
+
+       <p>Think of a hash as two arrays that are related to each other.  Sort of like a table of contents in a book:</p>
+<div id="example">
+  <font size="5px"><center>Table of Contents</font><br>
+  Prefix ............................  3 <br>
+  Chapter 1 .........................  23<br>
+  Chapter 2 .........................  45<br>
+  Chapter 3 .........................  53<br>
+  Chapter 4 .........................  78<br>
+  Chapter 5 .........................  123<br>
+  Chapter 6 .........................  168<br>
+  Chapter 7 .........................  201<br>
+  Chapter 8 .........................  222<br>
+</center>
+
+
+</div>
+
+
+       <p>One array, the Key array, could be seen as the chapter titles of the book, so if the Table of Contents was a hash (lets call it 'toc'), the keys of 'toc' would be an array that looks like this :  </p>
+
+       <div id="example">[ prefix, Chapter 1, Chapter 2, Chapter 3, Chapter 4, Chapter 5, Chapter 6, Chapter 7, Chapter 8 ]</div>
+
+        <p>while the Values array could be the page numbers that each title corresponds to.  The array for the values would look like this:  </p>
+
+        <div id="example">[ 3, 23, 45, 53, 78, 123, 168, 201, 222 ]</div>
+
+
+       <p> And these two arrays would be related though what index they each sit at in their respective arrays.</p>
+
+
+          <p>So to close out this thought, a hash can be thought of as TWO PARALLEL ARRAYS, whos elements are invariably linked to one another by position in their respective array.  An array can be thought of as a hash, in which the keys are automatically incrementing numbers starting at 0 for the first element (incrementing by one each position), and values which represent the elements in the array.  You may call elements in an array by referencing its position, (ie Array[3] ==  4th element), and you may call values in a hash by referencing its key (ie Hash[Key] == the values corresponding to the key)</p>
+
+
+      <h2>Declaring</h2>
+      <p>First thing is first, declaring each is done differently.  An array, for example is initiated with a pair of square brackets ([]).  If we wanted to initiate an array called 'mat'  we would type something like this:
+          <div id='example'> <center> mat=[] </center> </div>
+
+           <p> This would give us an array of length 0 called mat.</p>
+
+      <p>A Hash on the other hand is declared with curly braces ({}).  So the get a hash called 'mat' of length 0, would be done like this:</p>
+
+          <div id='example'> <center> mat={} </center> </div>
+
+
+
+      <h2>Populating and selecting</h2>
+      <p>      Selecting various elements in these objects is very important.  In an array, you have to select a certain element by referncing its order (index) in the array.</p>
+      <p>Array may be populated with any type of object, (even other arrays!).  An array of strings looks like ['string1', 'string2'], one of numbers would look like [1,2,3].  Unlike other programming languages, arrays can be of mixed object types, although its not recommending, because a fiar amout of errors wil pop up if you try to transverse that array using a string method, or number method </p>
+      <p>Array elements are assigned by thier index values, while elements in hashes are assigned and selected by their key values.</p>
+      <p>There are plenty of ways of making a hash, this most simply way is to fill a hash with key/value elements, the key and value are seperated by the => symbol, and treat those as elements to be entered in the array.</p>
+
+      <p>Objects in a hash look like this:</p>
+      <div id="example"><center>K=>V</center></div>
+      <p>K stands for what key this particular element is, and V is the value of that element.  The value is assigned and selected by the key.  The key replaces the index is terms of selecting and assigning.</p>
+
+
+
+      <h2>Uses</h2>
+      <p>Now that we have properly distinguished between these two types of objects, Arrays and Hashes, now we delve into why they exist.  What can you do with a hash that you can't do with an array?</p>
+        <h3>collections</h3>
+
+          <p>First off, the Hash class, is a subclass of the Collection class.  This means, among other things, it automatically removes duplicates for us.  In an array, the .uniq method would need to be used to do that, but since Hash is a subclass of Collection, it automatically does that for us, which makes alot of sense because if you think about it, the way elements are selected in a hash does not leave room for uplicates.  If we have two identical sets of keys and values and we call one key,  which element is really being called?  If two of them exist, are will be get two values?  but the values are also the same, so maybe we'll get one value?  Hashes protect themselves from these types of paradoxes by auto-eleminating all duplicates.</p>
+        <h3>enumerables</h3>
+          <p>Another way hashes make our lives easier is the ability to sort by either keys or values, via an enumerable.  If I have a hash that describes the number of people that were born in certain various population levels (population levels being the keys, and that values being the number of births) and I wanted to find the population that the most births took place in, then I could sort this hash by the number of births, and grab the key of the last element.  Or the other way, if I wanted to find how many births took place in the population with the least number of people, then I could sort by population, and find the value of the last element.</p>
+        <h3>describing objects: Matt=[] vs. Matt={}</h3>
+          <p>Objects in Ruby are basically sets of properties, and can be described in two ways: Arrays and Hashes.  Lets take an object modeled from myself.  </p>
+          <p>If I were to describe myself in an Array, it would look something like this:</p>
+          <div id="example"><center>Matt=['Matt', 'Lao', 'San Francisco', 'DBC student']</center></div>
+          <p>Now I can use the object Matt as one object with a set of properties described in an array.  My first name would be Matt[0], my ocupation would be Matt[3] and so on.</p>
+          <p>A hash description of me would look like this:</p>
+          <div id="example"><center>Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', ocupation=>'DBC student'}</center></div>
+          <p>Now I can call specifics about my self.  Such as Matt[first] for my first name regardless of order:</p>
+          <div id="example"><center>
+
+            Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', ocupation=>'DBC student'}<br><br>
+            -- is quivalent to --<br><br>
+            Matt={ ocupation=>'DBC student', last=>'Lao', location=>'San Francisco',first=>'Matt' }
+          </center></div>
+
+          <p>While this may not always be nessesary, it makes like ALOT simpler.</p>
+
+
+      <h2>Making one from the other</h2>
+        <h3>Using arrays to make hashes</h3>
+        <p>There are a number of ways that hashes may be made of arrays (without using a loop).  Here I will talk about two of them.</p>
+          <p>The first way is to use an array of keys and values in a particular order, [key1,value1,key2,value2,key3,value3] (so we always need an even number of arguments).  In this way we can define as hash called car, with a set of properties:</p>
+
+          <div id="example"><center>mycar=['Make','Honda','Model','Civic','Year',2003]</div>
+
+          <p>In order to make this as hash we must wrap it in a Hash and ruby will read it as a hash</p>
+
+          <div id="example"><center>Hash['Make','Honda','Model','Civic','Year',2003]<br><br>
+           => {"Make"=>"Honda", "Model"=>"Civic", "Year"=>2003}
+          </center></div>
+          <p>This is useful if you have a method that only spits out an array, and wish to turn that into a hash</p>
+
+          <p>Another way to do this is to marry two arrays together : Hash=[keys.zip(values)]</p>
+          <div id="example"><center>car_properties=['Make','Model','Year']<br>
+          car_description=['Honda','Civic',2003]<br>
+          car_properties.zip(car_description)<br>
+=> [["Make", "Honda"], ["Model", "Civic"], ["Year", 2003]]
+</center>
+          </div>
+
+          <p>This leades us into a thirdway of making the hash.  Notice how instead of a regular looking hash, we have an array of arrays.  Also called a <b>multi-dimentional</b> array.  In order for us to make keys of the first elements in each array element, and values of the second elements, we need to wrap the whole thing in an extra pair of square braces, and a Hash:</p>
+
+          <div id="example">
+<center>Hash[[["Make", "Honda"], ["Model", "Civic"], ["Year", 2003]]]
+<br><br>
+=> {"Make"=>"Honda", "Model"=>"Civic", "Year"=>2003}
+
+
+</center>
+
+          </div>
+
+        <h3>Using hashes to make arrays</h3>
+<p>Making arrays from hashes is as simple as the .keys and .values methods.  The .keys method will give you an array of keys, while the .values method gives you an array of........ wait for it..... VALUES!!!  This is the shortest part of my blog for a reason, its the most straight foreward thing to think about.  Remember, like I stated earlier, hashes can be thought of as sets of two parrallel arrays, whos elements are related to each other via index position.</p>
+</div>
+</div>
+
+</html>
