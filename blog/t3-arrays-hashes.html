@@ -33,9 +33,9 @@
 
 
     <div id="blogcontent">
-      <h1>Arrays and Hashes</h1>
+       <h1>Arrays and Hashes</h1>
       <h2>Whats the difference?</h2>
-       <p>The best way to summarize the coparison between these two types of objects is that one, hash, is a more specific version of an array.  An array has one set of values, while a hash has two sets of values.  An array is a group or elements, while a hash is type of collection of elements that contain keys and values.</p>
+       <p>The best way to summarize the comparison between these two types of objects is that one, hash, is a more specific version of an array.  An array has one set of values, while a hash has two sets of values.  An array is a group or elements, while a hash is type of collection of elements that contain keys and values.</p>
 
        <p>Think of a hash as two arrays that are related to each other.  Sort of like a table of contents in a book:</p>
 <div id="example">
@@ -83,10 +83,10 @@
 
 
       <h2>Populating and selecting</h2>
-      <p>      Selecting various elements in these objects is very important.  In an array, you have to select a certain element by referncing its order (index) in the array.</p>
-      <p>Array may be populated with any type of object, (even other arrays!).  An array of strings looks like ['string1', 'string2'], one of numbers would look like [1,2,3].  Unlike other programming languages, arrays can be of mixed object types, although its not recommending, because a fiar amout of errors wil pop up if you try to transverse that array using a string method, or number method </p>
-      <p>Array elements are assigned by thier index values, while elements in hashes are assigned and selected by their key values.</p>
-      <p>There are plenty of ways of making a hash, this most simply way is to fill a hash with key/value elements, the key and value are seperated by the => symbol, and treat those as elements to be entered in the array.</p>
+      <p>      Selecting various elements in these objects is very important.  In an array, you have to select a certain element by referencing its order (index) in the array.</p>
+      <p>Array may be populated with any type of object, (even other arrays!).  An array of strings looks like ['string1', 'string2'], one of numbers would look like [1,2,3].  Unlike other programming languages, arrays can be of mixed object types, although its not recommending, because a fiar amount of errors will pop up if you try to transverse that array using a string method, or number method </p>
+      <p>Array elements are assigned by their index values, while elements in hashes are assigned and selected by their key values.</p>
+      <p>There are plenty of ways of making a hash, this most simply way is to fill a hash with key/value elements, the key and value are separated by the => symbol, and treat those as elements to be entered in the array.</p>
 
       <p>Objects in a hash look like this:</p>
       <div id="example"><center>K=>V</center></div>
@@ -98,25 +98,25 @@
       <p>Now that we have properly distinguished between these two types of objects, Arrays and Hashes, now we delve into why they exist.  What can you do with a hash that you can't do with an array?</p>
         <h3>collections</h3>
 
-          <p>First off, the Hash class, is a subclass of the Collection class.  This means, among other things, it automatically removes duplicates for us.  In an array, the .uniq method would need to be used to do that, but since Hash is a subclass of Collection, it automatically does that for us, which makes alot of sense because if you think about it, the way elements are selected in a hash does not leave room for uplicates.  If we have two identical sets of keys and values and we call one key,  which element is really being called?  If two of them exist, are will be get two values?  but the values are also the same, so maybe we'll get one value?  Hashes protect themselves from these types of paradoxes by auto-eleminating all duplicates.</p>
+          <p>First off, the Hash class, is a subclass of the Collection class.  This means, among other things, it automatically removes duplicates for us.  In an array, the .uniq method would need to be used to do that, but since Hash is a subclass of Collection, it automatically does that for us, which makes a lot of sense because if you think about it, the way elements are selected in a hash does not leave room for duplicates.  If we have two identical sets of keys and values and we call one key,  which element is really being called?  If two of them exist, are will be get two values?  but the values are also the same, so maybe we'll get one value?  Hashes protect themselves from these types of paradoxes by auto-eliminating all duplicates.</p>
         <h3>enumerables</h3>
           <p>Another way hashes make our lives easier is the ability to sort by either keys or values, via an enumerable.  If I have a hash that describes the number of people that were born in certain various population levels (population levels being the keys, and that values being the number of births) and I wanted to find the population that the most births took place in, then I could sort this hash by the number of births, and grab the key of the last element.  Or the other way, if I wanted to find how many births took place in the population with the least number of people, then I could sort by population, and find the value of the last element.</p>
         <h3>describing objects: Matt=[] vs. Matt={}</h3>
           <p>Objects in Ruby are basically sets of properties, and can be described in two ways: Arrays and Hashes.  Lets take an object modeled from myself.  </p>
           <p>If I were to describe myself in an Array, it would look something like this:</p>
           <div id="example"><center>Matt=['Matt', 'Lao', 'San Francisco', 'DBC student']</center></div>
-          <p>Now I can use the object Matt as one object with a set of properties described in an array.  My first name would be Matt[0], my ocupation would be Matt[3] and so on.</p>
+          <p>Now I can use the object Matt as one object with a set of properties described in an array.  My first name would be Matt[0], my occupation would be Matt[3] and so on.</p>
           <p>A hash description of me would look like this:</p>
-          <div id="example"><center>Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', ocupation=>'DBC student'}</center></div>
+          <div id="example"><center>Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', occupation=>'DBC student'}</center></div>
           <p>Now I can call specifics about my self.  Such as Matt[first] for my first name regardless of order:</p>
           <div id="example"><center>
 
-            Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', ocupation=>'DBC student'}<br><br>
-            -- is quivalent to --<br><br>
-            Matt={ ocupation=>'DBC student', last=>'Lao', location=>'San Francisco',first=>'Matt' }
+            Matt={first=>'Matt', last=>'Lao', location=>'San Francisco', occupation=>'DBC student'}<br><br>
+            -- is equivalent to --<br><br>
+            Matt={ occupation=>'DBC student', last=>'Lao', location=>'San Francisco',first=>'Matt' }
           </center></div>
 
-          <p>While this may not always be nessesary, it makes like ALOT simpler.</p>
+          <p>While this may not always be necessary, it makes like ALOT simpler.</p>
 
 
       <h2>Making one from the other</h2>
@@ -141,7 +141,7 @@
 </center>
           </div>
 
-          <p>This leades us into a thirdway of making the hash.  Notice how instead of a regular looking hash, we have an array of arrays.  Also called a <b>multi-dimentional</b> array.  In order for us to make keys of the first elements in each array element, and values of the second elements, we need to wrap the whole thing in an extra pair of square braces, and a Hash:</p>
+          <p>This leads us into a third way of making the hash.  Notice how instead of a regular looking hash, we have an array of arrays.  Also called a <b>multi-dimensional</b> array.  In order for us to make keys of the first elements in each array element, and values of the second elements, we need to wrap the whole thing in an extra pair of square braces, and a Hash:</p>
 
           <div id="example">
 <center>Hash[[["Make", "Honda"], ["Model", "Civic"], ["Year", 2003]]]
@@ -154,7 +154,7 @@
           </div>
 
         <h3>Using hashes to make arrays</h3>
-<p>Making arrays from hashes is as simple as the .keys and .values methods.  The .keys method will give you an array of keys, while the .values method gives you an array of........ wait for it..... VALUES!!!  This is the shortest part of my blog for a reason, its the most straight foreward thing to think about.  Remember, like I stated earlier, hashes can be thought of as sets of two parrallel arrays, whos elements are related to each other via index position.</p>
+<p>Making arrays from hashes is as simple as the .keys and .values methods.  The .keys method will give you an array of keys, while the .values method gives you an array of........ wait for it..... VALUES!!!  This is the shortest part of my blog for a reason, its the most straight forward thing to think about.  Remember, like I stated earlier, hashes can be thought of as sets of two parallel arrays, whos elements are related to each other via index position.</p>
 </div>
 </div>
 
