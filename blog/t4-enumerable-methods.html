@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+  <title>Matt Lao Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<html id="tech">
+<div>
+<div id="techlogo">
+<div id="social">
+    <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"></a></div>
+
+  <div id="toc">
+    <hr>
+    <p id="navbar"><a href="#">Home</a> | <a href="#">Portfolio</a> | <a href="#">Blogs</a> | <a href="#">Contact</a> | <a href="#">About</a></p>
+    <hr>
+  <h2>Technical blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+
+  <h2>Cultural blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  </div>
+</div>
+<div id="techblogbody">
+  <div id="header">
+
+
+    <div id="blogcontent">
+
+<h1>Ruby Enumerable Methods</h1>
+
+<h2>`Enumerable#map`</h2>
+
+<h3>what it is</h3>
+<p>The Map enum is basically a way of created a new array from an existing one, by MAPPING each element in the array to a new one, but what make this enum really interesting is the ability to modify each element via a code blog as we transverse the given array.</p>
+
+<h3>how to use it</h3>
+<p>Basically, this enumerable method works by calling the method from an Array object.  Then placing a block after the method, so that each element in the new array is populated by something.  It could be populated by constants, or by something that has something to do with the element currently being parsed.</p>
+
+
+<h3>what it gives you</h3>
+<p>This is a non destructive method, so it leave the inputed array alone, and instead gives you a brand new array, template from the input array.  This is especially useful if you want to make a non destructive function, you want to leave the original array alone for later use, or you simply don't what the same object ID for you new and original arrays.</p>
+
+<h3>analogies / examples</h3>
+
+<p>One way to look at what a .map enum method does, is to think of an array as members of a football team.  Everyone in that team is exactly where they are supposed to be.  The tall handsome guy is the quarter back, the short fast guy is the running back, the skinny tall guy is the wide receiver, and the extra guy is the kicker.  You wouldn't want to shuffle this order of thing up, ie have the shot fast guy be the quarterback, (he wouldn't be able to see over his offensive line)  nor would you want the tall skinny fast guy to be a running back,  (he wouldn't be able to fit through holes in the line of scrimmage, and we would totally get hurt trying to rush through), so you would want everyone at the exact position they are at.  Now image that you want to take this team and transfer them to another city with on another team.  You would have to change their jerseys, change their current residences etc.  Well if our football team is an array of players and we want to transfer them all to the SeaHawks, then the .map method would look like this:</p>
+<div id="example">
+  [[Kaepernick, QB, San Francisco], [Gore, RB, San Francisco], [Krabtree, WR, San Francisco]].map {|e| e[2]=Seattle}
+
+=> [[Kaepernick, QB, Seattle], [Gore, RB, Seattle], [Krabtree, WR, Seattle]]
+</div>
+
+<p>Now we have a brand new array, and each element in that array was transfered over from the old array via a block of code that merely changes the element in the 2 index to Seattle.  This is a way of mapping an array to a new array.</p>
+
+<h3>The blind artist and his pencils</h3>
+<p>Order is also very important when it comes to mapping.  Supposed there lived a famous artist, who worked with pencils.  Now the extraordinary thing about this artist is that we is completely blind and he makes all of his pencil drawings by feeling the paper, and he arranges his pencils in such an order that he always knows which color is where.  Now this famous artist, has an assistant who's responsibilities include sharpening the artists pencils every morning. The artist drawing a lot and usually twiddles his pencils down the previous day, so they are in need of complete replacing. The order of the pencils is extremely important, because the artist has a very specific memory in his brain as to where exactly each colored pencil is on his drawing table side stand.</p>
+
+<p>Every morning the assistant must replace each pencil with a sharpened brand new pencil, and place each pencil and place in the exact same order they were in the beginning.  This is exactly what a map is for.  By using a map, the assistant can make a brand new row of pencils in the exact same order.  The original row of pencils stay untouch and is put in storage.</p>
+
+
+<h2>`Enumerable#group_by`</h2>
+<p>The group_by enum method basically takes a block, and the block as some kind of expression in it.  Returns a hash,  the keys of the hash are all the possible evaluations of the expression inside the block.  Each keys values are all the numbers (in an array) in the enumerable for which the key is true.  For example if I had an array</p>
+<div id="example">
+[1,2,3]
+</div>
+
+<p>and I wanted to use the group_by method to group the elements in the array by whether or not they are even, the method would look like this:</p>
+<div id="example">
+[1,2,3].group_by {|e| e.even?}
+</div>
+
+<p>'e.even?' being a boolean, the possible outcomes of this expression is either 'true' or 'false', therefore the keys of the resulting hash would be true or false.  Now the values would be the elements in the enumerable for which the key evaluates.  there for,</p>
+
+<div id="example">
+[1,2,3].group_by {|e| e.even?}
+=>  {true => [2], false=>[1,3]}
+</div>
+
+<p>the values of 'true' is an array containing all the elements for which e.even? evaluates to 'true', in this case its a single element array [2].  The values of 'false' are all the elements in the enum for which the expression evaluates to 'false', in this case, [1,3].</p>
+
+<p>Lets take another example, lets say in stead of a boolean expression, lets makes the expression inside of the block 'e%2'.  Now what are the possible outcomes of e%2?  Well, 0 is one,  it is completely possible for something, divided by two to have NO remainder.  It also possible for it to hve a remainder of 1, but it is not possible for the remainder to be 2 or greater.  Therefore the keys in the resulting hash would be 0 and 1.</p>
+
+<p>Now what are the elements in [1,2,3] for which '%2' evaluates to 0?  Simply, just 2, for there are no other multiples of 2 in the set [1,2,3].  So the value of the element for which 0 is the key would be [0].  Finally all the elements for which '%2' evaluates to 1?  Well 1%2 = 1, and 1%3 = 1 right?  The value of this element would be [1,3].  Feast your eyes:</p>
+
+<div id="example">
+[1,2,3].group_by {|e| e%2}
+=> {1=>[1, 3], 0=>[2]}
+</div>
+
+
+<h2>`Enumerable#cycle`</h2>
+
+<p>Cycle is a way for you to call each element in a block, an n number of times.  Generally the .cycle enum method will take in an argument and a block.</p>
+
+<div id="example">
+[1,2,3].cycle(n) {|e| expression}
+</div>
+
+<p>In this example, the enum method will run evaluate the expression in the block, for each element 'e' in the enumerable, 'n' times.  In order, from the start of the enum to the end, then back from the start to the end, 'n' times.  If no n is given the expression will repeat forever.  This is a way to run some to infinity, since ruby has no infinity symbol.</p>
+
+
+
+    </div>
+</div>
+</div>
+
+</html>
