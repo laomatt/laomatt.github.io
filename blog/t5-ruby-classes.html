@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+  <title>Matt Lao Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<html id="tech">
+<div>
+<div id="techlogo">
+<div id="social">
+    <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"></a></div>
+
+  <div id="toc">
+    <hr>
+    <p id="navbar"><a href="#">Home</a> | <a href="#">Portfolio</a> | <a href="#">Blogs</a> | <a href="#">Contact</a> | <a href="#">About</a></p>
+    <hr>
+  <h2>Technical blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+
+  <h2>Cultural blog entries</h2>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  <li><p id="menuitem">menu items</p></li>
+  </div>
+</div>
+<div id="techblogbody">
+  <div id="header">
+
+
+    <div id="blogcontent">
+
+      <h1>Ruby classes, and what they do</h1>
+
+classes are a way of group attributed together
+
+classes produce objects
+
+The main function of classes is to produce objects.  Classes are templates for new objets.  Everything in ruby is an object, and classes are where objects come from.
+
+Take a class called 'Matthew' (modeled after myself):
+
+<div id="example">
+
+class Matthew<br>
+<br>
+def initialize<br>
+  @name="unknown"<br>
+  @face="unknown"<br>
+  @clothes="unknown"<br>
+  @job="unknown"<br>
+  @location="unknown"<br>
+  @clothes="unknown"<br>
+end<br>
+<br>
+def setname(name)<br>
+  @name=name<br>
+end<br>
+<br>
+def setface(face)<br>
+  @face=face<br>
+end<br>
+<br>
+def setclothes(dress)<br>
+  @clothes=dress<br>
+end<br>
+<br>
+def setjob(occ)<br>
+  @job=occ<br>
+end<br>
+<br>
+def setlocation(place)<br>
+  @location=place<br>
+end<br>
+<br>
+def setclothes(rags)<br>
+  @clothes=rags<br>
+<br>
+end<br>
+<br>
+def introduce_self<br>
+  "Hi, my name is #{@name}, and I am a #{@job}, <br>living in #{@location}, on my face I have #{@face}.<br>  I wear #{@clothes}."<br>
+end<br>
+<br>
+end<br>
+
+</div>
+
+
+
+<p>Now this is an example of a class, that has a collection of attributes, that every object created from this class will have.  Now lets create an objects</p>
+
+<div id="example">
+Matt=Matthew.new<br>
+Matt.setname("Matt Lao")<br>
+Matt.setlocation("San Francisco")<br>
+Matt.setjob("DBC student")<br>
+Matt.setface("thick eyebrows and stubble")<br>
+Matt.setclothes("plain t-shirt and jeans")<br>
+</div>
+
+
+<p>now I create another object from this class to describe myself in high school:</p>
+
+<div id="example">
+highscoolMatt=Matthew.new<br>
+highscoolMatt.setname("Night Terror")<br>
+highscoolMatt.setlocation("the abyss of color and emptyness")<br>
+highscoolMatt.setjob("goth raver")<br>
+highscoolMatt.setface("heavy eye-liner and black lipstick")<br>
+highscoolMatt.setclothes("baggy raver pants and a long black trenchcoat")<br>
+</div>
+
+
+<p>now I create another object from this class to describe myself in college</p>
+
+
+
+<div id="example">
+collegeMatt=Matthew.new<br>
+collegeMatt.setname("Mattyboy")<br>
+collegeMatt.setlocation("the college commons")<br>
+collegeMatt.setjob("parttime student, part-time Ultimate Frisby champ")<br>
+collegeMatt.setface("a really long bushy beard")<br>
+collegeMatt.setclothes("cargo shorts, sandals and graphic tees")<br>
+</div>
+
+<p>So in summary I just created three versions of myself, from a class I made to model myself.  And each object has an introduce_self method that introduces themselves based on their attributes that each has:</p>
+
+<div id="example">
+puts Matt.introduce_self<br>
+=>Hi, my name is Matt Lao, and I am a DBC student,
+living in San Francisco, on my face I have thick eyebrows and stubble.
+I wear plain t-shirt and jeans.<br><br>
+
+
+puts highscoolMatt.introduce_self<br>
+=>Hi, my name is Night Terror, and I am a goth raver,
+living in the abyss of color and emptyness, on my face I have heavy eye-liner and black lipstick.
+I wear baggy raver pants and a long black trenchcoat.<br><br>
+
+
+puts collegeMatt.introduce_self<br>
+=>Hi, my name is Mattyboy, and I am a parttime student, part-time Ultimate Frisby champ,
+living in the college commons, on my face I have a really long bushy beard.
+I wear cargo shorts, sandals and graphic tees.<br><br>
+</div>
+
+
+
+    </div>
+</div>
+</div>
+
+</html>
