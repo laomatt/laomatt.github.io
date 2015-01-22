@@ -82,6 +82,18 @@ position: relative;
 
 }
 
+#eg{
+background-color: transparent;
+color: red;
+border-style: solid;
+position: absolute;
+padding: 12px;
+margin-left: 40%;
+
+
+}
+
+
 #mainpage{
 /* background-image: url("../websitebgmain.png");*/
 
@@ -121,6 +133,7 @@ background-repeat: no-repeat;
 
 
 }
+
 
 #top{
 

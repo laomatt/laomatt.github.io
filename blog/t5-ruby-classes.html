@@ -36,15 +36,25 @@
 
       <h1>Ruby classes, and what they do</h1>
 
-classes are a way of group attributed together
+<h2>Classes are a way to group attributed together</h2>
+<p>One of the first things to notice about classes is that they are nothing but collections of things.  Fields and Methods.  Fields can be thought of as adjectives, Methods are verbs.  Unlike other languages such as Java, ruby does not require us to use classes to make methods and fields (or variables), but it is required for making objects, which I'll get into later in this post.  As a default setting, methods and variable declared outside of classes are made in something called a main Object, that everything runs on.</p>
 
-classes produce objects
+<h3>How to call methods and variables in a class</h3>
+<p>To access an attribute in a class, we must first make an object of that class.  Then that object will inherit all the attributes of that class (as well as all the attribute of that class super class), and we can access it method via the '.' method, also known as the 'call' method.  For example, Objectone.methodone calls the methodone method in the Objectone object.</p>
 
-The main function of classes is to produce objects.  Classes are templates for new objets.  Everything in ruby is an object, and classes are where objects come from.
+<p>Another notable difference in Ruby from other languages is that everything in ruby is a language, so we can't directly call a method in a class (static methods), methods must first be assigned to a object before they can be used.</p>
 
-Take a class called 'Matthew' (modeled after myself):
+<h2>Classes produce objects</h2>
+
+<p>If class Fields are adjectives, and Methods are Verbs, then the Objects that classes produce are the nouns of the ruby language.  Thinks about it:  then you think of a person, place or thing in the spoken language, they are usually each associated with their own sets of attributes (adjectives and verbs).  They have a description of things about them, and then they have a set of actions they are capable of doing.  For example, a car has thing about it that are similar to fields, for example, the color, the make and the model.  Every car has these attributes but in different descriptions.  One car is a green Honda civic, another might be a red Dodge charger.  They all have verbs or actions associated with them, for example a 'drive' method, which all run differently based on each cars 'engine' field.  The main function of classes is to produce objects.  </p>
+
+
+  <p>Classes are templates for new objects.  Everything in ruby is an object, and classes are where objects come from.</p>
+
+<p>Take a class called 'Matthew' (modeled after myself):</p>
 
 <div id="example">
+<div id="eg">My Matthew class has 5 fields associated with it (name, face, clothes, job, location,) and 6 methods (5 of them setter methods for the fields that we can replace with an attr_writer), making for a totally or 11 attributes.  </div>
 
 class Matthew<br>
 <br>
@@ -54,7 +64,6 @@ def initialize<br>
   @clothes="unknown"<br>
   @job="unknown"<br>
   @location="unknown"<br>
-  @clothes="unknown"<br>
 end<br>
 <br>
 def setname(name)<br>
@@ -77,9 +86,7 @@ def setlocation(place)<br>
   @location=place<br>
 end<br>
 <br>
-def setclothes(rags)<br>
-  @clothes=rags<br>
-<br>
+
 end<br>
 <br>
 def introduce_self<br>
@@ -129,7 +136,7 @@ collegeMatt.setface("a really long bushy beard")<br>
 collegeMatt.setclothes("cargo shorts, sandals and graphic tees")<br>
 </div>
 
-<p>So in summary I just created three versions of myself, from a class I made to model myself.  And each object has an introduce_self method that introduces themselves based on their attributes that each has:</p>
+<p>So in summary I just created three versions of myself, from a class I made to model myself.  And each object has an introduce_self method that introduces themselves based on the attributes that each has:</p>
 
 <div id="example">
 puts Matt.introduce_self<br>
@@ -140,12 +147,12 @@ I wear plain t-shirt and jeans.<br><br>
 
 puts highscoolMatt.introduce_self<br>
 =>Hi, my name is Night Terror, and I am a goth raver,
-living in the abyss of color and emptyness, on my face I have heavy eye-liner and black lipstick.
-I wear baggy raver pants and a long black trenchcoat.<br><br>
+living in the abyss of color and emptiness, on my face I have heavy eye-liner and black lipstick.
+I wear baggy raver pants and a long black trench coat.<br><br>
 
 
 puts collegeMatt.introduce_self<br>
-=>Hi, my name is Mattyboy, and I am a parttime student, part-time Ultimate Frisby champ,
+=>Hi, my name is Mattyboy, and I am a part-time student, part-time Ultimate Frisbee champ,
 living in the college commons, on my face I have a really long bushy beard.
 I wear cargo shorts, sandals and graphic tees.<br><br>
 </div>
