@@ -36,65 +36,68 @@
 
       <h3>What are Ruby Classes used for?</h3>
 
-      <p>So like my other blog <a href="t5-ruby-classes.html">post</a> states, a class is a template for an object.  The main purpose of a class is to make objects based on itself.  It's like a cookie mold, making multiple cookies of the same shape.  One of the other uses a class has is to group variables, constans and methods that are linked to each other in some ways.  Sort of like a package, but a package that you can't open, unless you clone it and open the clone.  In other words you can't directly access things in that class without making objects from that class.</p>
+      <p>So like my other blog <a href="t5-ruby-classes.html">post</a> states, a class is a template for an object.  The main purpose of a class is to make objects based on itself.  It's like a cookie mold, making multiple cookies of the same shape.  One of the other uses a class has is to group variables, constants and methods that are linked to each other in some way.  Sort of like a package, but a package that you can't open, unless you clone it and open the clone.  In other words you can't directly access things in that class without making objects from that class.</p>
 
 <h3>What does a Ruby Module look like?</h3>
 
-<p>A module is ruby is basically structured the same way most of everything else in ruby is structed.  There is a header and an 'end' statement to signal we are at an end of the construct.  Within those keywords reside the body of the construct, in the case of a module, this consists of constants, classes and methods. </p>
+<p>A module is ruby is basically structured the same way most of everything else in ruby is structured.  There is a header and an 'end' statement to signal we are at an end of the construct.  Within those keywords reside the body of the construct, in the case of a module, this consists of constants, classes and methods. </p>
 <p>Take for example a file called <b>module_demo.rb</b></p>
       <div id="example">
         <h5>--disclaimer -- this code was originally taken from <a href="http://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/80-modules-as-namespaces">Ruby Monk</a> and modified for my own purposes --</h5><br><br>
-  module Matt<br>
-  def Matt.add(num1, num2)<br>
-    return num2+num1<br>
-  end<br>
-<br>
-  TANG="matt"<br>
-end<br>
-<br>
-<br>
-module Lao<br>
-  def Lao.add(num1, num2)<br>
-    return num2+num1*6<br>
-  end<br>
-<br>
-  TANG="lksdfjs"<br>
-end<br>
-<br>
-<br>
-<br>
-module RubyMonk<br>
-  module Parser<br>
-    class TextParser<br>
-      def self.parse(input)<br>
-        # define method<br>
-        #input.upcase.chars<br>
-        input.upcase.split("")<br>
-      end<br>
-    end<br>
-  end<br>
-end<br>
-<br>
-<br>
-<br>
-module Kata<br>
-  A = 50<br>
-  module Dojo<br>
-    B = 9<br>
-    A = 1<br>
-<br>
-    class ScopeIn<br>
-      def push<br>
-        A<br>
-      end<br>
-    end<br>
-  end<br>
-end<br>
-<br>
-A = 10<br>
-<br>
+        <PRE>
+0:
+1: module Matt
+2:   def Matt.add(num1, num2)
+3:     return num2+num1
+4:   end
+5:
+6:   TANG="matt"
+7: end
+8:
+9:
+10: module Lao
+11:   def Lao.add(num1, num2)
+12:     return num2+num1*6
+13:   end
+14:
+15:   TANG="lksdfjs"
+16: end
+17:
+18:
+19:
+20: module RubyMonk
+21:   module Parser
+22:     class TextParser
+23:       def self.parse(input)
+24:         # define method
+25:         #input.upcase.chars
+26:         input.upcase.split("")
+27:       end
+28:     end
+29:   end
+30: end
+31:
+32:
+33:
+34: module Kata
+35:   A = 50
+36:   module Dojo
+37:     B = 9
+38:     A = 1
+39:
+40:     class ScopeIn
+41:       def push
+42:         A
+43:       end
+44:     end
+45:   end
+46: end
+47:
+48: A = 10
+49:
+</PRE>
 </div>
-<br>
+
 <p>As you can see, the modules encapsulate a variety of different objects, from methods to contants, variables are stored inside classes which are stored inside the module.</p>
 <p> We have a file for my test drivers for it:</p><br><br>
 
