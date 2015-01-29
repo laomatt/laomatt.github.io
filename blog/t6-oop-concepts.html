@@ -70,7 +70,7 @@
 22:     class TextParser
 23:       def self.parse(input)
 24:         # define method
-25:         #input.upcase.chars
+25:
 26:         input.upcase.split("")
 27:       end
 28:     end
@@ -98,7 +98,7 @@
 </PRE>
 </div>
 
-<p>As you can see, the modules encapsulate a variety of different objects, from methods to contants, variables are stored inside classes which are stored inside the module.</p>
+<p>As you can see, the modules encapsulate a variety of different objects, from methods to constants, variables are stored inside classes which are stored inside the module.</p>
 <p> We have a file for my test drivers for it:</p><br><br>
 
 <div id="example">
@@ -110,19 +110,19 @@ p RubyMonk::Parser::TextParser.parse("matt")<br>
 </div>
 
   <h3>had to take the 'new' keyword out</h3>
-    <p><b>why?</b>  parse is a factory method, (because of the 'self.' keyword), therefore it does not of an object to be called, instead it may be called directly from the class in the modules.
-    modules containt Contants, methods and classes... but not variables.</p>
+    <p><b>why?</b>  Parse is a factory method, (because of the 'self.' keyword), therefore it does not have to be part of an object to be called, instead it may be called directly from the class in the module.  In this case, the class TextParser, inside the module Parser, inside the module RubyMonk.
+    modules contain Constants, methods and classes... but not variables.</p>
 <br>
 <br>
-<p>Now, further down out test file we have:</p>
+<p>Now, further down our test file we have:</p>
 <div id="example">
-  #this first method call did not work<br>
+#this first method call did not work<br>
 #p Kata::Dojo::ScopeIn.push<br>
 p Kata::Dojo::ScopeIn.new.push<br>
 </div>
 <h3>had to put the 'new' keyword in</h3>
-    <p><b>why?</b> Scope in is a method that is not static, or it does not belong to the class, but rather an instance of that class.  There fore we must first instatiate an obeject (this is what the 'new' keyword does), then call the push method of that object that was just created.
-    #note:  the object is anonymous, as in we never gave it an actual variable name, thus it takes up no space in memory.  After this command is executed from this temporarily instantiate object, the object effectivly dissappears.</p><br>
+    <p><b>why?</b> Scope in is a method that is <i>not</i> static, or it does not belong to the class, but rather an instance of that class (an object made from that class).  Therefore we must first instantiate an object (this is what the 'new' keyword does), then call the push method of that object that was just created.<br><br>
+    <b>note: </b> the object is anonymous, because we never gave it an actual variable name, thus it takes up no space in memory.  After this command is executed from this temporarily instantiated object, the object effectively disappears, and memory is freed up making it advantageous to processing speed to use anonymous objects when ever possible...</p><br>
 <br>
 <br>
 <br>
@@ -134,20 +134,28 @@ p Kata::Dojo::ScopeIn.new.push<br>
       <h3>What are Ruby Modules used for?</h3>
       <p>Modules are the packages in the Ruby language.  Modules are a way to avoid collisions in the namespace.  Module are also a way to group and call logically related constants, methods and classes.</p>
 
-      <p>You call things in a Module via the '::' operator, which tells Ruby to look up the proceding item in the Module with the name of the preceding item.  This is usful for grouping items and calling them by group, kind of like putting things in folders and directly calling them in those folders.</p>
-<h3>Selecting modules example</h3>
+      <p>You call things in a Module via the '::' operator, which tells Ruby to look up the pro-ceding item in the Module with the name of the preceding item.  This is useful for grouping items and calling them by group, kind of like putting things in folders and directly calling them in those folders.</p>
+<h3>Avoiding namespace collisions </h3>
 <p>To directly call a method that sits inside, on the first level, or a module, simply use the '::' operator in order to locate the method.  The syntax follows: 'Module_Name::Thing_your_looking_for'.  The more levels the object is down, the more '::' we to use.</p>
 
 <p>Back in the test file we have:</p>
 
 <div id="example">p Matt::add(3,4)  #=>prints out 7</div>
 
-<p>now if I had another method named 'add' (because it does the same thing almost), to avoid collisions in the name space , I could put that extra 'add' method into another module called Lao (like I did in module_demo.rb), while my original 'add' method is still in the Matt module.  To call each method, I would first have to call the Module, then use the :: operator to seach with in that module.</p>
+<p>now if I had another method named 'add' (because it does the same thing almost), to avoid collisions in the name space , I could put that extra 'add' method into another module called Lao (like I did in module_demo.rb), while my original 'add' method is still in the Matt module.  To call each method, I would first have to call the Module, then use the :: operator to search with in that module.</p>
 
 
 <div id="example">p Lao::add(3,4) #=>prints out 22</div>
 
-<p>The same principle follows for the constants name TANG in each module.  Each module contains a constant named TANG, if we were to call the TANG inside Matt module, we would have to call it like this: "puts Matt::TANG" => prints "matt" while "puts Lao::TANG" =>prints "lksdfjs". </p>
+<p>The same principle follows for the constants name TANG in each module.  Each module contains a constant named TANG, if we were to call the TANG inside Matt module, we would have to call it like this:
+<div id="example">
+  "puts Matt::TANG" => prints "matt"
+</div>
+  <p>while</p>
+
+<div id="example">
+  "puts Lao::TANG" =>prints "lksdfjs".
+</div>
 
 <h3>Disclaimer</h3>
 <p>This blog post is subject to change, as I only found out about modules this morning.</p>

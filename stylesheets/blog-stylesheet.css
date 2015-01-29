@@ -9,6 +9,30 @@ background-size: 100%;
 
 }
 
+#mainnavbar{
+text-align: center;
+background-color: transparent;
+
+}
+
+#navbarlinks{
+color: white;
+font-size: 25pt;
+
+
+}
+
+a{
+
+  color:white;
+}
+
+#navbar{
+text-align: center;
+background-color: transparent;
+}
+
+
 html#tech{
 background-image: url("../websitebg.png");
 background-repeat: repeat-y;
@@ -49,12 +73,6 @@ float: left;
 }
 #menuitem{
   margin-left: 20px;
-}
-
-#navbar{
-text-align: center;
-background-color: #CEF6D8;
-
 }
 
 
