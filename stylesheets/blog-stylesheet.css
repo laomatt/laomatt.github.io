@@ -27,6 +27,12 @@ a{
   color:white;
 }
 
+a#in
+{
+
+  color: red;
+}
+
 #navbar{
 text-align: center;
 background-color: transparent;
