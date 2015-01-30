@@ -40,7 +40,8 @@ background-color: transparent;
 
 
 html#tech{
-background-image: url("../websitebg.png");
+/*background-image: url("../websitebg.png");*/
+background-color: grey;
 background-repeat: repeat-y;
 background-size: 100%;
 }
