@@ -38,6 +38,15 @@ text-align: center;
 background-color: transparent;
 }
 
+#cartoon
+{
+background-color: transparent;
+position: absolute;
+left: 10%;
+top: 150%;
+
+}
+
 
 html#tech{
 /*background-image: url("../websitebg.png");*/
