@@ -135,7 +135,7 @@ p RubyMonk::Parser::TextParser.parse("matt")<br>
 </div>
 <p>Notice how the first method call didn't work, what happened?  How do we fix this?</p>
   <h3>We had to take the 'new' keyword out</h3>
-    <p><b>why?</b>  Parse is a factory method, (because of the 'self.' keyword), therefore it does not have to be part of an object to be called, instead it may be called directly from the class in the module.  In this case, the class TextParser, inside the module Parser, inside the module RubyMonk.
+    <p><b>why?</b>  'Parse' is a factory method, (because of the 'self.' keyword), therefore it does not have to be part of an object to be called, instead it may be called directly from the class in the module.  In this case, the class TextParser, inside the module Parser, inside the module RubyMonk.
     modules contain Constants, methods and classes... but not variables.</p>
 <br>
 <br>
@@ -147,7 +147,7 @@ p Kata::Dojo::ScopeIn.new.push<br>
 </div>
 <p>Again, the first method call did not work.  </p>
 <h3>We had to put the 'new' keyword in</h3>
-    <p><b>why?</b> Scope in is a method that is <i>not</i> static, or it does not belong to the class, but rather an instance of that class (an object made from that class).  Therefore we must first instantiate an object (this is what the 'new' keyword does), then call the push method of that object that was just created.<br><br>
+    <p><b>why?</b> 'ScopeIn' is a method that is <i>not</i> static, or it does not belong to the class, but rather an instance of that class (an object made from that class).  Therefore we must first instantiate an object (this is what the 'new' keyword does), then call the push method of that object that was just created.<br><br>
     <b>note: </b> the object is anonymous, because we never gave it an actual variable name, thus it takes up no space in memory.  After this command is executed from this temporarily instantiated object, the object effectively disappears, and memory is freed up making it advantageous to processing speed to use anonymous objects when ever possible...</p><br>
 <br>
 <br>
