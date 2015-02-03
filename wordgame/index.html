@@ -1,0 +1,45 @@
+<head>
+  <title>Name guessing</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<html>
+<body>
+
+<div id="game_window">
+
+
+
+<!--below this is the player one stuff-->
+<div id="player_one">
+  <div id="login">
+      what's your word?: <input type="text" id="na">
+      <button onclick="submit()">play!!!</button>
+  </div>
+  <div id="player_one_purse"></div>
+</div>
+
+<div id="controlpanel">
+Make a wager: <input type="number" id="wag">
+Guess a letter:  <input type="text" id="nam">
+<button onclick="guess()">guess</button>
+
+</div>
+
+<!--below this is the player two stuff-->
+  <div id="player_two">
+    <div id="comps">
+    </div>
+    <div id="player_two_purse"></div>
+  </div>
+  <div id="compguess"></div>
+<div id="update">update</div>
+<br><br><br>
+<div id="update2"></div>
+
+</div>
+
+    <script type="text/javascript" src="my_solution.js"></script>
+
+</body>
+
+</html>
