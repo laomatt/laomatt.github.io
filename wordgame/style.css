@@ -24,6 +24,16 @@ position: relative;
 
 }
 
+#login{
+
+
+ background-color: transparent;
+ padding: 3% 3% 3% 3%;
+font-size: 12px;
+
+
+}
+
 #game_window{
 background-color: #F5F6CE;
 position: absolute;
