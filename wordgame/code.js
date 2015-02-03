@@ -1,5 +1,9 @@
 // Refactored Code
+      //players name
       var x = document.getElementById("login")
+      //computers name
+      var y = document.getElementById("comps")
+
       var b = document.getElementById("na")
 var guessedletters=[]
 
@@ -7,7 +11,7 @@ var purse_two = document.getElementById("player_two_purse")
 var purse_one = document.getElementById("player_one_purse")
 
 //these are my object rpresenting the player and the computer
-var player={name:"",purse:52, count:0};
+var player={name:"",purse:52, count:0, blankname:""};
 var computer={name:"",purse:52, count:0};
 
 //displays the players name
@@ -15,11 +19,16 @@ function displayplayer()
     {
       player.name=b.value
       x.innerHTML=player.name
+      var blanx=""
+      for (var i=0;i<player.name.length;i+=1)
+      {
+        blanx+="_"
+      }
+      player.blankname=blanx
 
     }
 
 //displays the computer name
-var y = document.getElementById("comps")
 //var g = document.getElementById("nam")
 //var bet = document.getElementById("wag")
 var lettarray = document.getElementById("playeroneletters")
@@ -53,13 +62,26 @@ function guess()
 {
   var g = document.getElementById("nam")
   var bet = document.getElementById("wag")
+
+  if((typeof g.value != 'string')||(g.value.toString().length>1))
+  {
+    alert("Must enter one letter in the Guess box")
+    g.value=""
+  }
+  else if((typeof parseInt(bet.value) != 'number')||(bet.value<=0))
+  {
+    alert("You must wager a number greater than 0")
+    bet.value=0
+  }
+  else
+  {
   var temp= y.innerHTML
   var temporary=g.value
     y.innerHTML=updatecompname(temporary)
    // cp.innerHTML=temp
     g.value=""
    //guessedletters.push(g.value)
-    if (y.innerHTML==temp)
+    if (y.innerHTML.toString()==temp.toString())
     {
       ud.innerHTML="MISS....."
       player.purse-=parseInt(bet.value)
@@ -67,19 +89,18 @@ function guess()
     }
     else
     {
-      UD.innerHTML="HIT!!!"
+      ud.innerHTML="HIT!!!"
       player.purse+=parseInt(bet.value)
       computer.purse-=parseInt(bet.value)
     }
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       bet.value=0
-     // compupdate.innerHTML="<button onclick=\"computer_guess()\">click to end your turn</button>"
-     //var letterspicks=guessedletters
-     lettarray.innerHTML="You just guessed "+temporary+"<br>Guessed letters: "+guessedletters
+      lettarray.innerHTML="You just guessed "+temporary+"<br>Guessed letters: "+guessedletters
 
       cp.innerHTML="<button onclick=\"computer_guess()\" id=\"but\">click to end your turn</button>"
-end_conditions()
+      end_conditions()
+    }
 }
 
 var compupdate=document.getElementById("compguess")
@@ -112,7 +133,7 @@ function computer_guess()
       purse_two.innerHTML=computer.purse
       compupdate.innerHTML=""
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
-//end_conditions()
+    end_conditions()
 }
 
 var endcond = document.getElementById("update2")
@@ -120,15 +141,15 @@ var endcond = document.getElementById("update2")
 
 function end_conditions()
 {
-    if ((player.count==player.name.length) || (computer.count==computer.name.length))
+    if ((x.innerHTML.toString()==player.blankname) || (y.innerHTML.toString()==computer.name))
     {
         if(player.purse>computer.purse)
         {
-          endcond.innerHTML="YOU WON!!!!!"
+          cp.innerHTML="YOU WON!!!!!"
         }
         else
         {
-          endcond.innerHTML="computer won :("
+          cp.innerHTML="computer won :("
         }
     }
 
