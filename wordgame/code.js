@@ -1,50 +1,3 @@
- // U3.W7: Design your own Code Combat Mission
-
-// This is a solo challenge
-
-// Your mission description:
-
-//my mission will have a character and another character, that each possess. a purse of coins,  the object of the game is to collect as many coins as possible frlom the other character you start with, by guessing each others name letter by letter.
-//the more letters you guess the more money you get from the others purse.  if you fail to guess a letter in the name, then you loose the money you wagered.
-//if you guess more than one letter at a time (a series of letters) then you can steal the next turn, but if you guess wrong, then the computer gets the next two turns.
-// Overall mission:  to take all of the other characters coins., you take coins based on what you guess, you loose coins if you guess wrong,  you are able to wager a certain amount of coins.
-// Goals: take as much coins as possible.  the person with more coins at the end of the game wins.
-// Characters: two charactes with a purse and a random name assigned to them.
-// Objects:character one, character two
-// Functions:guess, takecoins, wager
-
-// Pseudocode
-//
-//1) two play objects are made, one for you and the name you choose,  one of the computer and a random name assigned to it.  each start with 50 coins.
-//2.) playerone is given the first turn
-
- //LOOP
-//1.)one player first must  wager  and guess
-//2.)things update
-//3.)'thinking...' pops up and animates
-//4.)computer wagers and guesses
-//5.)everything updates and 'update' dive is updated with what the comput did
- //END LOOP (condition: either all of my name letters are red, or all of the computers letters a guesses)
-
-    //get total number of coins, for each player
-    //declare the one with more coins the winner
-
-//class Player
-//attributes:   purse - number of coins each has
-              //name - an array of the letters in the name
-              //counter - keeps track of how many letters in name array were guessed
-
-//methods : wager, guess, takecoins, paycoins
-
-// Initial Code
-//names = array of 100 random names
-
-
-
-
-
-//computer pick random name from names array
-
 // Refactored Code
       var x = document.getElementById("login")
       var b = document.getElementById("na")
@@ -114,8 +67,8 @@ function guess()
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       bet.value=0
-      compupdate.innerHTML="<button onclick=\"computer_guess()\">click to end your turn</button>"
-
+     // compupdate.innerHTML="<button onclick=\"computer_guess()\">click to end your turn</button>"
+      cp.innerHTML="<button onclick=\"computer_guess()\" id=\"but\">click to end your turn</button>"
 end_conditions()
 }
 
@@ -145,7 +98,7 @@ function computer_guess()
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       compupdate.innerHTML=""
-
+      cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
 //end_conditions()
 }
 
@@ -213,15 +166,3 @@ function updateplayername(letter)
 
 
 
-
-
-
-// Reflection
-//
-//
-//Java script is VERY frustrating becuase there is not way to see a mistake, or effectivly debug.  Its cool, but I would prefer making these methods in ruby, if we must use a scripting language.
-//
-//
-//
-//
-//

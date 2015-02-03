@@ -6,6 +6,7 @@
 <body>
 <div id="game_window">
 <div id="rules">
+  <h1>Word Battleship</h1>
 <h2>rules:</h2>
 1. Pick a word.<br>
 2. computer will randomly pick a word.<br>
@@ -18,33 +19,48 @@
 <!--below this is the player one stuff-->
 <div id="player_one">
   <div id="login">
-      what's your word?: <input type="text" id="na">
-      <button onclick="submit()">play!!!</button>
+    <table id="tab">
+      <tr>
+        <td align="right">
+        what's your word?: <input type="text" id="na">
+      </td>
+      <td>
+        <button onclick="submit()" id="but">play!!!</button>
+      </td>
+      </tr>
+    </table>
   </div>
   <div id="player_one_purse"></div>
 </div>
 
 <div id="controlpanel">
-Make a wager: <input type="number" id="wag">
-Guess a letter:  <input type="text" id="nam">
-<button onclick="guess()">guess</button>
-
+  <table id="tab">
+<tr>
+  <td>
+  Make a wager: <input type="number" id="wag"><br>
+  Guess a letter:  <input type="text" id="nam">
+  </td>
+  <td>
+  <button onclick="guess()" id="but">guess</button>
+  </td>
+</tr>
+</table>
 </div>
 
 <!--below this is the player two stuff-->
-  <div id="player_two">
+  <div id="player_one">
     <div id="comps">
     </div>
     <div id="player_two_purse"></div>
   </div>
   <div id="compguess"></div>
-<div id="update">update</div>
+<div id="update"></div>
 <br><br><br>
 <div id="update2"></div>
 
 </div>
 
-    <script type="text/javascript" src="my_solution.js"></script>
+    <script type="text/javascript" src="code.js"></script>
 
 </body>
 
