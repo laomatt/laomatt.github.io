@@ -20,8 +20,9 @@ function displayplayer()
 
 //displays the computer name
 var y = document.getElementById("comps")
-var g = document.getElementById("nam")
-var bet = document.getElementById("wag")
+//var g = document.getElementById("nam")
+//var bet = document.getElementById("wag")
+var lettarray = document.getElementById("playeroneletters")
 
 function displaycomp()
     {
@@ -50,17 +51,23 @@ var ud=document.getElementById("update")
 
 function guess()
 {
+  var g = document.getElementById("nam")
+  var bet = document.getElementById("wag")
   var temp= y.innerHTML
-    y.innerHTML=updatecompname(g.value)
+  var temporary=g.value
+    y.innerHTML=updatecompname(temporary)
    // cp.innerHTML=temp
     g.value=""
+   //guessedletters.push(g.value)
     if (y.innerHTML==temp)
     {
+      ud.innerHTML="MISS....."
       player.purse-=parseInt(bet.value)
       computer.purse+=parseInt(bet.value)
     }
     else
     {
+      UD.innerHTML="HIT!!!"
       player.purse+=parseInt(bet.value)
       computer.purse-=parseInt(bet.value)
     }
@@ -68,22 +75,28 @@ function guess()
       purse_two.innerHTML=computer.purse
       bet.value=0
      // compupdate.innerHTML="<button onclick=\"computer_guess()\">click to end your turn</button>"
+     //var letterspicks=guessedletters
+     lettarray.innerHTML="You just guessed "+temporary+"<br>Guessed letters: "+guessedletters
+
       cp.innerHTML="<button onclick=\"computer_guess()\" id=\"but\">click to end your turn</button>"
 end_conditions()
 }
 
 var compupdate=document.getElementById("compguess")
 var computerGuessed =[]
+var alpha="abcdefghijklmnopqrstuvwxyz".split('')
+
+
 function computer_guess()
 {
   var temp= x.innerHTML
 
-  alpha="abcdefghijklmnopqrstuvwxyz".split('')
   num=Math.floor(Math.random()*(computer.purse/2));
   let=alpha[Math.floor(Math.random()*alpha.length)]
   x.innerHTML = updateplayername(let)
+  //delete alpha[]
 
-  ud.innerHTML="I wagered "+num+". I guessed the letter "+let
+  ud.innerHTML="I wagered "+num+".<br> I guessed the letter "+let
 
     if (x.innerHTML==temp)
     {
@@ -147,6 +160,7 @@ function updateplayername(letter)
     {
         guessedletters.push(letter)
         compdisplay=""
+        //g.value=""
         computer.count=0
       for(var h in computer.name.split(''))
       {

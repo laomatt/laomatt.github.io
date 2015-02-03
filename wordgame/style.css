@@ -38,7 +38,15 @@ text-align: center;
 position: relative;
 }
 
+#playeroneletters
+{
 
+ background-color: transparent;
+ padding: 3% 3% 3% 3%;
+font-size: 12px;
+
+
+}
 #player_one{
 background-color: white;
 color: black;
