@@ -17,7 +17,7 @@ var computer={name:"",purse:52, count:0};
 //displays the players name
 function displayplayer()
     {
-      player.name=b.value
+      player.name=b.value.toLowerCase()
       x.innerHTML=player.name
       var blanx=""
       for (var i=0;i<player.name.length;i+=1)
@@ -76,7 +76,7 @@ function guess()
   else
   {
   var temp= y.innerHTML
-  var temporary=g.value
+  var temporary=g.value.toLowerCase()
     y.innerHTML=updatecompname(temporary)
    // cp.innerHTML=temp
     g.value=""
