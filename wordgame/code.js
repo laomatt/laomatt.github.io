@@ -6,13 +6,13 @@
 
       var b = document.getElementById("na")
 var guessedletters=[]
-
+var pool=[]
 var purse_two = document.getElementById("player_two_purse")
 var purse_one = document.getElementById("player_one_purse")
 
 //these are my object rpresenting the player and the computer
-var player={name:"",purse:52, count:0, blankname:""};
-var computer={name:"",purse:52, count:0};
+var player={name:"",purse:50, count:0, blankname:""};
+var computer={name:"",purse:50, count:0};
 
 //displays the players name
 function displayplayer()
@@ -49,9 +49,11 @@ function submit()
       displayplayer();
       var compname = name[Math.floor(Math.random()*name.length)];
       computer.name=compname;
+
       displaycomp();
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
+      cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
     }
 
 
@@ -62,6 +64,8 @@ function guess()
 {
   var g = document.getElementById("nam")
   var bet = document.getElementById("wag")
+  var p1=document.getElementById("p1_portrait")
+  var p2=document.getElementById("p2_portrait")
 
   if((typeof g.value != 'string')||(g.value.toString().length>1))
   {
@@ -80,15 +84,20 @@ function guess()
     y.innerHTML=updatecompname(temporary)
    // cp.innerHTML=temp
     g.value=""
-   //guessedletters.push(g.value)
+   //actions for if a letter is guessed
     if (y.innerHTML.toString()==temp.toString())
     {
+      //happy player animation
+
       ud.innerHTML="MISS....."
       player.purse-=parseInt(bet.value)
       computer.purse+=parseInt(bet.value)
     }
+   //actions for a miss....
     else
     {
+      //sad player animation
+
       ud.innerHTML="HIT!!!"
       player.purse+=parseInt(bet.value)
       computer.purse-=parseInt(bet.value)
@@ -110,22 +119,45 @@ var alpha="abcdefghijklmnopqrstuvwxyz".split('')
 
 function computer_guess()
 {
+  //resets the pool array
+  var pool1=player.name.split('')
+  pool=[]
+  for(var i=0;i<pool1.length;i+=1)
+    {
+      if (computerGuessed.indexOf(pool1[i])<=0)
+        {pool.push(pool1[i])}
+    }
+
+  //adds letters to the pool of letters the computer may choose from
+  for(var i=0;i<player.name.length;i+=1)
+    {
+      var tempalpha=alpha[Math.floor(Math.random()*alpha.length)]
+      if (computerGuessed.indexOf(pool1[i])<=0)
+        {pool.push(tempalpha[i])}
+    }
+
   var temp= x.innerHTML
 
-  num=Math.floor(Math.random()*(computer.purse/2));
-  let=alpha[Math.floor(Math.random()*alpha.length)]
-  x.innerHTML = updateplayername(let)
+  num=Math.floor(Math.random()*(20));
+
+  //selects randomly from pool, then removes that element from pool
+    let=pool[Math.floor(Math.random()*pool.length)];
+  x.innerHTML = updateplayername(let);
   //delete alpha[]
 
   ud.innerHTML="I wagered "+num+".<br> I guessed the letter "+let
 
     if (x.innerHTML==temp)
     {
+      //happy computer animation
+
       player.purse+=num
       computer.purse-=num
     }
     else
     {
+      //sad computer animation
+
       player.purse-=num
       computer.purse+=num
     }

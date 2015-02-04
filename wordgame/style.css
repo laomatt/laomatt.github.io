@@ -58,6 +58,36 @@ font-size: 12px;
 
 
 }
+
+player_portraits{
+
+background-color: red
+}
+
+#p1_portrait{
+  background-color: red;
+  position: relative;
+  background-image: url("anim1.png");
+  background-size: 100%;
+  right: -90%;
+  top: -50%;
+  width:200px;
+  height:200px;
+
+}
+
+#p2_portrait {
+  background-color: red;
+  position: relative;
+  background-image: url("anim1.png");
+  background-size: 100%;
+  right: -90%;
+  top: -50%;
+  width:200px;
+  height:200px;
+}
+
+
 #player_one{
 background-color: white;
 color: black;
