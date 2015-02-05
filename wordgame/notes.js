@@ -45,3 +45,15 @@ var changep1bgImage = function(){
                 incre+=1
                 setTimeout(sadplayer, 1000)
               }
+#game_window{
+background-color: #F5F6CE;
+top: 0%;
+color: black;
+font-family:"Lucida Console", Monaco, monospace;
+font-size: 22px;
+padding: 3% 3% 3% 3%;
+margin-left: 10%;
+width: 60%;
+text-align: center;
+position: relative;
+}

@@ -66,7 +66,9 @@ height: 40%
 }
 
 #game_window{
-background-color: #F5F6CE;
+background-image: url("paper_bg.png");
+background-position: top;
+background-size: 100%;
 top: 0%;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
@@ -121,7 +123,7 @@ font-size: 12px;
 
 
 #player_one{
-background-color: white;
+background-color: transparent;
 color: black;
 position: relative;
 right: 20%;
@@ -215,7 +217,7 @@ text-align: center;
 
 
 #player_two{
-background-color: white;
+background-color: transparent;
 position: relative;
 right: 20%;
 left: 20%;
