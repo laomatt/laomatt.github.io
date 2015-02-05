@@ -103,7 +103,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+sadplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(sadplayer, 1000)
+        setTimeout(sadplayer, 400)
       }
   }
 
@@ -114,7 +114,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+angryplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(angryplayer, 1000)
+        setTimeout(angryplayer, 400)
       }
   }
 
@@ -125,7 +125,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+gloatingplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(gloatingplayer, 1000)
+        setTimeout(gloatingplayer, 400)
       }
   }
 
@@ -136,7 +136,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p1.innerHTML="<img src=\""+happyplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(happyplayer, 1000)
+            setTimeout(happyplayer, 400)
           }
       }
 
@@ -148,7 +148,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+sadcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(sadcomputer, 1000)
+            setTimeout(sadcomputer, 400)
           }
       }
 
@@ -159,7 +159,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+angrycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(angrycomputer, 1000)
+            setTimeout(angrycomputer, 400)
           }
       }
 
@@ -170,7 +170,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+happycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(happycomputer, 1000)
+            setTimeout(happycomputer, 400)
           }
       }
 
@@ -181,7 +181,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+gloatingcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(gloatingcomputer, 1000)
+            setTimeout(gloatingcomputer, 400)
           }
       }
 
