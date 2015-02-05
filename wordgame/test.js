@@ -47,16 +47,28 @@ if(quak_f<20)
 
             }
 
+sadplayerarray
+
+var incre=0
+//sad player
+var moving_animation = function(input_array)
+  {
+     if(incre<input_array.length)
+     {
+        p1.innerHTML="<img src=\""+input_array[incre]+"\" width=\"100%\" height=\"100%\">"
+        incre+=1
+        setTimeout(moving_animation, 1000)
+      }
+  }
 
 
-      if(quak_c<20)
-            {
-                if(quak_c%2==0)
-                  {start1-=2; }
-                else
-                  {start1+=2; }
-                quak_c+=1
-                y.style.left = start1+'%'
-                setTimeout(computer_word_quake,20)
 
-            }
+  var sadplayer = function(sadplayerarray)
+  {
+     if(incre<sadplayerarray.length)
+     {
+        p1.innerHTML="<img src=\""+sadplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+        incre+=1
+        setTimeout(sadplayer, 1000)
+      }
+  }

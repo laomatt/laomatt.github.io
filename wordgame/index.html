@@ -2,37 +2,26 @@
   <title>Hangman</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<div id="wrapper">
 <html>
 <body>
-<div id="game_window">
-<div id="rules">
-  <h1>Battle-Hangman</h1>
-<h2>rules:</h2>
-<p>
-1. Pick a word.<br>
-2. computer will randomly pick a word.<br>
-3. each player gets 50 points to start with.<br>
-4. you must type a single letter into the guess and an arbitrary number in wager.  Then hit the button that appears to make the computer take a guess and wager.<br>
-5. game is over when one word is fully guessed.<br>
-6. player with most points at the end wins.<br></p>
-</div>
 
+<div id="wrapper">
+
+<div id="game_window">
 <!--below this is the player one stuff-->
 <div id="p1_portrait"><img src="player_start.png" width="100%" height="100%"></div>
     <div id="p2_portrait"><img src="computer_start.png" width="100%" height="100%"></div>
 <div ="maingamecolumn">
   <div id="player_one">
-    <div id="login">
-
-    </div>
+    <div id="player_update"></div>
+    <div id="login"></div>
     <div id="playeroneletters"></div>
     <div id="player_one_purse"></div>
   </div>
 
   <div id="controlpanel">
    <table id="tab">
-        <tr height="40%">
+        <tr height="100%">
           <td align="right">
           what's your word?: <br><input type="text" id="na">
         </td>
@@ -48,16 +37,29 @@
     <div id="comps">
     </div>
     <div id="player_two_purse"></div>
-  </div>
   <div id="compguess"></div>
 <div id="update"></div>
 <br><br><br>
 <div id="update2"></div>
+  </div>
 
 </div>
 
 </div>
 
+
+<div id="rules">
+  <h2>Battle-Hangman</h2>
+<h3>rules:</h3>
+<p>
+1. Pick a word.<br>
+2. computer will randomly pick a word.<br>
+3. each player gets 50 points to start with.<br>
+4. you must type a single letter into the guess and an arbitrary number in wager.  Then hit the button that appears to make the computer take a guess and wager.<br>
+5. game is over when one word is fully guessed.<br>
+6. player with most points at the end wins.<br></p>
+<button id="rule_button" onclick="hide_rules()">[x]</button> <-- Hide rules
+</div>
     <script type="text/javascript" src="code.js"></script>
 
 </body>

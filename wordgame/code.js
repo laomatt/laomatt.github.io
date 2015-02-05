@@ -65,13 +65,39 @@ var ud=document.getElementById("update")
 var p1=document.getElementById("p1_portrait")
 var p2=document.getElementById("p2_portrait")
 
-/*start all my animation functions*/
-
+/*******************  start all my animation arrays  *******************/
+/*******************  start all my animation arrays  *******************/
+/*******************  start all my animation arrays  *******************/
+/*******************  start all my animation arrays  *******************/
+//player arrays
 var sadplayerarray = ["sad_player1.png","sad_player2.png","sad_player3.png","sad_player1.png"]
+var angryplayerarray = ["angry_player1.png","angry_player2.png","angry_player3.png","angry_player1.png"]
+var gloatingplayerarray = ["gloating_player1.png","gloating_player2.png","gloating_player3.png","gloating_player1.png"]
+var happyplayerarray=["happy_player1.png","happy_player2.png","happy_player3.png","happy_player1.png"]
+
+//comp arrays
 var sadcomputerarray = ["sad_computer1.png","sad_computer2.png","sad_computer3.png","sad_computer1.png"]
-var incre=0
+var angrycomputerarray = ["angry_computer1.png","angry_computer2.png","angry_computer3.png","angry_computer1.png"]
+var happycomputerarray= ["happy_computer1.png","happy_computer2.png","happy_computer3.png","happy_computer1.png"]
+var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","gloating_computer3.png","gloating_computer1.png"]
+
+/*******************  end all my animation arrays  *******************/
+/*******************  end all my animation arrays  *******************/
+/*******************  end all my animation arrays  *******************/
+/*******************  end all my animation arrays  *******************/
+
+
+/******************  start all my animation functions *******************/
+/******************  start all my animation functions *******************/
+/******************  start all my animation functions *******************/
+/******************  start all my animation functions *******************/
+/******************  start all my animation functions *******************/
+/******************  start all my animation functions *******************/
+    var incre=0
+
+/********************** player emotions **********************/
 //sad player
-var sadplayer = function()
+  var sadplayer = function()
   {
      if(incre<sadplayerarray.length)
      {
@@ -80,12 +106,88 @@ var sadplayer = function()
         setTimeout(sadplayer, 1000)
       }
   }
+
 //angry player
+  var angryplayer = function()
+  {
+     if(incre<angryplayerarray.length)
+     {
+        p1.innerHTML="<img src=\""+angryplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+        incre+=1
+        setTimeout(angryplayer, 1000)
+      }
+  }
 
 //gloating player
+  var gloatingplayer = function()
+  {
+     if(incre<gloatingplayerarray.length)
+     {
+        p1.innerHTML="<img src=\""+gloatingplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+        incre+=1
+        setTimeout(gloatingplayer, 1000)
+      }
+  }
 
 //happy player
+    var happyplayer = function()
+      {
+         if(incre<happyplayerarray.length)
+         {
+            p1.innerHTML="<img src=\""+happyplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+            incre+=1
+            setTimeout(happyplayer, 1000)
+          }
+      }
 
+/*********** computer emotions ***********/
+//sad computer
+    var sadcomputer = function()
+      {
+         if(incre<sadcomputerarray.length)
+         {
+            p2.innerHTML="<img src=\""+sadcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+            incre+=1
+            setTimeout(sadcomputer, 1000)
+          }
+      }
+
+  //angry computer
+      var angrycomputer = function()
+      {
+         if(incre<angrycomputerarray.length)
+         {
+            p2.innerHTML="<img src=\""+angrycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+            incre+=1
+            setTimeout(angrycomputer, 1000)
+          }
+      }
+
+  //happy computer
+  var happycomputer = function()
+      {
+         if(incre<happycomputerarray.length)
+         {
+            p2.innerHTML="<img src=\""+happycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+            incre+=1
+            setTimeout(happycomputer, 1000)
+          }
+      }
+
+  //gloating computer
+    var gloatingcomputer = function()
+      {
+         if(incre<gloatingcomputerarray.length)
+         {
+            p2.innerHTML="<img src=\""+gloatingcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
+            incre+=1
+            setTimeout(gloatingcomputer, 1000)
+          }
+      }
+
+
+
+  /*******************************   quake functions   *******************************/
 //player window shaking
         var quake_i=0
         var startp1=20
@@ -102,8 +204,6 @@ var sadplayer = function()
                     setTimeout(player_quake,20)
               }
       }
-
-
 //play word shaking
        var start0=0
        var quak_f=0
@@ -121,7 +221,6 @@ var sadplayer = function()
 
             }
       }
-
 //comp word quaking
       var quak_c=0
       var start1=0
@@ -139,25 +238,6 @@ var sadplayer = function()
 
                 }
         }
-
-
-
-    var sadcomputer = function()
-      {
-         if(incre<sadplayerarray.length)
-         {
-            p2.innerHTML="<img src=\""+sadcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
-            incre+=1
-            setTimeout(sadcomputer, 1000)
-          }
-      }
-
-  //angry computer
-
-  //happy computer
-
-  //gloating computer
-
   //computer window shaking
         var quake_p=0
         var startp9=20
@@ -177,7 +257,24 @@ var sadplayer = function()
 
 
 
-  /*end all my animation functions*/
+//rule book slider
+        var quake_r=0
+        var startp9=0
+    var hide_rules = function()
+      {
+        if(quake_r<800)
+              {
+                startp9-=30;
+                quake_r+=1
+                    document.getElementById("rules").style.left = startp9+'px';
+                    setTimeout(hide_rules,3)
+              }
+      }
+
+  /****************end all my animation functions*********************/
+  /****************end all my animation functions*********************/
+  /****************end all my animation functions*********************/
+  /****************end all my animation functions*********************/
 
 
 function guess()
@@ -191,10 +288,10 @@ function guess()
     alert("Must enter one letter in the Guess box")
     g.value=""
   }
-  else if((typeof parseInt(bet.value) != 'number')||(bet.value<=0))
+  else if((typeof parseInt(bet.value) != 'number')||(bet.value<=0)||(bet.value>10))
   {
-    alert("You must wager a number greater than 0")
-    bet.value=0
+    alert("You must wager a number greater between 1 and 10")
+    bet.value=1
   }
   else
   {
@@ -207,6 +304,7 @@ function guess()
     if (y.innerHTML.toString()==temp.toString())
     {
       //sad player animation
+      incre=0
       sadplayer()
 
       //gloating computer animation
@@ -268,7 +366,7 @@ function computer_guess()
 
   var temp= x.innerHTML
 
-  num=Math.floor(Math.random()*(20));
+  num=Math.floor(Math.random()*(10));
 
   //selects randomly from pool, then removes that element from pool
     let=pool[Math.floor(Math.random()*pool.length)];
@@ -279,16 +377,17 @@ function computer_guess()
 
     if (x.innerHTML==temp)
     {
+      document.getElementById("player_update").innerHTML="Miss...."
       //sad computer animation
 
       //gloating player animation
       sadcomputer()
-
       player.purse+=num
       computer.purse-=num
     }
     else
     {
+      document.getElementById("player_update").innerHTML="HIT!!!!"
       //happy computer animation
 
       //sad player animation
@@ -305,7 +404,7 @@ function computer_guess()
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       compupdate.innerHTML=""
-      cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
+      cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
     end_conditions()
 }
 

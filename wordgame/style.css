@@ -15,17 +15,18 @@ background-size: 100%;
 }
 
 #rules{
-background-color: #F5F6CE;
+background-color: white;
 position: absolute;
-top: 0%;
+left: 0px;
+top: 20px;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
+border: solid;
 font-size: 12px;
 padding: 3% 3% 3% 3%;
 margin-left: 10%;
-width: 60%;
+width: 20%;
 text-align: left;
-position: relative;
 
 
 }
@@ -51,10 +52,17 @@ position: relative;
 left: 0%;
 font-size: 22px;
 height: 40%
+}
 
-
-
-
+#player_update{
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  color: red;
+  background-color: transparent;
+  width: 20%;
+  height: 20%;
+  font-size: 200%;
 }
 
 #game_window{
@@ -131,7 +139,7 @@ position: relative;
 {
 background-color: transparent;
 width: 100%;
-height: 50%;
+height: 100%;
 padding: 3%,3%,3%,3%;
 }
 #but
@@ -141,7 +149,11 @@ height: 50%;
 background-color: black;
 color: white;
 border-style: solid;
-font-size: 22px;
+font-size: 100%;
+}
+
+#rule_button{
+background-color: transparent;
 
 }
 
@@ -160,8 +172,9 @@ position: relative;
 right: 20%;
 left: 20%;
 color: black;
+padding-top: 1%;
 width: 50%;
-height: 20%;
+height: 10%;
 font-size: 15pt;
 text-align: center;
 font-family:"Lucida Console", Monaco, monospace;
