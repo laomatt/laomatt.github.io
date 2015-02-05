@@ -8,13 +8,19 @@ background-repeat: repeat-y;
 background-size: 100%;
 }
 
+#wrapper{
+    margin-left:auto;
+    margin-right:auto;
+    width:120%;
+}
+
 #rules{
 background-color: #F5F6CE;
 position: absolute;
-top: 10%;
+top: 0%;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
-font-size: 22px;
+font-size: 12px;
 padding: 3% 3% 3% 3%;
 margin-left: 10%;
 width: 60%;
@@ -28,16 +34,31 @@ position: relative;
 
 
 background-color: transparent;
-
+position: relative;
+left: 0%;
 font-size: 22px;
 height: 40%
 
 
 }
 
+
+#comps{
+
+
+background-color: transparent;
+position: relative;
+left: 0%;
+font-size: 22px;
+height: 40%
+
+
+
+
+}
+
 #game_window{
 background-color: #F5F6CE;
-position: absolute;
 top: 0%;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
@@ -59,32 +80,35 @@ font-size: 12px;
 
 }
 
-player_portraits{
 
-background-color: red
+#p1_portraittest{
+  background-color: red;
+  position: absolute;
+  left: 10%;
+  background-size: 100%;
+  width:400px;
+  height:400px;
 }
 
 #p1_portrait{
-  background-color: red;
-  position: relative;
-  background-image: url("anim1.png");
-  background-size: 100%;
-  right: -90%;
-  top: -50%;
-  width:200px;
-  height:200px;
+  background-color: transparent;
+  position: absolute;
+  right: 70%;
+  bottom: 20%;
+  text-align: center;
+  width:400px;
+  height:400px;
 
 }
 
+
 #p2_portrait {
-  background-color: red;
-  position: relative;
-  background-image: url("anim1.png");
-  background-size: 100%;
-  right: -90%;
-  top: -50%;
-  width:200px;
-  height:200px;
+  background-color: transparent;
+  position: absolute;
+  left: 65%;
+  bottom: 20%;
+  width:400px;
+  height:400px;
 }
 
 
@@ -108,14 +132,24 @@ position: relative;
 background-color: transparent;
 width: 100%;
 height: 50%;
+padding: 3%,3%,3%,3%;
 }
 #but
 {
-width: 100%;
-height: 100%;
+width: 50%;
+height: 50%;
 background-color: black;
 color: white;
 border-style: solid;
+font-size: 22px;
+
+}
+
+#maingamecolumn
+{
+background-color: transparent;
+position: relative;
+width: 70%;
 
 }
 
@@ -127,11 +161,10 @@ right: 20%;
 left: 20%;
 color: black;
 width: 50%;
-height: 10%;
+height: 20%;
 font-size: 15pt;
-text-align: left;
+text-align: center;
 font-family:"Lucida Console", Monaco, monospace;
-padding: 3% 3% 3% 3%;
 }
 
 #player_one_purse

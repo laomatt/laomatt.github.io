@@ -2,49 +2,52 @@
   <title>Hangman</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<div id="wrapper">
 <html>
 <body>
 <div id="game_window">
 <div id="rules">
   <h1>Battle-Hangman</h1>
 <h2>rules:</h2>
+<p>
 1. Pick a word.<br>
 2. computer will randomly pick a word.<br>
 3. each player gets 50 points to start with.<br>
 4. you must type a single letter into the guess and an arbitrary number in wager.  Then hit the button that appears to make the computer take a guess and wager.<br>
 5. game is over when one word is fully guessed.<br>
-6. player with most points at the end wins.<br>
+6. player with most points at the end wins.<br></p>
 </div>
 
 <!--below this is the player one stuff-->
-<div id="player_one">
-  <div id="login">
-    <table id="tab">
-      <tr>
-        <td align="right">
-        what's your word?: <input type="text" id="na">
-      </td>
-      <td>
-        <button onclick="submit()" id="but">play!!!</button>
-      </td>
-      </tr>
-    </table>
-  </div>
-  <div id="playeroneletters"></div>
-  <div id="player_one_purse"></div>
-  <div id="p1_portrait"></div>
-</div>
+<div id="p1_portrait"><img src="player_start.png" width="100%" height="100%"></div>
+    <div id="p2_portrait"><img src="computer_start.png" width="100%" height="100%"></div>
+<div ="maingamecolumn">
+  <div id="player_one">
+    <div id="login">
 
-<div id="controlpanel">
- Pick a word
-</div>
+    </div>
+    <div id="playeroneletters"></div>
+    <div id="player_one_purse"></div>
+  </div>
+
+  <div id="controlpanel">
+   <table id="tab">
+        <tr height="40%">
+          <td align="right">
+          what's your word?: <br><input type="text" id="na">
+        </td>
+        <td width="40%">
+          <button onclick="submit()" id="but">play!!!</button>
+        </td>
+        </tr>
+      </table>
+  </div>
 
 <!--below this is the player two stuff-->
-  <div id="player_one">
+  <div id="player_two">
     <div id="comps">
     </div>
     <div id="player_two_purse"></div>
-    <div id="p2_portrait"></div>
   </div>
   <div id="compguess"></div>
 <div id="update"></div>
@@ -53,8 +56,11 @@
 
 </div>
 
+</div>
+
     <script type="text/javascript" src="code.js"></script>
 
 </body>
 
 </html>
+</div>
