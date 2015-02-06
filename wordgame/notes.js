@@ -309,3 +309,9 @@ var p2incre=comp_orig_score
   /****************end all my animation functions*********************/
   /****************end all my animation functions*********************/
   /****************end all my animation functions*********************/
+
+
+
+document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+
+document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"

@@ -18,6 +18,7 @@ var comp_orig_score=0
 var player={name:"",purse:50, count:0, blankname:""};
 var computer={name:"",purse:50, count:0};
 
+
 //displays the players name
 function displayplayer()
     {
@@ -410,7 +411,7 @@ function computer_guess()
         //happy computer animation
         happycomputer()
         //document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
-        //sad player animation
+        //angry player animation
 
         //player window shakes
            quake_i=0
@@ -588,6 +589,22 @@ function updateplayername(letter)
         }
       }
      return compdisplay
+
+    }
+
+
+
+
+function loadup()
+    {
+      //document.getElementById("p2_portrait").innerHTML="fgfdsg"
+    sadplayer()
+    sadcomputer()
+    happyplayer()
+    happycomputer()
+    document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+    document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
+
 
     }
 
