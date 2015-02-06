@@ -402,10 +402,13 @@ function computer_guess()
          quake_i=0
          startp1=20
          player_quake()
-
+      if(player.count>1)
+            {
+              document.getElementById("p2_bonus").innerHTML="bonus x"+player.count+"!"
+            }
 
       player.purse-=num
-      computer.purse+=num
+      computer.purse+=num*player.count
     }
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
@@ -429,7 +432,7 @@ function end_conditions()
     {
         if(player.purse>computer.purse)
         {
-          cp.innerHTML="YOU WON!!!!!"
+          cp.innerHTML="YOU WON!!!!!<br> the word was \""+computer.word+"\" <button onclick=\"reset()\">Play again?</button>"
         }
         else
         {
@@ -448,7 +451,8 @@ function updateplayername(letter)
         if (computerGuessed.indexOf(player.name.charAt(h))>=0)
          {
           compdisplay+="_"
-          player.count+=1
+          if(player.name.charAt(h)==letter)
+              {player.count+=1}
         }
         else
           {
@@ -472,7 +476,7 @@ function updateplayername(letter)
         if (guessedletters.indexOf(computer.name.charAt(h))>=0)
         {
           compdisplay+=computer.name.charAt(h)
-          if(h==letter)
+          if(computer.name.charAt(h)==letter)
             {computer.count+=1}
         }
         else
