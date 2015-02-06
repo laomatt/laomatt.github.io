@@ -4,7 +4,7 @@
       //computers name
       var y = document.getElementById("comps")
 
-      var b = document.getElementById("na")
+     /// var b = document.getElementById("na")
 var guessedletters=[]
 var pool=[]
 var purse_two = document.getElementById("player_two_purse")
@@ -19,7 +19,7 @@ var computer={name:"",purse:50, count:0};
 //displays the players name
 function displayplayer()
     {
-      player.name=b.value.toLowerCase()
+      player.name=document.getElementById("na").value.toLowerCase()
       x.innerHTML=player.name
       var blanx=""
       for (var i=0;i<player.name.length;i+=1)
@@ -49,6 +49,8 @@ function submit()
       player_animation_quake()
       computer_word_quake()
      var name=["former", "swimmer", "stanford", "university", "pleaded", "guilty", "today", "counts", "sexual", "assault", "allegedly", "raping", "drunk", "unconscious", "woman", "outside", "oncampus", "fraternity", "party", "month", "prosecutors", "brock", "allen", "turner", "charged", "felony", "counts", "sexual", "assault", "deputies", "allegedly", "found", "pinned", "samaritans", "encountered", "woman", "outside", "kappa", "alpha", "house", "lomita", "court", "according", "report", "santa", "clara", "county", "sheriffs", "office", "convicted", "charges", "turner", "could", "maximum", "sentence", "years", "prison", "district", "attorneys", "spokesman", "webby", "today", "turner", "resident", "freshman", "stanford", "until", "withdrew", "school", "shortly", "after", "arrest", "allegedly", "found", "turner", "bicycling", "before", "noticed", "lying", "woman", "ground", "dumpster", "according", "sheriffs", "offices", "report", "woman", "appeared", "unconscious", "moving", "looked", "having", "bicyclists", "stopped", "going", "tried", "checked", "woman", "pursued", "caught", "fleeing", "after", "struggle", "pinned", "ground", "woman", "still", "unconscious", "deputies", "arrived", "severely", "intoxicated", "taken", "santa", "clara", "valley", "medical", "center", "where", "remained", "asleep", "until", "later", "morning", "investigators", "memory", "shortly", "after", "midnight", "drinking", "outside", "house", "turner", "investigators", "woman", "party", "ended", "kissing", "ground", "outside", "house", "sexual", "activity", "between", "seemed", "consensual", "perspective", "according", "sheriffs", "offices", "report", "prosecutors", "charged", "turner", "unlawful", "sexual", "intercourse", "someone", "prevented", "resisting", "intoxication", "intercourse", "person", "unconscious", "nature", "assault", "intent", "commit", "sexual", "penetration", "person", "cannot", "resist", "intoxication", "penetration", "person", "unconscious", "nature", "disney", "announced", "thursday", "newest", "princess", "elena", "avalor", "yearold", "character", "inspired", "diverse", "latin", "cultures", "folklore", "shell", "debut", "disney", "juniors", "animated", "sofia", "first", "which", "targeted", "children", "elenas", "eponymous", "spinoff", "series", "premiere", "disney", "junior", "disney", "juniors", "programming", "block", "disney", "channel", "aimee", "carrero", "familys", "young", "hungry", "voice", "excites", "chance", "distinctive", "animation", "visual", "design", "wonderful", "stories", "influenced", "culture", "traditions", "familiar", "worldwide", "population", "hispanic", "latino", "families", "reflect", "interests", "aspirations", "children", "through", "classic", "fairy", "nancy", "kanter", "executive", "president", "general", "manager", "disney", "junior", "worldwide", "announcement", "disney", "faced", "harsh", "criticism", "after", "producer", "sofia", "first", "series", "announced", "title", "character", "latina", "disney", "junior", "executives", "later", "clarified", "princess", "ethnicity", "misrepresented", "adding", "characters", "fantasy", "lands", "reflect", "elements", "various", "cultures", "ethnicities", "meant", "specifically", "represent", "those", "world", "cultures", "santa", "enforcement", "officials", "detonated", "determined", "improvised", "explosive", "device", "santa", "found", "while", "landscaping", "backyard", "today", "santa", "police", "santa", "police", "officers", "responded", "report", "suspicious", "device", "apartments", "block", "guerneville", "santa", "police", "marcus", "sprague", "device", "encased", "cloth", "pouch", "measured", "roughly", "inches", "inches", "material", "covered", "making", "determine", "exactly", "cloth", "inside", "sprague", "pouch", "couple", "canisters", "wicks", "poking", "which", "officers", "suspected", "might", "improvised", "explosive", "sprague", "police", "device", "looked", "buried", "ground", "there", "roots", "wrapped", "around", "casing", "partially", "deteriorated", "sprague", "there", "buried", "sonoma", "county", "sheriffs", "explosive", "ordinance", "disposal", "called", "assist", "disposal", "device", "police", "police", "cordoned", "approximately", "minutes", "while", "squad", "rendered", "device", "using", "water", "ceramic", "rounds", "which", "fired", "devise", "close", "distance", "police", "according", "santa", "police", "sheriffs", "squad", "confirm", "device", "actually", "improvised", "explosive", "sprague", "squad", "destroy", "device", "without", "activating", "whatever", "explosive", "inside", "police", "manner", "which", "device", "destroyed", "further", "information", "available", "about", "devices", "contents", "origin", "representative", "sonoma", "county", "sheriffs", "office", "immediately", "available", "comment"]
+
+    // player.name=document.getElementById("na").value
       displayplayer();
       var compname = name[Math.floor(Math.random()*name.length)];
       computer.name=compname;
@@ -330,11 +332,11 @@ function guess()
 
         player.purse+=parseInt(bet.value)*(computer.count)
         computer.purse-=parseInt(bet.value)
-      }
         if(computer.count>1)
             {
               document.getElementById("p1_bonus").innerHTML="bonus x"+computer.count+"!"
             }
+      }
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       bet.value=0
@@ -382,39 +384,40 @@ function computer_guess()
   ud.innerHTML="I wagered "+num+".<br> I guessed the letter "+let
 
     if (x.innerHTML==temp)
-    {
-      document.getElementById("player_update").innerHTML="Miss...."
-      //sad computer animation
+      {
+        document.getElementById("player_update").innerHTML="Miss...."
+        //sad computer animation
 
-      //gloating player animation
-      sadcomputer()
-      player.purse+=num
-      computer.purse-=num
-    }
+        //gloating player animation
+        sadcomputer()
+        player.purse+=num
+        computer.purse-=num
+      }
     else
-    {
-      document.getElementById("player_update").innerHTML="HIT!!!!"
-      //happy computer animation
-      document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
-      //sad player animation
+      {
+        document.getElementById("player_update").innerHTML="HIT!!!!"
+        //happy computer animation
+        document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+        //sad player animation
 
-      //player window shakes
-         quake_i=0
-         startp1=20
-         player_quake()
-      if(player.count>1)
-            {
-              document.getElementById("p2_bonus").innerHTML="bonus x"+player.count+"!"
-            }
+        //player window shakes
+           quake_i=0
+           startp1=20
+           player_quake()
+        player.purse-=num
+        computer.purse+=num*player.count
+        if(player.count>1)
+              {
+                document.getElementById("p2_bonus").innerHTML="bonus x"+player.count+"!"
+              }
 
-      player.purse-=num
-      computer.purse+=num*player.count
-    }
+
+      }
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       compupdate.innerHTML=""
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
-    end_conditions()
+      end_conditions()
 }
 
 var endcond = document.getElementById("update2")
@@ -423,20 +426,38 @@ function reset()
 {
 
   cp.innerHTML=" <table id=\"tab\"><tr height=\"100%\"><td align=\"right\">what's your word?: <br><input type=\"text\" id=\"na\"></td><td width=\"40%\"><button onclick=\"submit()\" id=\"but\">play!!!</button></td></tr></table>"
-
+  document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
+  document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+  document.getElementById("p1_bonus").innerHTML=""
+  document.getElementById("p2_bonus").innerHTML=""
+  document.getElementById("player_update").innerHTML=""
+  document.getElementById("update").innerHTML=""
+  document.getElementById("update2").innerHTML=""
+  document.getElementById("compguess").innerHTML=""
+  document.getElementById("playeroneletters").innerHTML=""
+  document.getElementById("compguess").innerHTML=""
+  document.getElementById("comps").innerHTML=""
+  document.getElementById("login").innerHTML=""
+      guessedletters=[]
+      computerGuessed=[]
+      player.purse=50
+      computer.purse=50
+      purse_one.innerHTML=player.purse
+      purse_two.innerHTML=computer.purse
 }
 
 function end_conditions()
 {
     if ((x.innerHTML.toString()==player.blankname) || (y.innerHTML.toString()==computer.name))
     {
+
         if(player.purse>computer.purse)
         {
-          cp.innerHTML="YOU WON!!!!!<br> the word was \""+computer.word+"\" <button onclick=\"reset()\">Play again?</button>"
+          cp.innerHTML="YOU WON!!!!!<br> the word was <b>\""+computer.name+"\" </b><button onclick=\"reset()\">Play again?</button>"
         }
         else
         {
-          cp.innerHTML="computer won :(<br> the word was \""+computer.word+"\" <button onclick=\"reset()\">Play again?</button>"
+          cp.innerHTML="computer won :(<br> the word was <b>\""+computer.name+"\" </b><button onclick=\"reset()\">Play again?</button>"
         }
     }
 
