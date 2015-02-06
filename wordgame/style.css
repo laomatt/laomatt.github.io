@@ -17,18 +17,16 @@ background-size: 100%;
 #rules{
 background-color: white;
 position: absolute;
-left: 0px;
-top: 20px;
+left: -100px;
+top: 20%;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
 border: solid;
 font-size: 12px;
 padding: 3% 3% 3% 3%;
-margin-left: 10%;
-width: 20%;
+margin-left: 35%;
+width: 40%;
 text-align: left;
-
-
 }
 
 #login{
@@ -156,7 +154,7 @@ font-size: 100%;
 
 #rule_button{
 background-color: transparent;
-
+color: red;
 }
 
 #maingamecolumn
