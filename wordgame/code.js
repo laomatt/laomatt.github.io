@@ -11,6 +11,8 @@ var purse_two = document.getElementById("player_two_purse")
 var purse_one = document.getElementById("player_one_purse")
 var p1window = document.getElementById("player_one")
 var p2window = document.getElementById("player_two")
+var play_orig_score=0
+var comp_orig_score=0
 
 //these are my object rpresenting the player and the computer
 var player={name:"",purse:50, count:0, blankname:""};
@@ -56,8 +58,9 @@ function submit()
       computer.name=compname;
 
       displaycomp();
-      purse_one.innerHTML=player.purse
-      purse_two.innerHTML=computer.purse
+      computer.purse=50
+      player.purse=50
+      updatepurses()
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
     }
 
@@ -209,9 +212,10 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
 //play word shaking
        var start0=0
        var quak_f=0
+       var quak_done_f=20
     var player_animation_quake = function()
       {
-            if(quak_f<20)
+            if(quak_f<quak_done_f)
             {
                 if(quak_f%2==0)
                   {start0-=2; }
@@ -225,10 +229,11 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
       }
 //comp word quaking
       var quak_c=0
+      var quak_done_c=40
       var start1=0
     var computer_word_quake = function()
         {
-          if(quak_c<40)
+          if(quak_c<quak_done_c)
                 {
                     if(quak_c%2==0)
                       {start1-=2; }
@@ -305,6 +310,7 @@ function guess()
    //actions for if a letter is guessed
     if (y.innerHTML.toString()==temp.toString())
       {
+     //actions for a miss....
         //sad player animation
         incre=0
         sadplayer()
@@ -315,21 +321,27 @@ function guess()
         player.purse-=parseInt(bet.value)
         computer.purse+=parseInt(bet.value)
       }
-     //actions for a miss....
       else
       {
         //happy player animation
-        document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
+        happyplayer()
+        //document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
         //angry computer animation
 
         //computer window shakes
            quake_p=0
            startp9=20
           comp_window_quake()
+        //computer word shakes
+           start1=0
+           quak_c=20
+           quak_done_c=50
+          computer_word_quake()
+
 
         ud.innerHTML="HIT!!!"
-
-
+        play_orig_score=player.purse
+        comp_orig_score=computer.purse
         player.purse+=parseInt(bet.value)*(computer.count)
         computer.purse-=parseInt(bet.value)
         if(computer.count>1)
@@ -337,8 +349,7 @@ function guess()
               document.getElementById("p1_bonus").innerHTML="bonus x"+computer.count+"!"
             }
       }
-      purse_one.innerHTML=player.purse
-      purse_two.innerHTML=computer.purse
+      updatepurses()
       bet.value=0
       lettarray.innerHTML="You just guessed "+temporary+"<br>Guessed letters: "+guessedletters
 
@@ -397,13 +408,24 @@ function computer_guess()
       {
         document.getElementById("player_update").innerHTML="HIT!!!!"
         //happy computer animation
-        document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+        happycomputer()
+        //document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
         //sad player animation
 
         //player window shakes
            quake_i=0
            startp1=20
            player_quake()
+
+        //player word shakes
+           start0=0
+           quak_f=20
+           quak_done_f=50
+          player_animation_quake()
+
+        play_orig_score=player.purse
+        comp_orig_score=computer.purse
+
         player.purse-=num
         computer.purse+=num*player.count
         if(player.count>1)
@@ -413,8 +435,7 @@ function computer_guess()
 
 
       }
-      purse_one.innerHTML=player.purse
-      purse_two.innerHTML=computer.purse
+      updatepurses()
       compupdate.innerHTML=""
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
       end_conditions()
@@ -442,24 +463,84 @@ function reset()
       computerGuessed=[]
       player.purse=50
       computer.purse=50
-      purse_one.innerHTML=player.purse
-      purse_two.innerHTML=computer.purse
+      updatepurses()
 }
+
+
 
 function end_conditions()
 {
     if ((x.innerHTML.toString()==player.blankname) || (y.innerHTML.toString()==computer.name))
     {
 
+      if(y.innerHTML.toString()==computer.name)
+        {
+          document.getElementById("p1_bonus").innerHTML="Word solve bonus: 20pts"
+          player.purse+=20
+        }
+      else
+        {
+          document.getElementById("p2_bonus").innerHTML="Word solve bonus: 20pts"
+          computer.purse+=20
+        }
+
+  updatepurses()
+
         if(player.purse>computer.purse)
         {
-          cp.innerHTML="YOU WON!!!!!<br> the word was <b>\""+computer.name+"\" </b><button onclick=\"reset()\">Play again?</button>"
+          if(y.innerHTML.toString()==computer.name)
+          {
+            cp.innerHTML="YOU WON!!!!!<br><button onclick=\"reset()\">Play again?</button>"
+          }
+          else
+          {
+            cp.innerHTML="YOU WON!!!!!<br> the word was <b>\""+computer.name+"\" </b><button onclick=\"reset()\">Play again?</button>"
+          }
         }
         else
         {
           cp.innerHTML="computer won :(<br> the word was <b>\""+computer.name+"\" </b><button onclick=\"reset()\">Play again?</button>"
         }
     }
+
+}
+var p1incre=play_orig_score
+var p2incre=comp_orig_score
+function updatepurses()
+{
+
+ //   purse_one.innerHTML=player.purse
+ //   purse_two.innerHTML=computer.purse
+
+
+
+  if((player.purse != p1incre) || (computer.purse != p2incre))
+  {
+    if(player.purse>p1incre)
+      {
+        p1incre+=1
+        purse_one.innerHTML=p1incre
+      }
+    else
+      {
+        p1incre-=1
+        purse_one.innerHTML=p1incre
+      }
+
+    if(computer.purse>p2incre)
+      {
+        p2incre+=1
+        purse_two.innerHTML=p2incre
+      }
+    else
+      {
+        p2incre-=1
+        purse_two.innerHTML=p2incre
+      }
+
+      setTimeout(updatepurses, 20)
+  }
+
 
 }
 
