@@ -319,6 +319,7 @@ function guess()
         //gloating computer animation
 
         ud.innerHTML="MISS....."
+        document.getElementById("player_update").innerHTML=""
         play_orig_score=player.purse
         comp_orig_score=computer.purse
         player.purse-=parseInt(bet.value)
@@ -343,6 +344,7 @@ function guess()
 
 
         ud.innerHTML="HIT!!!"
+        document.getElementById("player_update").innerHTML=""
         play_orig_score=player.purse
         comp_orig_score=computer.purse
         player.purse+=parseInt(bet.value)*(computer.count)
