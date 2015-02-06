@@ -103,7 +103,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+sadplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(sadplayer, 400)
+        setTimeout(sadplayer, 200)
       }
   }
 
@@ -114,7 +114,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+angryplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(angryplayer, 400)
+        setTimeout(angryplayer, 200)
       }
   }
 
@@ -125,7 +125,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
      {
         p1.innerHTML="<img src=\""+gloatingplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
         incre+=1
-        setTimeout(gloatingplayer, 400)
+        setTimeout(gloatingplayer, 200)
       }
   }
 
@@ -136,7 +136,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p1.innerHTML="<img src=\""+happyplayerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(happyplayer, 400)
+            setTimeout(happyplayer, 200)
           }
       }
 
@@ -148,7 +148,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+sadcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(sadcomputer, 400)
+            setTimeout(sadcomputer, 200)
           }
       }
 
@@ -159,7 +159,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+angrycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(angrycomputer, 400)
+            setTimeout(angrycomputer, 200)
           }
       }
 
@@ -170,7 +170,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+happycomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(happycomputer, 400)
+            setTimeout(happycomputer, 200)
           }
       }
 
@@ -181,7 +181,7 @@ var gloatingcomputerarray= ["gloating_computer1.png","gloating_computer2.png","g
          {
             p2.innerHTML="<img src=\""+gloatingcomputerarray[incre]+"\" width=\"100%\" height=\"100%\">"
             incre+=1
-            setTimeout(gloatingcomputer, 400)
+            setTimeout(gloatingcomputer, 200)
           }
       }
 
@@ -302,33 +302,39 @@ function guess()
     g.value=""
    //actions for if a letter is guessed
     if (y.innerHTML.toString()==temp.toString())
-    {
-      //sad player animation
-      incre=0
-      sadplayer()
+      {
+        //sad player animation
+        incre=0
+        sadplayer()
 
-      //gloating computer animation
+        //gloating computer animation
 
-      ud.innerHTML="MISS....."
-      player.purse-=parseInt(bet.value)
-      computer.purse+=parseInt(bet.value)
-    }
-   //actions for a miss....
-    else
-    {
-      //happy player animation
+        ud.innerHTML="MISS....."
+        player.purse-=parseInt(bet.value)
+        computer.purse+=parseInt(bet.value)
+      }
+     //actions for a miss....
+      else
+      {
+        //happy player animation
+        document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
+        //angry computer animation
 
-      //angry computer animation
+        //computer window shakes
+           quake_p=0
+           startp9=20
+          comp_window_quake()
 
-      //computer window shakes
-         quake_p=0
-         startp9=20
-        comp_window_quake()
+        ud.innerHTML="HIT!!!"
 
-      ud.innerHTML="HIT!!!"
-      player.purse+=parseInt(bet.value)
-      computer.purse-=parseInt(bet.value)
-    }
+
+        player.purse+=parseInt(bet.value)*(computer.count)
+        computer.purse-=parseInt(bet.value)
+      }
+        if(computer.count>1)
+            {
+              document.getElementById("p1_bonus").innerHTML="bonus x"+computer.count+"!"
+            }
       purse_one.innerHTML=player.purse
       purse_two.innerHTML=computer.purse
       bet.value=0
@@ -389,7 +395,7 @@ function computer_guess()
     {
       document.getElementById("player_update").innerHTML="HIT!!!!"
       //happy computer animation
-
+      document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
       //sad player animation
 
       //player window shakes
@@ -410,6 +416,12 @@ function computer_guess()
 
 var endcond = document.getElementById("update2")
 
+function reset()
+{
+
+  cp.innerHTML=" <table id=\"tab\"><tr height=\"100%\"><td align=\"right\">what's your word?: <br><input type=\"text\" id=\"na\"></td><td width=\"40%\"><button onclick=\"submit()\" id=\"but\">play!!!</button></td></tr></table>"
+
+}
 
 function end_conditions()
 {
@@ -421,7 +433,7 @@ function end_conditions()
         }
         else
         {
-          cp.innerHTML="computer won :("
+          cp.innerHTML="computer won :(<br> the word was \""+computer.word+"\" <button onclick=\"reset()\">Play again?</button>"
         }
     }
 
@@ -460,7 +472,8 @@ function updateplayername(letter)
         if (guessedletters.indexOf(computer.name.charAt(h))>=0)
         {
           compdisplay+=computer.name.charAt(h)
-          computer.count+=1
+          if(h==letter)
+            {computer.count+=1}
         }
         else
         {

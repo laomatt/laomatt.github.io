@@ -29,13 +29,37 @@ width: 40%;
 text-align: left;
 }
 
+#p1_bonus{
+  position: absolute;
+background-color: transparent;
+font-size: 100%;
+color: red;
+height: 80px;
+width: 200px;
+top: 10%;
+}
+
+
+#p2_bonus{
+  position: absolute;
+background-color: transparent;
+font-size: 100%;
+color: red;
+height: 80px;
+width: 200px;
+bottom: 0%;
+}
+
+
+
+
 #login{
 
 
 background-color: transparent;
 position: relative;
 left: 0%;
-font-size: 22px;
+font-size: 100%;
 height: 40%
 
 
@@ -48,7 +72,7 @@ height: 40%
 background-color: transparent;
 position: relative;
 left: 0%;
-font-size: 22px;
+font-size: 100%;
 height: 40%
 }
 
