@@ -319,6 +319,8 @@ function guess()
         //gloating computer animation
 
         ud.innerHTML="MISS....."
+        play_orig_score=player.purse
+        comp_orig_score=computer.purse
         player.purse-=parseInt(bet.value)
         computer.purse+=parseInt(bet.value)
       }
@@ -402,6 +404,8 @@ function computer_guess()
 
         //gloating player animation
         sadcomputer()
+        play_orig_score=player.purse
+        comp_orig_score=computer.purse
         player.purse+=num
         computer.purse-=num
       }
