@@ -446,6 +446,7 @@ function updateplayername(letter)
     {
       computerGuessed.push(letter)
       compdisplay=""
+      player.count=0
       for(var h in player.name.split(''))
       {
         if (computerGuessed.indexOf(player.name.charAt(h))>=0)
