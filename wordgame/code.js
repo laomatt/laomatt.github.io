@@ -468,6 +468,8 @@ function reset()
   document.getElementById("login").innerHTML=""
       guessedletters=[]
       computerGuessed=[]
+      var play_orig_score=0
+      var comp_orig_score=0
       player.purse=50
       computer.purse=50
       updatepurses()
