@@ -315,3 +315,23 @@ var p2incre=comp_orig_score
 document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
 
 document.getElementById("p1_portrait").innerHTML="<img src=\"player_start.png\" width=\"100%\" height=\"100%\">"
+function updateplayername(letter)
+    {
+      computerGuessed.push(letter)
+      compdisplay=""
+      player.count=0
+      for(var h in player.name.split(''))
+      {
+        if (computerGuessed.indexOf(player.name.charAt(h))>=0)
+         {
+          compdisplay+="_"
+          if(player.name.charAt(h)==letter)
+              {player.count+=1}
+        }
+        else
+          {
+            compdisplay+=player.name.charAt(h)
+          }
+      }
+     return compdisplay
+    }
