@@ -61,6 +61,8 @@ function submit()
       displaycomp();
       computer.purse=50
       player.purse=50
+      p1incre=play_orig_score
+      p2incre=comp_orig_score
       updatepurses()
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
     }
@@ -348,12 +350,14 @@ function guess()
         play_orig_score=player.purse
         comp_orig_score=computer.purse
         player.purse+=parseInt(bet.value)*(computer.count)
-        computer.purse-=parseInt(bet.value)
+        computer.purse-=parseInt(bet.value)*(computer.count)
         if(computer.count>1)
             {
               document.getElementById("p1_bonus").innerHTML="bonus x"+computer.count+"!"
             }
       }
+        p1incre=play_orig_score
+        p2incre=comp_orig_score
       updatepurses()
       bet.value=0
       lettarray.innerHTML="You just guessed "+temporary+"<br>Guessed letters: "+guessedletters
@@ -433,7 +437,7 @@ function computer_guess()
         play_orig_score=player.purse
         comp_orig_score=computer.purse
 
-        player.purse-=num
+        player.purse-=num*player.count
         computer.purse+=num*player.count
         if(player.count>1)
               {
@@ -442,6 +446,8 @@ function computer_guess()
 
 
       }
+      p1incre=play_orig_score
+      p2incre=comp_orig_score
       updatepurses()
       compupdate.innerHTML=""
       cp.innerHTML="<table id=\"tab\"><tr><td>Make a wager: <input type=\"number\" id=\"wag\"><br>Guess a letter:  <input type=\"text\" id=\"nam\"></td><td width=\"30%\"><button onclick=\"guess()\" id=\"but\">guess</button></td></tr></table>"
@@ -472,6 +478,8 @@ function reset()
       comp_orig_score=0
       player.purse=50
       computer.purse=50
+      p1incre=play_orig_score
+      p2incre=comp_orig_score
       updatepurses()
 }
 
@@ -492,7 +500,8 @@ function end_conditions()
           document.getElementById("p2_bonus").innerHTML="Word solve bonus: 20pts"
           computer.purse+=20
         }
-
+ p1incre=play_orig_score
+ p2incre=comp_orig_score
   updatepurses()
 
         if(player.purse>computer.purse)
