@@ -45,7 +45,7 @@ bottom: 0%;
 #login{
 
 
-background-color: #CEF6F5;
+background-color: #F5F6CE;
 position: relative;
 left: 0%;
 font-size: 100%;
@@ -59,7 +59,7 @@ float: left;
 #comps{
 
 
-background-color: #CEF6F5;
+background-color: #F5F6CE;
 position: relative;
 left: 0%;
 font-size: 100%;
@@ -421,9 +421,15 @@ position: relative;
 margin-top: 1%;
 }
 
-.resume_item{
-
+.resume_item_right{
+float: right;
 padding: 3% 3% 3% 3%;
+width: 80%;
+}
+.resume_item_left{
+float: left;
+padding: 3% 3% 3% 3%;
+width: 20%;
 }
 
 #toc2{
@@ -528,8 +534,8 @@ float: right;
 padding-bottom: 10%;
 padding-right: 10%;
 padding-left: 10%;
-padding-top: 10%;
-background-color: transparent;
+padding-top: 0%;
+background-color: #E0ECF8;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 12px;
