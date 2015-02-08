@@ -437,7 +437,7 @@ function computer_guess()
         document.getElementById("player_update").innerHTML="HIT!!!!"
         //happy computer animation
         happycomputer()
-        //document.getElementById("p2_portrait").innerHTML="<img src=\"computer_start.png\" width=\"100%\" height=\"100%\">"
+
         //angry player animation
 
         //player window shakes
