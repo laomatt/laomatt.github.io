@@ -81,10 +81,11 @@ float: right;
 
 #hangman_wrapper{
 
-  background-color: red;
+  background-color: transparent;
   position: relative;
-  top: 10%;
-  height: 700px;
+  top: 0%;
+  right: 10%;
+  width: 90%;
 }
 
 #game_window{
