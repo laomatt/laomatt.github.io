@@ -533,18 +533,13 @@ float: left;
 
 }
 
-.date{
-float: right;
-
-}
-
 #maintext{}
 
 
 #blogcontent{
 padding-bottom: 10%;
 padding-right: 10%;
-padding-left: 10%;
+padding-left: 0%;
 padding-top: 0%;
 background-color: transparent;
 color: black;
@@ -571,16 +566,24 @@ width: 50%;
 background-color: #F5F6CE;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
-font-size: 12px;
+font-size: 100%;
 padding: 3% 3% 3% 3%;
 margin-left: 0%;
 float: left;
-width: 60%;
+width: 90%;
 position: relative;
 margin-top: 1%;
+}
 
+.date{
+float: right;
+}
+
+#fontbuttons{
+float: left;
 
 }
+
 
 
 #cultlogo{
