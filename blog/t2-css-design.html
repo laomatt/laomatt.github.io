@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <head>
-  <title>Matt Lao Technical Blog</title>
+  <title>DBC Blogs: CSS design</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
 </head>
 
-<html id="tech">
-<div>
-<div id="techlogo">
-<div id="social">
-    <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"></a></div>
+<html>
 
-  <div id="toc">
-    <hr>
-    <p id="navbar"><a href="#">Home</a> | <a href="#">Portfolio</a> | <a href="#">Blogs</a> | <a href="#">Contact</a> | <a href="#">About</a></p>
-    <hr>
-  <h2>Technical blog entries</h2>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
+<div id="middle_column">
+        <div id="social">
+          <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><br><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><br><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"><br></a>
+        </div>
 
-  <h2>Cultural blog entries</h2>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
-  <li><p id="menuitem">menu items</p></li>
-  </div>
-</div>
+
+<body id="middle">
+
+<div id = "blog_home">
+
+
 <div id="techblogbody">
+  <div id="header">
+
 
     <div id="blogcontent">
-
- <h1>Week 2: CSS design</h1>
+<h1>Week 2: CSS design</h1>
           <h2>CSS class vs. IDs</h2>
-          <h4>December 22nd, 2014</h4>
+          <h4>December 17th, 2014</h4>
 
 
           <p> This week was our first foray into true website design, in our introduction to the concepts of cascading style sheets, or CSS for short.  In designing my website, via tables, I found that I wanted every space on the site to have specific styles.  This is where the concept of CSS ids and classes become important.</p>
@@ -44,8 +35,27 @@
           <p>So then I thought: Great!  now I know how to refernce different classes and IDs in my stylesheet!.....  But wait a minute, why are there two different and unique identifiers?  Surely there has to be a reason for this.  Then I did some further research into the subject.  From the internet I found that it is suggested (but so far doesn't seem required) that elements that use the ID identifier are for very specific situations in which you want something that shows up once in the page.  (eg.  the title, navigation bar, logo, etc...) and by contrast, the class identifier is for elements that are repeatedly used multiple times on the same page.</p>
 
           <p>In conclusion, I feel more confident about CSS, knowing the difference between the two types.  I still don't know any concrete reason why you couldn't use the two interchangably, it must be something that is noticable when the website grows bigger and the CSS file is linked from more HTML pages.</p>
+          <button onclick="display_blogs()">Browse blogs</button>
     </div>
 </div>
 </div>
+
+
+
+</div>
+
+        <div id="navbar">
+          <a id="navbarlinks" href="../index.html">Home</a> -
+          <a id="navbarlinks" href="../portfolio.html">Portfolio</a> -
+          <a id="navbarlinks" href="../blog/bloghome.html">Blogs</a> -
+          <a id="navbarlinks" href="../contact.html">Contact</a> -
+          <a id="navbarlinks" href="../about.html">About</a>
+        </div>
+
+
+
+    <script type="text/javascript" src="../main_code.js"></script>
+
+</body>
 
 </html>

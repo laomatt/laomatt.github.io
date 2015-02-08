@@ -16,26 +16,20 @@ background-color: transparent;
 }
 
 #navbarlinks{
-color: white;
+color: black;
 font-size: 25pt;
-
 
 }
 
 a{
 
-  color:white;
+  color:red;
 }
 
 a#in
 {
 
   color: red;
-}
-
-#navbar{
-text-align: center;
-background-color: transparent;
 }
 
 #cartoon
@@ -47,6 +41,22 @@ top: 150%;
 
 }
 
+#blog_home{
+  background-color: transparent;
+  position: relative;
+  left: 10%;
+
+}
+
+#index_home{
+  background-color: transparent;
+  position: absolute;
+  right: 1%;
+  width: 40%;
+  height: 70%;
+
+
+}
 
 html#tech{
 /*background-image: url("../websitebg.png");*/
@@ -55,12 +65,12 @@ background-repeat: repeat-y;
 background-size: 100%;
 }
 #techlogo{
-  background-image: url("../blog/roboto6.png");
+background-image: url("../blog/roboto6.png");
 position: absolute;
-left: 50px;
+left: 50%;
 background-size: 100%;
-width: 20%;
-height: 100%;
+width: 50%;
+height: 50%;
 background-color: transparent;
 background-repeat: no-repeat;
 float: left;
@@ -70,15 +80,92 @@ float: left;
   right: 10px;
   float: right;
   background-color: transparent;
-  width: 70%;
+  width: 100%;
   min-height: 1000px;
 }
+
+#topmenu{
+  background-color: red;
+  position: absolute;
+  left: 10%;
+  width: :90%;
+  height:20%;
+
+
+}
+
+#middle_column{
+background-image: url("../blog/roboto6.png");
+background-size: 100%;
+background-repeat: no-repeat;
+    position: absolute;
+  padding: 3%, 3%, 3%, 3%;
+color: black;
+font-family:"Lucida Console", Monaco, monospace;
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 70%;
+  height: 100%;
+  background-color: transparent;
+  overflow: auto;
+
+}
+
+#middle{
+  background-color: white;
+
+
+
+}
+
+#social
+{
+  position: fixed;
+  left: 0%;
+  top: 50px;
+width: 10%;
+background-color: transparent;
+
+}
+
+#navbar{
+position: fixed;
+right:10%;
+top:0%;
+font-family:"Lucida Console", Monaco, monospace;
+text-align: center;
+background-color: transparent;
+}
+
+.app_menu_item{
+background-color: #F5F6CE;
+color: black;
+font-family:"Lucida Console", Monaco, monospace;
+font-size: 12px;
+padding: 3% 3% 3% 3%;
+margin-left: 10%;
+width: 60%;
+position: relative;
+margin-top: 1%;
+}
+
+.resume_item{
+
+padding: 3% 3% 3% 3%;
+}
+
+#toc2{
+
+
+}
+
+
 
 #toc{
   size: 30px;
   position: relative;
   left: 10%;
-  top: 30%;
+  top: 0%;
   width: 60%;
   background-color: #5858FA;
   padding-left: 5%;
@@ -145,15 +232,20 @@ background-size: 100%;
 }
 
 #mainlogo{
- background-image: url("../robotz4.png");
+
 position: absolute;
 left: 50px;
 background-size: 100%;
-width: 20%;
+width: 50%;
 height: 100%;
 background-color: #5858FA;
 background-repeat: no-repeat;
 float: left;
+
+}
+
+.date{
+float: right;
 
 }
 
@@ -165,8 +257,8 @@ padding-bottom: 10%;
 padding-right: 10%;
 padding-left: 10%;
 padding-top: 10%;
-background-color: #5858FA;
-color: white;
+background-color: white;
+color: black;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 12px;
 margin-left: 0%;
@@ -208,16 +300,6 @@ border-bottom: double 10px white;
 #header{
 height: 100px;
 
-
-}
-
-#social
-{
-  position: relative;
-  left: 10px;
-  top: 0px;
-width: 20%;
-background-color: transparent;
 
 }
 
