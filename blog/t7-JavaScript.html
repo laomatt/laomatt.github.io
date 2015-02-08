@@ -25,14 +25,35 @@
     <div id="blogcontent">
 
 <h1> Ruby Hashes vs. JavaScript Objects </h1>
-<h4>Fenuary 7th, 2015</h4>
+<h4>Febuary 7th, 2015</h4>
   <h2>Similarities</h2>
   <h3>Hashes work as key values, and Java-Script objects are just Ruby hashes.</h3>
+  <p>Probably, the most basic correlation between these two things are the way they look.  If you look at a hash in Ruby, you will notice that it is declared in a key/value pattern, in all it's incarnations.  There is usually a value, or the 'meat' of the hash, in other words, the thing that is actually returned from the hash when called.  Then there is a key, or the 'getter', in other words, the things that is referenced in order to call its associated value.  Java-Script objects work the exact same way.</p>
+  <p>Java-Script objects, are created with curly braces.  Is it already looking familiar?  Secondly, all Java-Script attributes are declared in key values pairs, via the colon operator.  Thirdly, all Java-Script objects come with attribute accessors.  That means that all of their attributes are directly callable via attribute name.  Fourthly, Java-Script objects, much like Ruby hash elements, may have extra attributes added to them directly and dynamically, after the object was created, much like how Ruby hash elements are added after the hash is created.</p>
+  <div id="example">
+    <PRE>
+      RubyHash = {key1: value1, key2:value2,
+                  key3:value3, key4:value4}
 
+        how to call a hash element:
+          RubyHash[key2]  => value2
+
+      JavaScriptobject = {attribute1:value1,
+                          attribute2:value2,
+                          attribute3:value3,
+                          attribute4:value4}
+
+        how to access a JS object attribute:
+          JavaScriptobject[attribute2] = value2
+          (may also be accessed with a 'dot'
+          eg: JavaScriptobject.attribute2 = value2)
+
+    </PRE>
+
+  </div>
   <h3>In both languages EVERYTHING is an object.</h3>
 
-    <h3>In Java-Script, objects come in three forms: constants, variables, and methods.</h3>
-    <p>Objects may contain other objects.</p>
+    <p>In Java-Script, objects come in three forms: constants, variables, and methods.  Objects may contain other objects.</p>
     <p>All Java-Script objects either contain one constant, or sets of constants working as key/values pairs. (these are variables)</p>
     <p>Methods, are declared as variable objects that essential are a 'function' keyword, followed by a pair of parenthesis to optionally encapsulate any parameters the function may have, passed to them by their function call arguments. Then a block of code afterward that acts upon the information given as input (in any), and performs a certain task.</p>
 
@@ -45,6 +66,10 @@
   <h3>Java-Script objects are directly declared</h3>
   <p>(in the form: name={}, where name is the name of the object we are creating.), there are no classes in Java-Script, only methods, so you need to directly declare all object attributes upon creation of the object, or dynamically as new attributes are needed.</p>
   <p>Java-Script objects automatically come in attr_accessors for all their attributes, so you may reference them directly on default.</p>
+
+
+  <h3>Circular?</h3>
+  <p>Jaca_script objects have attributes, and some of those attributes may have values that are other objects.  (Much in the same way that some hashes have value that are other hashes), but if that value is an object, that has the same attribute in its list of attributes, that also has it's value the object of context, then the keyword '[circular]' will automatically replace that value to tell the user that this relationship is circular.  This is important, because a mutual relationship is important for some objects, and it helps up keep track of those in shorthand.</p>
 
           <button onclick="display_blogs()">Browse blogs</button>
 
