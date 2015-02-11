@@ -10,10 +10,11 @@
 <div id="middle_column">
         <div id="social">
           <a href="https://www.facebook.com/matt.lao1"><img src="../icons/facebook.png" width ="50px"></a><br><a href="https://github.com/laomatt"><img src="../icons/github.png" width ="50px"</a><br><a href="https://twitter.com/LaoMatt"><img src="../icons/twitter.png" width ="50px"></a><br><a href="https://www.youtube.com/channel/UCEKPDwTITT16mD4ARJWFAIQ"><img src="../icons/youtube.png" width ="50px"></a><br>
+
         </div>
 
 
-<body id="middle">
+<body id="middle" onload="display_blogs()">
 
 <div id = "blog_home">
 
@@ -155,18 +156,10 @@ I wear cargo shorts, sandals and graphic tees.<br><br>
 
 <p>They all have inherited the 'introduce_self' method, but they all have different outputs for that method, why?  Because that method, depends of the attributes of each object.  They all share the same fields, but each have different values for those Fields, so their output for the method will be structured the same, but with different details.</p>
 
-          <button onclick="display_blogs()">Browse blogs</button>
-
 
     </div>
 </div>
 </div>
-
-
-
-
-
-
 
         <div id="navbar">
           <a id="navbarlinks" href="../index.html">Home</a> -
@@ -176,6 +169,7 @@ I wear cargo shorts, sandals and graphic tees.<br><br>
           <a id="navbarlinks" href="../about.html">About</a>
         </div>
 
+ <div id="blog_list"></div>
 
 
     <script type="text/javascript" src="../main_code.js"></script>
