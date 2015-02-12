@@ -402,7 +402,19 @@ float: right;
 #social
 {
   position: fixed;
-  left: 0%;
+  left: 2%;
+  float: left;
+  top: 50px;
+width: 20%;
+background-color: transparent;
+overflow-y: scroll;
+
+}
+
+#social_main
+{
+  position: fixed;
+  left: 2%;
   float: left;
   top: 50px;
 width: 20%;
