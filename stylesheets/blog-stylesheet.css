@@ -631,7 +631,12 @@ float: left;
 
 }
 
+.blog_date{
+font-size: 15pt;
+color: white;
+background-color: black;
 
+}
 
 #cultlogo{
 background-image: url("../blog/cultroboto.png");
