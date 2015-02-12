@@ -435,7 +435,9 @@ background-color: transparent;
 
 .app_menu_item{
 background-color: #F5F6CE;
-color: black;
+background-color: black;
+opacity: 0.80;
+color: white;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 12px;
 padding: 3% 3% 3% 3%;
@@ -607,6 +609,8 @@ width: 50%;
 
 .blog_menu_item{
 background-color: #F5F6CE;
+background-color: white;
+opacity: 0.75;
 color: black;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 100%;
