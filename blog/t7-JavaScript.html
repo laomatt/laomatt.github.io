@@ -65,7 +65,31 @@
   <h2>Differences</h2>
   <h3>Java-Script objects are directly declared</h3>
   <p>(in the form: name={}, where name is the name of the object we are creating.), there are no classes in Java-Script, only methods, so you need to directly declare all object attributes upon creation of the object, or dynamically as new attributes are needed.</p>
-  <p>Java-Script objects automatically come in attr_accessors for all their attributes, so you may reference them directly on default.</p>
+  <p>Java-Script objects are also created via 'Constructor functions'.  These functions, usually starting with a capitol letter, act as object factories, or templates, much in the same way that ruby classes make ruby objects.  Attributes in Java-Script objects, (the key-values pairs in ruby hashes) are derived from these special constructor functions via the 'this' keyword.  Where the convention is "this.keyName=value" and values are usually arguments passed to parametes of the constructor function when the object is created (via the 'new' keyword).</p>
+
+  <p>For example:</p>
+  <div id="example">
+<PRE>
+0:
+1: function Student(name, score)
+2: {
+3:   this.student_name=name;
+4:   this.student_score=score;
+5:   this.put_together=function()
+6:   {
+7:     return this.student_name+ " scored "+
+this.student_score+"% in webslingology."
+8:   }
+9: }
+10: var Peter_parker=new Student("Peter Parker", 98)
+11: console.log(Peter_parker.put_together())
+
+
+=>Peter Parker scored 98% in webslingology.
+</PRE>
+
+
+  </div>
 
 
   <h3>Circular?</h3>

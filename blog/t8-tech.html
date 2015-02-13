@@ -23,33 +23,85 @@
 
 
     <div id="blogcontent">
-Recursion
+<h1>Recursion</h1>
+<h4 class="blog_date">Febuary 11th, 2015</h4>
+<p>One of the things that is important to programming in general is the ability of a method to call itself.  This is called Recursion.</p>
 
-one of the things that is important to programming in general is the ability of a method to call itself.  This is called Recursion.
+ <h2>vs Looping</h2>
+
+  <h3>similarities</h3>
+  <h3>differences</h3>
+  <h3>advatanages (when to use each one)<h3>
+
+<h4>When to use recursion:</h4>
 
 
-Being able to call itself 'so far'.  Example,  the 'nums-to-words' method.
+
+<p>An important thing that recursion allows us to do is to have a function 'use' itself as part of its function, in other words: "Being able to call itself 'so far'."for example, my method 'in_words' below, takes a number and out puts it in english words:</p>
 
 <div id="example">
+<PRE>
+0:
+1:
+2: def in_words(number)
+3:   exceptions_hash={-this hash was basically the first 20 numbers-}
+4:     if exceptions_hash.keys.include?(number)
+5:       "#{exceptions_hash[number]}"
+6:     elsif number< 100
+7:       "#{in_words(Integer(number.to_s[0])*10)}
+            #{in_words(Integer(number.to_s[1]))
+            }"
+8:     else
+9:        group1=""
+10:        group2=""
+11:         str=number.to_s
+12:             str.length>3 ? str.length%3==0 ? mark=3 : mark=str.length%3 : mark=1
+13:             str.chars.each_with_index {|element, idx| idx< mark ? group1+=element
+               : group2+=element}
+14:             sum=group2.chars.inject(0) {|esum,e| esum+=Integer(e)}
+15:             keyword=["one","ten","hundred","thousand",...."trillion"]
+16:              if !(sum==0)
+17:               if group2[0]=="0"
+18:                 group2.slice!("0")
+19:               end
+20:                 "#{in_words(Integer(group1))}
+                #{keyword[str.length-1]} #{in_words(Integer(group2))}"
+21:               else
+22:                 "#{in_words(Integer(group1))} #{keyword[str.length-1]}"
+23:               end
+24:       end
+25: end
+</PRE>
 
-
-
+<a href="https://github.com/laomatt/phase-0-unit-3/blob/master/ruby/nums-to-words/my_solution.rb" target="outer_page">Full code can be found here </a> lines 209-232.
 
 
 </div>
 
-
-Recursion vs Looping
-
-
-JS animating
-
+<p>
+The first instance of recursion occurs on line 7.
+Then line 20 and 22: becuase:</p>
+<p>we have to make special exceptions in the number system for our front numbers(the number right before the markers word) this is how I divide the number up over and over again into managable chunks that can be ran through the method again via RECURSION</p>
 
 
 
+</p>
 
 
-          <button onclick="display_blogs()">Browse blogs</button>
+<h4>JS animating</h4>
+
+  timed functions (setTimeout)
+  cannot have initiail values passed in as args/params
+
+  <h4>When to use loops</h4>
+
+  iterating through the elements of an array
+
+  iterating through the elements of an objects
+
+  we don't use recursion so we dont complicate code and make things less effiecient by introducing surplus functions and variables.
+
+
     </div>
 </div>
 </div>
