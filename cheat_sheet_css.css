@@ -5,7 +5,6 @@ opacity: .5;
 width: 100%;
 background-position: center;
 height: 10%;
-padding: 3% 3% 3% 3%;
 text-align: center;
 color: white;
 font-size: 30px;
@@ -24,6 +23,13 @@ background-color: #F3E2A9
 h2{
 background-color: #F3E2A9;
 
+}
+
+.example{
+  background-color: #5C5606;
+  color: white;
+  margin-left: 10%;
+  font-size: 11px;
 }
 
 .title{
