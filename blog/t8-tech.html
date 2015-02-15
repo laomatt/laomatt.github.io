@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>DBC Blogs: </title>
+  <title>DBC Blogs: Recursion</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
 </head>
@@ -23,21 +23,25 @@
 
 
     <div id="blogcontent">
-<h1>Recursion</h1>
-<h4 class="blog_date">Febuary 11th, 2015</h4>
+<h1>What's recursion?  Try asking yourself</h1>
+<h4 class="blog_date">February 11th, 2015</h4>
 <p>One of the things that is important to programming in general is the ability of a method to call itself.  This is called Recursion.</p>
 
  <h2>vs Looping</h2>
 
-  <h3>similarities</h3>
-  <h3>differences</h3>
-  <h3>advatanages (when to use each one)<h3>
+  <h3>Similarities</h3>
+  <p>Obviously both these constructs repeat certain blocks of code.  They both do so, indefinably if not stopped or introduced with an end condition.  </p>
+  <h3>Differences</h3>
+  <p>Loops are constructs that operate dependent on a specific condition or over an array, such as a while-loop that loops until a condition is no longer valid, or a for-loop that iterates through a predetermined set of elements, usually dictated by a counter variable, or temporary variable that embodies every iteration of the set or collection.</p>
+  <p>Recursive functions, on the other hand, is sort of like a mirror, pointed at its own reflection in a another mirror.  Another way of looking at recursion, is when you are video chatting with some one, and you share your screen with them, and they in turn share their screen with you.  What you get on your screen is an infinite window of smaller windows that shrink to approach nothingness.  This might seem a little paradoxical, but stick with me on this post and you'll get it soon enough.</p>
+
+  <p>Recursion in short is a method that calls itself.  It does nothing more than execute a block of code, and in that block of code is included a method call to itself, which obviously runs that block of code again, with ... you guess it!  The method call to itself!  And on and on it goes until stopped, either manually or by an end condition.</p>
+
 
 <h4>When to use recursion:</h4>
 
 
-
-<p>An important thing that recursion allows us to do is to have a function 'use' itself as part of its function, in other words: "Being able to call itself 'so far'."for example, my method 'in_words' below, takes a number and out puts it in english words:</p>
+<p>An important thing that recursion allows us to do is to have a function 'use' itself as part of its function, in other words: "Being able to call itself 'so far'."for example, my ruby method 'in_words' below, takes a number and out puts it in English words:</p>
 
 <div id="example">
 <PRE>
@@ -79,9 +83,8 @@
 </div>
 
 <p>
-The first instance of recursion occurs on line 7.
-Then line 20 and 22: becuase:</p>
-<p>we have to make special exceptions in the number system for our front numbers(the number right before the markers word) this is how I divide the number up over and over again into managable chunks that can be ran through the method again via RECURSION</p>
+The first instance of recursion occurs on line 7.  Basically whats happening here is that in order to find the correct word to add to the output, and accumulate the whole word, the function needs to access information that it has already declared, and there is no better way to do that then to call itself, and directly access that information.</p>
+<p>  Then line 20 and 22, we have to make special exceptions in the number system for our front numbers(the number right before the markers word) this is how I divide the number up over and over again into manageable chunks that can be ran through the method again via RECURSION.  So instead of creating a completely new function, or block of code, we can just call the function of context.  Again, this might seem a bit paradoxical but in time it becomes clear that recursion is the perfect tool for this.</p>
 
 
 
@@ -90,16 +93,40 @@ Then line 20 and 22: becuase:</p>
 
 <h4>JS animating</h4>
 
-  timed functions (setTimeout)
-  cannot have initiail values passed in as args/params
+
+  <p>Another use for recursion involves animating in Java-Script via timed methods, like setTimeout which cannot have initial values passed in as args/params.</p>
+
+  <p>For example, in the code below, the function 'sadplayer' does two things.  First, it changes the inner HTML of the p1 element to an image tag that calls an element in the 'sadplayerarray' declared before it, the 'sadplayerarray' represents file names of images that are the 'frames' of my animation.  This particular animation only has three frames.  Then it calls itself, via the setTimeout method, in 200 milliseconds.</p>
+
+  <div id="example">
+    <PRE>
+0:  var sadplayerarray = ["sad_player1.png",
+                          "sad_player2.png",
+                          "sad_player3.png"]
+1:   var sadplayer = function()
+2:   {
+3:      if(incre < sadplayerarray.length)
+4:      {
+5:         p1.innerHTML="< img src="sadplayerarray[incre]">"
+6:         incre+=1
+7:         setTimeout(sadplayer, 200)
+8:       }
+9:   }
+</PRE>
+<a href="https://github.com/laomatt/laomatt.github.io/blob/master/wordgame/code.js" target="outer_page">Full code can be found here </a> lines 125-133.
+  </div>
+
+  <p>But what about the 'incre' variable?  What does that do?  Well, quite simply it provides a way for the function to keep moving forward in the array by incrementing itself every iteration.  Where did it come from?  Well, equally quite simply, it cannot be initialized locally inside the recursive function 'sadplayer', otherwise it would reset itself every time that function is called, which happens in line 7 of the function every iterations.  In a sense the loop would be forever stuck in the initial element of the array.</p>
+
+  <p>The solution?  THe variable 'incre' must be declared and initialized as 'var incre=0' before the recursive function 'sadplayer()' is called initially.  This way 'incre' is preserved value-wise every time and the incrementing on line 6 is not done in vain.</p>
+
+
 
   <h4>When to use loops</h4>
 
-  iterating through the elements of an array
+  <p>When iterating through the elements of an array, or properties of an object, it is often most helpful, and most efficient to use a loop.  Namely, but not necessarily, a for-loop.  The main advantage of this, other than making things simpler to read and write, is that unlike a recursive function, a loop is not an object, but a construct, thus we do not have to allocate memory to declare a function inside a another function.</p>
 
-  iterating through the elements of an objects
-
-  we don't use recursion so we dont complicate code and make things less effiecient by introducing surplus functions and variables.
+  <p>In short, we don't use recursion so we don't complicate code and make things less efficient by introducing surplus functions and variables.  If you can loop, then you should loop.  Looping is one of the main constructs in programming, because it is one of the most common things you need to do as a programmer.  But in some special cases, recursion will be necessary.</p>
 
 
     </div>
