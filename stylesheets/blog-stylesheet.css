@@ -430,12 +430,14 @@ overflow-y: scroll;
 
 #navbar{
 position: fixed;
+color: black;
+background-color: white;
+opacity: .5;
 right:5%;
 top:0%;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 100%;
 text-align: center;
-background-color: transparent;
 }
 
 .app_menu_item{
