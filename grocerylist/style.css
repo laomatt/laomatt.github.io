@@ -1,0 +1,93 @@
+#wrapper{
+
+position: fixed;
+width: 90%;
+height: 100%;
+background-color: transparent;
+text-align: center;
+}
+
+
+#list{
+position: absolute;
+right: 2%;
+top: 6%;
+height: 60%;
+width: 30%;
+background-color: #ECF2B3;
+overflow: scroll;
+margin-left: auto;
+margin-left: auto;
+/*padding: 3%;*/
+}
+
+#shop{
+float: left;
+background-color: #B3F2E2;
+height: 100%;
+width: 60%;
+overflow: scroll;
+padding: 0%;
+
+}
+
+#total{
+position: absolute;
+bottom: 10%;
+right: 2%;
+width: 30%;
+height: 20%;
+background-color: #ECF2B3;
+margin-left: auto;
+margin-left: auto;
+}
+
+#logo{
+position: fixed;
+right: 1%;
+top: 1%;
+background-color: transparent;
+width: 200px;
+height: 200px;
+
+}
+
+#purchase_button{
+
+  position: absolute;
+  bottom: 0%;
+}
+
+.item{
+position: relative;
+height: 20%;
+width: 80%;
+background-color: yellow;
+padding: 3% 3% 3% 3%;
+border: solid;
+margin: 2%;
+font-size: 22px;
+margin-left: auto;
+margin-left: auto;
+}
+
+
+.list_item{
+position: relative;
+height: 20%;
+width: 90%;
+background-color: transparent;
+padding: 3% 3% 3% 3%;
+border: solid;
+margin: 2%;
+margin-left: auto;
+margin-left: auto;
+}
+
+.portrait{
+float: left;
+}
+
+.add{
+  float: right;
+}
