@@ -49,17 +49,28 @@ function loadup()
      if (grocer_item_list[g].inCart==false)
     {
       // menu_of_items+="<div class=\"item\"><img src=\""+grocer_item_list[g].image+"\" width=\"200px\" class=\"portrait\">"+grocer_item_list[g].name+"<button class=\"add\" onclick=\"additem("+grocer_item_list[g].name+")>add</button></div>"
-      menu_of_items+="<div class=\"item\"><img src=\""+grocer_item_list[g].image+"\" width=\"200px\" class=\"portrait\" height=\"200px\">"+grocer_item_list[g].name+"<button class=\"add\" onclick=\"additem("+grocer_item_list[g].name+")\">add</button></div>"
+      menu_of_items+="<div class=\"item\"><img src=\""+grocer_item_list[g].image+"\" width=\"200px\" class=\"portrait\" height=\"200px\">"+grocer_item_list[g].name+"("+grocer_item_list[g].price+")"+"<button class=\"add\" onclick=\"additem("+grocer_item_list[g].name+")\">add</button></div>"
       // menu_of_items+="<div class=\"item\"><img src=\""+grocer_item_list[g].image+"\" width=\"200px\" class=\"portrait\">"+grocer_item_list[g].name+"<button class=\"add\" onclick=\"additem(\""+grocer_item_list[g].name+"\")\">add</button></div>"
     }
     else
     {
-      item_list+="<div class=\"list_item\"><img src=\""+grocer_item_list[g].image+"\" height =\"90px\" width=\"90px\" class=\"portrait\">"+grocer_item_list[g].name+"<button class=\"add\" onclick=\"removeitem("+grocer_item_list[g].name+")\">remove</button></div>"
+      item_list+="<div class=\"list_item\"><img src=\""+grocer_item_list[g].image+"\" height =\"90px\" width=\"90px\" class=\"portrait\">"+grocer_item_list[g].name+"("+grocer_item_list[g].price+")"+"<button class=\"add\" onclick=\"removeitem("+grocer_item_list[g].name+")\">remove</button></div>"
     }
    }
+var total_value=0
+for(var r in grocer_item_list)
+{
+  if (grocer_item_list[r].inCart==true)
+  {
+    total_value+=grocer_item_list[r].price
+  }
+}
+
+
 document.getElementById("shop").innerHTML=menu_of_items
 document.getElementById("list").innerHTML=item_list
-// document.getElementById("list").style.backgroundColor="red"
+document.getElementById("total").innerHTML="Total:  "+total_value
+
 }
 
 
