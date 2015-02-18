@@ -60,18 +60,56 @@ var total=0
 
  function deal()
  {
-  var current1=cards[Math.floor(Math.random()*cards.length)]
-  var current2=cards[Math.floor(Math.random()*cards.length)]
-  var current3=cards[Math.floor(Math.random()*cards.length)]
-  quak_c=0
-  startp1=10
-hand_shake()
-  document.getElementById("card1").innerHTML="<img src=\""+current1.file+"\" width=\"100%\">"
-  document.getElementById("card2").innerHTML="<img src=\""+current2.file+"\" width=\"100%\">"
+    var num_of_cards=1+Math.floor(Math.random()*5)
+    var pool=[]
+    // while(pool.length<num_of_cards)
+    while(pool.length<num_of_cards)
+    {
+      var x=Math.floor(Math.random()*cards.length)
+      if (pool.indexOf(x)<0)
+        {
+          pool.push(x)
+        }
+    }
+    //now we have to create a loop that deals out cards for every number in pool
+    var hand=[]
+    for(var r in pool)
+    {
+      hand.push(cards[pool[r]])
+    }
 
-  document.getElementById("card3").innerHTML="<img src=\""+current3.file+"\" width=\"100%\">"
+    // var current1=cards[Math.floor(Math.random()*cards.length)]
+    // var current2=cards[Math.floor(Math.random()*cards.length)]
+    // var current3=cards[Math.floor(Math.random()*cards.length)]
 
-  total=current1.value+current2.value+current3.value
+    quak_c=0
+    startp1=10
+    hand_shake()
+    total=0
+   var id_array=["card1","card2","card3","card4","card5"]
+    var hand_accum=""
+    for(var g in hand)
+    {
+    // var width_random=Math.floor(Math.random()*100)
+    var width_random=100
+    var x_random=Math.floor(Math.random()*100)
+    var y_random=Math.floor(Math.random()*100)
+      hand_accum+="<div id=\""+id_array[g]+"\" class=\"card\" style=\"left:"+x_random+"%\"><img src=\""+hand[g].file+"\" width=\""+width_random+"%\"></div>"
+      // hand_accum+="<div id=\""+id_array[g]+"\" style=\"left:"+x_random+"%\"><img src=\""+hand[g].file+"\" width=\""+width_random+"%\"></div>"
+      total+=hand[g].value
+    }
+
+
+
+  // document.getElementById("card1").innerHTML="<img src=\""+current1.file+"\" width=\"100%\">"
+  // document.getElementById("card2").innerHTML="<img src=\""+current2.file+"\" width=\"100%\">"
+
+  // document.getElementById("card3").innerHTML="<img src=\""+current3.file+"\" width=\"100%\">"
+
+
+
+  // total=current1.value+current2.value+current3.value
+  document.getElementById("table").innerHTML=hand_accum
   document.getElementById("output").innerHTML=total
   document.getElementById("input").value=""
 
@@ -128,7 +166,7 @@ var windowQuake = function()
     var start1=10
     var hand_shake = function()
         {
-          if(quak_c<16)
+          if(quak_c<28)
                 {
                     if(quak_c%2==0)
                       {start1-=5; }
@@ -140,9 +178,16 @@ var windowQuake = function()
                     {document.getElementById("card1").style.top = start1+'%'}
                   if((quak_c>=4) && (quak_c<=10))
                     {document.getElementById("card2").style.top = start1+'%'}
-                  if(quak_c>=8)
-                    document.getElementById("card3").style.top = start1+'%'
+                  if((quak_c>=8) && (quak_c<=16))
+                    {document.getElementById("card3").style.top = start1+'%'}
+                  if((quak_c>=14) && (quak_c<=22))
+                    {document.getElementById("card4").style.top = start1+'%'}
+                  if((quak_c>=20) && (quak_c<=28))
+                    {document.getElementById("card5").style.top = start1+'%'}
+
                     setTimeout(hand_shake,20)
+
+
                 }
 
         }
