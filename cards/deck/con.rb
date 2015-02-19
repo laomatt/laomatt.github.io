@@ -3,7 +3,7 @@ num=["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "te
 
 j=0
 for i in (101..113)
-  puts "#{num[j]}_of_diamonds = {file: \"#{num[j]}_of_diamonds.png\", value: #{j+1}},"
+  puts "#{num[j]}_of_diamonds = {file: \"#{num[j]}_of_diamonds.png\", value: #{j+1}, title: \"#{num[j]}_of_diamonds\"},"
   j+=1
 end
 

@@ -1,56 +1,56 @@
 var cards=[
-ace_of_diamonds = {file: "deck/ace_of_diamonds.png", value: 1},
-two_of_diamonds = {file: "deck/two_of_diamonds.png", value: 2},
-three_of_diamonds = {file: "deck/three_of_diamonds.png", value: 3},
-four_of_diamonds = {file: "deck/four_of_diamonds.png", value: 4},
-five_of_diamonds = {file: "deck/five_of_diamonds.png", value: 5},
-six_of_diamonds = {file: "deck/six_of_diamonds.png", value: 6},
-seven_of_diamonds = {file: "deck/seven_of_diamonds.png", value: 7},
-eight_of_diamonds = {file: "deck/eight_of_diamonds.png", value: 8},
-nine_of_diamonds = {file: "deck/nine_of_diamonds.png", value: 9},
-ten_of_diamonds = {file: "deck/ten_of_diamonds.png", value: 10},
-jack_of_diamonds = {file: "deck/jack_of_diamonds.png", value: 10},
-queen_of_diamonds = {file: "deck/queen_of_diamonds.png", value: 10},
-king_of_diamonds = {file: "deck/king_of_diamonds.png", value: 10},
-ace_of_clubs = {file: "deck/ace_of_clubs.png", value: 1},
-two_of_clubs = {file: "deck/two_of_clubs.png", value: 2},
-three_of_clubs = {file: "deck/three_of_clubs.png", value: 3},
-four_of_clubs = {file: "deck/four_of_clubs.png", value: 4},
-five_of_clubs = {file: "deck/five_of_clubs.png", value: 5},
-six_of_clubs = {file: "deck/six_of_clubs.png", value: 6},
-seven_of_clubs = {file: "deck/seven_of_clubs.png", value: 7},
-eight_of_clubs = {file: "deck/eight_of_clubs.png", value: 8},
-nine_of_clubs = {file: "deck/nine_of_clubs.png", value: 9},
-ten_of_clubs = {file: "deck/ten_of_clubs.png", value: 10},
-jack_of_clubs = {file: "deck/jack_of_clubs.png", value: 10},
-queen_of_clubs = {file: "deck/queen_of_clubs.png", value: 10},
-king_of_clubs = {file: "deck/king_of_clubs.png", value: 10},
-ace_of_hearts = {file: "deck/ace_of_hearts.png", value: 1},
-two_of_hearts = {file: "deck/two_of_hearts.png", value: 2},
-three_of_hearts = {file: "deck/three_of_hearts.png", value: 3},
-four_of_hearts = {file: "deck/four_of_hearts.png", value: 4},
-five_of_hearts = {file: "deck/five_of_hearts.png", value: 5},
-six_of_hearts = {file: "deck/six_of_hearts.png", value: 6},
-seven_of_hearts = {file: "deck/seven_of_hearts.png", value: 7},
-eight_of_hearts = {file: "deck/eight_of_hearts.png", value: 8},
-nine_of_hearts = {file: "deck/nine_of_hearts.png", value: 9},
-ten_of_hearts = {file: "deck/ten_of_hearts.png", value: 10},
-jack_of_hearts = {file: "deck/jack_of_hearts.png", value: 10},
-queen_of_hearts = {file: "deck/queen_of_hearts.png", value: 10},
-king_of_hearts = {file: "deck/king_of_hearts.png", value: 10},
-ace_of_spades = {file: "deck/ace_of_spades.png", value: 1},
-two_of_spades = {file: "deck/two_of_spades.png", value: 2},
-three_of_spades = {file: "deck/three_of_spades.png", value: 3},
-four_of_spades = {file: "deck/four_of_spades.png", value: 4},
-five_of_spades = {file: "deck/five_of_spades.png", value: 5},
-six_of_spades = {file: "deck/six_of_spades.png", value: 6},
-seven_of_spades = {file: "deck/seven_of_spades.png", value: 7},
-eight_of_spades = {file: "deck/eight_of_spades.png", value: 8},
-nine_of_spades = {file: "deck/nine_of_spades.png", value: 9},
-ten_of_spades = {file: "deck/ten_of_spades.png", value: 10},
-jack_of_spades = {file: "deck/jack_of_spades.png", value: 10},
-queen_of_spades = {file: "deck/queen_of_spades.png", value: 10},
-king_of_spades = {file: "deck/king_of_spades.png", value: 10}
+ace_of_diamonds = {file: "../deck/ace_of_diamonds.png", value: 1},
+two_of_diamonds = {file: "../deck/two_of_diamonds.png", value: 2},
+three_of_diamonds = {file: "../deck/three_of_diamonds.png", value: 3},
+four_of_diamonds = {file: "../deck/four_of_diamonds.png", value: 4},
+five_of_diamonds = {file: "../deck/five_of_diamonds.png", value: 5},
+six_of_diamonds = {file: "../deck/six_of_diamonds.png", value: 6},
+seven_of_diamonds = {file: "../deck/seven_of_diamonds.png", value: 7},
+eight_of_diamonds = {file: "../deck/eight_of_diamonds.png", value: 8},
+nine_of_diamonds = {file: "../deck/nine_of_diamonds.png", value: 9},
+ten_of_diamonds = {file: "../deck/ten_of_diamonds.png", value: 10},
+jack_of_diamonds = {file: "../deck/jack_of_diamonds.png", value: 10},
+queen_of_diamonds = {file: "../deck/queen_of_diamonds.png", value: 10},
+king_of_diamonds = {file: "../deck/king_of_diamonds.png", value: 10},
+ace_of_clubs = {file: "../deck/ace_of_clubs.png", value: 1},
+two_of_clubs = {file: "../deck/two_of_clubs.png", value: 2},
+three_of_clubs = {file: "../deck/three_of_clubs.png", value: 3},
+four_of_clubs = {file: "../deck/four_of_clubs.png", value: 4},
+five_of_clubs = {file: "../deck/five_of_clubs.png", value: 5},
+six_of_clubs = {file: "../deck/six_of_clubs.png", value: 6},
+seven_of_clubs = {file: "../deck/seven_of_clubs.png", value: 7},
+eight_of_clubs = {file: "../deck/eight_of_clubs.png", value: 8},
+nine_of_clubs = {file: "../deck/nine_of_clubs.png", value: 9},
+ten_of_clubs = {file: "../deck/ten_of_clubs.png", value: 10},
+jack_of_clubs = {file: "../deck/jack_of_clubs.png", value: 10},
+queen_of_clubs = {file: "../deck/queen_of_clubs.png", value: 10},
+king_of_clubs = {file: "../deck/king_of_clubs.png", value: 10},
+ace_of_hearts = {file: "../deck/ace_of_hearts.png", value: 1},
+two_of_hearts = {file: "../deck/two_of_hearts.png", value: 2},
+three_of_hearts = {file: "../deck/three_of_hearts.png", value: 3},
+four_of_hearts = {file: "../deck/four_of_hearts.png", value: 4},
+five_of_hearts = {file: "../deck/five_of_hearts.png", value: 5},
+six_of_hearts = {file: "../deck/six_of_hearts.png", value: 6},
+seven_of_hearts = {file: "../deck/seven_of_hearts.png", value: 7},
+eight_of_hearts = {file: "../deck/eight_of_hearts.png", value: 8},
+nine_of_hearts = {file: "../deck/nine_of_hearts.png", value: 9},
+ten_of_hearts = {file: "../deck/ten_of_hearts.png", value: 10},
+jack_of_hearts = {file: "../deck/jack_of_hearts.png", value: 10},
+queen_of_hearts = {file: "../deck/queen_of_hearts.png", value: 10},
+king_of_hearts = {file: "../deck/king_of_hearts.png", value: 10},
+ace_of_spades = {file: "../deck/ace_of_spades.png", value: 1},
+two_of_spades = {file: "../deck/two_of_spades.png", value: 2},
+three_of_spades = {file: "../deck/three_of_spades.png", value: 3},
+four_of_spades = {file: "../deck/four_of_spades.png", value: 4},
+five_of_spades = {file: "../deck/five_of_spades.png", value: 5},
+six_of_spades = {file: "../deck/six_of_spades.png", value: 6},
+seven_of_spades = {file: "../deck/seven_of_spades.png", value: 7},
+eight_of_spades = {file: "../deck/eight_of_spades.png", value: 8},
+nine_of_spades = {file: "../deck/nine_of_spades.png", value: 9},
+ten_of_spades = {file: "../deck/ten_of_spades.png", value: 10},
+jack_of_spades = {file: "../deck/jack_of_spades.png", value: 10},
+queen_of_spades = {file: "../deck/queen_of_spades.png", value: 10},
+king_of_spades = {file: "../deck/king_of_spades.png", value: 10}
 ]
 var hand=[]
 var total=0
@@ -64,7 +64,6 @@ var id_array=["card1","card2","card3","card4","card5"]
  {
   times_dealt+=1
     // var num_of_cards=1+Math.floor(Math.random()*10)
-    // var num_of_cards=1+Math.floor(Math.random()*times_dealt)
     // var num_of_cards=times_dealt
     var num_of_cards=5
     // var num_of_cards=10
@@ -92,6 +91,15 @@ var id_array=["card1","card2","card3","card4","card5"]
     total=0
     var hand_accum=""
       var width_random=100
+      // if(times_dealt<5){width_random=100}
+      // else if(times_dealt<10){width_random=90}
+      // else if(times_dealt<15){width_random=70}
+      // else if(times_dealt<20){width_random=60}
+      // else if(times_dealt<25){width_random=50}
+      // else if(times_dealt<30){width_random=40}
+      // else if(times_dealt<35){width_random=30}
+      // else if(times_dealt<40){width_random=20}
+      // else if(times_dealt<50){width_random=10}
     for(var g in hand)
     {
     // var width_random=Math.floor(Math.random()*100)
@@ -105,20 +113,9 @@ var id_array=["card1","card2","card3","card4","card5"]
     }
 
   document.getElementById("table").innerHTML=hand_accum
-  document.getElementById("output").innerHTML="ROUND:"+times_dealt
+  document.getElementById("output").innerHTML=total+" on turn "+times_dealt
   document.getElementById("input").value=""
-
-      if(times_dealt<10){time_increment=10000}
-      else if(times_dealt>=10){time_increment=9000}
-      else if(times_dealt>=15){time_increment=7000}
-      else if(times_dealt>=20){time_increment=6000}
-      else if(times_dealt>=25){time_increment=5000}
-      else if(times_dealt>=30){time_increment=4000}
-      else if(times_dealt>=35){time_increment=3000}
-      else if(times_dealt>=40){time_increment=2000}
-      else if(times_dealt>=50){time_increment=1000}
-
-   setInterval(shuffle,time_increment);
+   // setInterval(shuffle,1000);
  }
 
 
@@ -140,7 +137,7 @@ function shuffle()
   var vurr_cards=document.getElementsByClassName("card")
       quak_c=0
     startp1=10
-    // hand_shake()
+   // hand_shake()
   for(var t in vurr_cards)
   {
     var mod_by=100
@@ -152,9 +149,10 @@ function shuffle()
 
     ypositions[t]=(ypositions[t]+y_random*mult)%mod_by
     xpositions[t]=(xpositions[t]+x_random*mult)%mod_by
-      document.getElementById("output").innerHTML="ROUND:"+times_dealt
+      document.getElementById("output").innerHTML=total+" on turn "+times_dealt+" x:"+x_random+ "y: "+y_random
   }
 }
+
 
  function submit()
  {
