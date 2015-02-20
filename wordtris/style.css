@@ -22,8 +22,8 @@ background-color: black;
   margin: auto;
   text-align: horizontal;
   overflow: hidden;
-  border: solid;
-  border-color: white;
+  /*border: solid;*/
+  /*border-color: white;*/
   float: left;
 }
 
@@ -33,6 +33,7 @@ background-color: black;
   height:100%;
   left: 25%;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .letter{
