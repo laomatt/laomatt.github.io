@@ -8,9 +8,9 @@ background-color: black;
 }
 
 #word_board{
-  position: fixed;
+  position: relative;
   top: 10%;
-  left: 25%;
+  left:0%;
   background-color:transparent;
   height: 80%;
   width: 50%;
@@ -75,7 +75,10 @@ margin: auto;
   background-color: transparent;
   color: white;
   border: none;
+  overflow: hidden;
   font-size: 30pt;
+  font-weight: 150%;
+  /*font-size: 100%;*/
   font-family: monospace;
   margin: 2%;
 }
