@@ -12,8 +12,8 @@ background-color: black;
   /*position: relative;*/
   /*position: absolute;*/
   /*float: left;*/
-  top: 10%;
-  /*top: 0%;*/
+  /*top: 10%;*/
+  top: 0%;
   /*left: 25%;*/
   left: 0%;
   background-color:transparent;
@@ -79,7 +79,7 @@ width: 20%;
 }
 
 #word{
-  position: absolute;
+  position: relative;
   top: 0%;
   left: 21%;
 width: 55%;
