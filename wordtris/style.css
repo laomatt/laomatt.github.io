@@ -17,6 +17,8 @@ background-color: black;
   margin: auto;
   text-align: horizontal;
   overflow: hidden;
+  border: solid;
+  border-color: white;
 }
 
 .letter{
