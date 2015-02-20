@@ -5,7 +5,9 @@
 
 2. user clicks a 'add' button to switch incart boolean and putt everything with inCart==true in the list, and everything with inCart==false in the shop.
 
+3. user clicks 'remove' button to set the items inCart value to false, then resorts everything to update both lists
 
+4. the total is also continuously refreshed with every buttton click, and it just displays the sum of the 'price' values of all items, with inCart value 'true'
 
 
 */

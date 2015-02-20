@@ -1,0 +1,105 @@
+#wrapper{
+  height: 100%;
+  width: 100%;
+/*margin: auto;*/
+background-color: #A9F5BC;
+
+}
+
+#word_board{
+  position: relative;
+  top: 0%;
+  background-color:transparent;
+  height: 80%;
+  width: 50%;
+  margin: auto;
+  text-align: horizontal;
+  overflow: hidden;
+}
+
+.letter{
+  position: relative;
+  top: 0%;
+/*background-color: #61210B;*/
+background-color: transparent;
+float: left;
+height: 8%;
+width: 8%;
+margin: 2%;
+color: black;
+font-size: 40pt;
+text-align: center;
+font-family: Lucidatypewriter, monospace;
+/*vertical-align: center;*/
+}
+
+.UI{
+  background-color:#F5ECCE;
+  font-size: 23pt;
+  font-family: monospace;
+  margin: 2%;
+}
+
+#wordbank{
+position: absolute;
+left: 0%;
+height: 100%;
+width: 20%;
+}
+
+#word{
+  position: relative;
+  top: 5%;
+  left: 21%;
+width: 55%;
+height: 5%;
+text-align: center;
+margin-top: 1%;
+margin: auto;
+  background-color:#F5ECCE;
+  background-color: transparent;
+  border: none;
+  font-size: 23pt;
+  font-family: monospace;
+  margin: 2%;
+}
+
+#score{
+  position: absolute;
+  right: 0%;
+height: 40%;
+width: 20%;
+padding-left: 2%;
+  padding-top: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#instructions{
+  position: absolute;
+  right: 0%;
+  bottom: 5%;
+  font-size: 12pt;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+height: 40%;
+width: 20%
+}
+
+.shufflebutton{
+  background-color: #61210B;
+  color: white;
+  position: absolute;
+  font-size: 16pt;
+  height: 5%;
+  width: 50%;
+  bottom: 5%;
+  left: 24%;
+}
+
+
+.current_select{
+
+}

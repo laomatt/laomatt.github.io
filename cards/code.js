@@ -139,7 +139,7 @@ function shuffle()
 {
   var vurr_cards=document.getElementsByClassName("card")
       quak_c=0
-    startp1=10
+    startp1=10d
     // hand_shake()
   for(var t in vurr_cards)
   {
