@@ -77,7 +77,7 @@ var current=""
         // td.innerHTML=ID_array[t]
         td.addEventListener("click",function(){
           // this ensures that only adjacent squares may be selected
-          if(((current=="")||(parseInt(current)+1==parseInt(this.id))||(parseInt(current)-1==parseInt(this.id))||(parseInt(current)+10==parseInt(this.id))||(parseInt(current)-10==parseInt(this.id)))&&(curr.indexOf(this.id)<0))
+          if(((current=="")||(parseInt(current)+1==parseInt(this.id))||(parseInt(current)-1==parseInt(this.id))||(parseInt(current)+10==parseInt(this.id))||(parseInt(current)-10==parseInt(this.id))||((parseInt(current)-9==parseInt(this.id)))||((parseInt(current)-11==parseInt(this.id)))||((parseInt(current)+9==parseInt(this.id)))||((parseInt(current)+11==parseInt(this.id))))&&(curr.indexOf(this.id)<0))
           {
               this.style.color="red"
               word+=this.innerHTML
