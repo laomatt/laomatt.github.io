@@ -10,7 +10,7 @@ var ID_arays_animation=[ID_array, ID_array.reverse(), ID_array_ripple, ID_array_
 
 var initials=document.getElementsByClassName("letter")
 
-function scamble(){
+var scamble = function(){
         shock_wave()
         player_score=0
         used_words=""
@@ -33,7 +33,7 @@ var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animat
 if(f<random_animation.length)
   {
     shake_this()
-    function shake_this(){
+     function shake_this(){
       shake(random_animation[f])
       f+=1
       setTimeout(shake_this,10)
@@ -43,7 +43,7 @@ if(f<random_animation.length)
 
 
 //shakes a single div
-function shake(indexID){
+var shake = function(indexID){
   var initial=0
   var incre=0
   quibble()
@@ -70,7 +70,7 @@ function slide(){}
 var word=""
 var curr=[]
 var current=""
-  function load(){
+ var load = function(){
       for (var t = 0; t <= 64; t++){
         td=document.getElementById(ID_array[t])
         td.innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
@@ -92,7 +92,7 @@ var current=""
       scamble()
   }
 
-  function reset_colors(){
+  var reset_colors = function(){
       word=""
       curr=[]
       current=""
@@ -121,7 +121,7 @@ function drop_blox(){
 }
 
 
-function submit(){
+var submit = function(){
     if(dictionary.indexOf(word)>=0)
     {
       used_words+=" "+word+" "
