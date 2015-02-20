@@ -264,4 +264,3 @@ var windowQuake = function()
                slider()
 
         }
-
