@@ -18,22 +18,33 @@ var return_button = function(event){
 }
 
 var scamble = function(){
-        shock_wave()
+        // shock_wave()
         player_score=0
         used_words=""
         document.getElementById("score").innerHTML=player_score
         document.getElementById("wordbank").innerHTML=used_words
-    for(var g in initials)
-        {
+    var ten=0
+    var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animation.length)]
+    assign_and_shake()
+    function assign_and_shake(){
+    // for(var g in initials)
           word=""
           document.getElementById("word").innerHTML="Jungle Jumble"
-          initials[g].style.color="white"
-          initials[g].innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
-        }
+          // initials[g].style.color="white"
+    if(ten<=64)
+        {
+          document.getElementById(random_animation[ten]).style.color="white"
 
+          // initials[g].innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
+          document.getElementById(random_animation[ten]).innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
+          shake(random_animation[ten])
+          ten+=1
+          setTimeout(assign_and_shake,20)
+        }
+    }
 }
 
-//shakes all dives in sequence
+//shakes all dives in sequence (not used, but still useful)
 function shock_wave(){
 var f=0
 var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animation.length)]
@@ -77,26 +88,33 @@ function slide(){}
 var word=""
 var curr=[]
 var current=""
- var load = function(){
-      for (var t = 0; t <= 64; t++){
-        td=document.getElementById(ID_array[t])
+        var time_inc=0
+var load = function(){
+        // scamble()
+      // for (var t = 0; t <= 64; t++){
+        if(time_inc<=64){
+        td=document.getElementById(ID_array[time_inc])
         td.innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
         // td.innerHTML=ID_array[t]
+        // adds event listener
         td.addEventListener("click",function(){
           // this ensures that only adjacent squares may be selected
           if(((current=="")||(parseInt(current)+1==parseInt(this.id))||(parseInt(current)-1==parseInt(this.id))||(parseInt(current)+10==parseInt(this.id))||(parseInt(current)-10==parseInt(this.id))||((parseInt(current)-9==parseInt(this.id)))||((parseInt(current)-11==parseInt(this.id)))||((parseInt(current)+9==parseInt(this.id)))||((parseInt(current)+11==parseInt(this.id))))&&(curr.indexOf(this.id)<0))
-          {
-              this.style.color="red"
-              word+=this.innerHTML
-              current=this.id
-              curr.push(this.id)
-              document.getElementById("word").innerHTML=word
-              // document.getElementById("score").innerHTML=curr
-              // document.getElementById("score").innerHTML=current
-          }
-        })
+              {
+                  this.style.color="red"
+                  word+=this.innerHTML
+                  current=this.id
+                  curr.push(this.id)
+                  document.getElementById("word").innerHTML=word
+                  // document.getElementById("score").innerHTML=curr
+                  // document.getElementById("score").innerHTML=current
+              }
+            })
+        shake(ID_array[time_inc])
+        time_inc+=1
+        setTimeout(load,20)
         }
-      scamble()
+      // scamble()
   }
 
   var reset_colors = function(){
