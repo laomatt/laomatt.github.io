@@ -8,17 +8,31 @@ background-color: black;
 }
 
 #word_board{
-  position: fixed;
+  position: relative;
+  /*position: relative;*/
+  /*position: absolute;*/
+  /*float: left;*/
   top: 10%;
-  left: 25%;
+  /*top: 0%;*/
+  /*left: 25%;*/
+  left: 0%;
   background-color:transparent;
   height: 80%;
-  width: 50%;
+  width: 100%;
   margin: auto;
   text-align: horizontal;
   overflow: hidden;
   border: solid;
   border-color: white;
+  float: left;
+}
+
+#center{
+  position: absolute;
+  width: 50%;
+  height:100%;
+  left: 25%;
+  background-color: transparent;
 }
 
 .letter{
@@ -65,7 +79,7 @@ width: 20%;
 }
 
 #word{
-  position: fixed;
+  position: absolute;
   top: 0%;
   left: 21%;
 width: 55%;
@@ -83,6 +97,7 @@ margin: auto;
   /*font-size: 100%;*/
   font-family: monospace;
   margin: 2%;
+  float: left;
 }
 
 #score{
@@ -125,8 +140,12 @@ width: 15%
   width: 50%;
   bottom: 5%;
   left: 24%;
+  float: left;
 }
 
+#table{
+  width:"20%";
+}
 
 .current_select{
 
