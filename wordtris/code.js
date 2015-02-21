@@ -7,8 +7,8 @@ var ID_array=["11","12","13","14","15","16","17","18","21","22","23","24","25","
 var ID_array_ripple=["55","54","44","45","46","56","66","65","64","63","53","43","33","34","35","36","37","47","57","67","77","76","75","74","73","72","62","52","42","32","22","23","24","25","26","27","28","38","48","58","68","78","88","87","86","85","84","83","82","81","71","61","51","41","31","21","11","12","13","14","15","16","17","18"]
 
 
-// var ID_arays_animation=[ID_array, ID_array.reverse(), ID_array_ripple, ID_array_ripple.reverse()]
-var ID_arays_animation=[ID_array, ID_array.reverse()]
+var ID_arays_animation=[ID_array, ID_array.reverse(), ID_array_ripple, ID_array_ripple.reverse()]
+// var ID_arays_animation=[ID_array, ID_array.reverse()]
 
 var initials=document.getElementsByClassName("letter")
 
@@ -47,7 +47,11 @@ var scamble = function(){
             setTimeout(assign_and_shake,20)
           }
     }
-    reset_colors()
+      word=""
+      curr=[]
+      current=""
+      document.getElementById("word").innerHTML=word
+    // reset_colors()
 }
 
 //shakes all dives in sequence (not used, but still useful)
@@ -119,7 +123,7 @@ var load = function(){
   }
 
   var reset_colors = function(){
-      document.getElementById("score").innerHTML=current
+      // document.getElementById("score").innerHTML=current
       word=""
       curr=[]
       current=""
@@ -153,7 +157,8 @@ var submit = function(){
       new_score = player_score+word.length
       document.getElementById("wordbank").innerHTML=used_words
       document.getElementById("word").innerHTML="Score! +"+word.length+"pts"
-      document.getElementById("score").innerHTML=current
+      slide_score()
+      // document.getElementById("score").innerHTML=current
       //CODE THAT DESTROYS WORD ON BOARD
       for (var t = 0; t < curr.length; t++)
         {
@@ -179,11 +184,11 @@ var submit = function(){
     }
     else
     {
-      document.getElementById("word").innerHTML="not a word :("
+    reset_colors()
     for (var tea = 0; tea <= 64; tea++)
       {
+    document.getElementById("word").innerHTML="not a word :("
         document.getElementById(ID_array[tea]).style.color=current_color
-      reset_colors()
       }
     }
     // reset_colors()
