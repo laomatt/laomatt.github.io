@@ -36,20 +36,16 @@ var scamble = function(){
     var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animation.length)]
     assign_and_shake()
     function assign_and_shake(){
-    // for(var g in initials)
           word=""
           document.getElementById("word").innerHTML="Jungle Jumble"
-          // initials[g].style.color="current_color"
-    if(ten<=64)
-        {
-          document.getElementById(random_animation[ten]).style.color=current_color
-
-          // initials[g].innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
-          document.getElementById(random_animation[ten]).innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
-          shake(random_animation[ten])
-          ten+=1
-          setTimeout(assign_and_shake,20)
-        }
+      if(ten<=64)
+          {
+            document.getElementById(random_animation[ten]).style.color=current_color
+            document.getElementById(random_animation[ten]).innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
+            shake(random_animation[ten])
+            ten+=1
+            setTimeout(assign_and_shake,20)
+          }
     }
     reset_colors()
 }
@@ -97,8 +93,6 @@ function slide(){}
 
 var time_inc=0
 var load = function(){
-        // scamble()
-      // for (var t = 0; t <= 64; t++){
         if(time_inc<=64){
         td=document.getElementById(ID_array[time_inc])
         td.innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
@@ -125,11 +119,11 @@ var load = function(){
   }
 
   var reset_colors = function(){
+      document.getElementById("score").innerHTML=current
       word=""
       curr=[]
       current=""
       document.getElementById("word").innerHTML=word
-      // document.getElementById("score").innerHTML=current
       for (var t = 0; t <= 64; t++)
       {
         document.getElementById(ID_array[t]).style.color=current_color
@@ -149,53 +143,50 @@ function drop_blox(){
               {document.getElementById(ID_array[t]).innerHTML=document.getElementById((parseInt(ID_array[t])-10).toString()).innerHTML}
           }
         }
-
 }
 
 var new_score=0;
 var submit = function(){
-    if(dictionary.indexOf(word)>=0)
+    if((dictionary.indexOf(word)>=0)&&(word.length>1))
     {
-      if(word.length>1)
-      {
       used_words+=" "+word+" "
       new_score = player_score+word.length
-      // slide_score()
       document.getElementById("wordbank").innerHTML=used_words
       document.getElementById("word").innerHTML="Score! +"+word.length+"pts"
-      }
+      document.getElementById("score").innerHTML=current
       //CODE THAT DESTROYS WORD ON BOARD
       for (var t = 0; t < curr.length; t++)
         {
           document.getElementById(curr[t]).innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
-          // document.getElementById(curr[t]).innerHTML=""
-
+          document.getElementById(curr[t]).style.color=current_color;
           shake(curr[t])
         }
-      //code that slides upper letters into place of empty divs
-    // drop_blox()
-      //code that generates new random letters in place of empty divs
-      //now we reset the player bank
-      for (var tea = 0; tea <= curr.length; tea++)
-        {
-          document.getElementById(curr[tea]).style.color=current_color;
-        }
+      reset_colors()
+    }
+    else if((word.length==1)&&(dictionary.indexOf(word)>=0))
+    {
       word=""
-      curr=[]
       current=""
+
+      for (var t = 0; t < curr.length; t++)
+        {
+          document.getElementById(curr[t]).innerHTML=alpha[Math.floor(Math.random()*alpha.length)]
+          document.getElementById(curr[t]).style.color=current_color;
+          shake(curr[t])
+        }
+      curr=[]
+        // reset_colors()
     }
     else
     {
-      // reset_colors()
-      word=""
-      curr=[]
-      current=""
       document.getElementById("word").innerHTML="not a word :("
     for (var tea = 0; tea <= 64; tea++)
       {
         document.getElementById(ID_array[tea]).style.color=current_color
+      reset_colors()
       }
     }
+    // reset_colors()
   }
 
   var slide_score = function(){
