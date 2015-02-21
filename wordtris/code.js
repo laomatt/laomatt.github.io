@@ -22,7 +22,7 @@ var word=""
 var curr=[]
 var current=""
 var current_color="white";
-var colors=["white", "#F9E90C", "#0C27F9", "#1CF90C"]
+var colors=["white", "#E6E0F8", "#E0F8F7", "#ECF6CE","#F5F6CE","#CEE3F6","#8FFDEB","#FDBB8F","#E2FD8F","#CD8FFD"]
 var scamble = function(){
   current_color=colors[Math.floor(Math.random()*colors.length)]
         // shock_wave()
