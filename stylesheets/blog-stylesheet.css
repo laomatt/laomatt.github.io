@@ -443,7 +443,7 @@ text-align: center;
 .app_menu_item{
 background-color: #F5F6CE;
 background-color: black;
-opacity: 0.80;
+opacity: 0.90;
 color: white;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 16px;
@@ -453,6 +453,12 @@ float: left;
 width: 50%;
 position: relative;
 margin-top: 1%;
+}
+
+.app_picture{
+  position: absolute;
+  float: right;
+  width: 40%;
 }
 
 .resume_item_right{

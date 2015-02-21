@@ -91,15 +91,6 @@ var id_array=["card1","card2","card3","card4","card5"]
     total=0
     var hand_accum=""
       var width_random=100
-      // if(times_dealt<5){width_random=100}
-      // else if(times_dealt<10){width_random=90}
-      // else if(times_dealt<15){width_random=70}
-      // else if(times_dealt<20){width_random=60}
-      // else if(times_dealt<25){width_random=50}
-      // else if(times_dealt<30){width_random=40}
-      // else if(times_dealt<35){width_random=30}
-      // else if(times_dealt<40){width_random=20}
-      // else if(times_dealt<50){width_random=10}
     for(var g in hand)
     {
     // var width_random=Math.floor(Math.random()*100)
@@ -113,9 +104,9 @@ var id_array=["card1","card2","card3","card4","card5"]
     }
 
   document.getElementById("table").innerHTML=hand_accum
-  document.getElementById("output").innerHTML=total+" on turn "+times_dealt
+  // document.getElementById("output").innerHTML=total+" on turn "+times_dealt
   document.getElementById("input").value=""
-   // setInterval(shuffle,1000);
+   setInterval(shuffle,5000);
  }
 
 
@@ -149,7 +140,7 @@ function shuffle()
 
     ypositions[t]=(ypositions[t]+y_random*mult)%mod_by
     xpositions[t]=(xpositions[t]+x_random*mult)%mod_by
-      document.getElementById("output").innerHTML=total+" on turn "+times_dealt+" x:"+x_random+ "y: "+y_random
+      // document.getElementById("output").innerHTML=total+" on turn "+times_dealt+" x:"+x_random+ "y: "+y_random
   }
 }
 

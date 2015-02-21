@@ -115,7 +115,7 @@ var id_array=["card1","card2","card3","card4","card5"]
   document.getElementById("table").innerHTML=hand_accum
   document.getElementById("output").innerHTML=total+" on turn "+times_dealt
   document.getElementById("input").value=""
-   // setInterval(shuffle,1000);
+   setInterval(shuffle,1000);
  }
 
 
