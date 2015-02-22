@@ -3,6 +3,7 @@ var alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 var player_score=0
 var noise_array=["crash1","crash2","crash3","crash4","crash5","crash6"]
 // var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
+var hit_noise=new Audio("sounds/crash3.wav")
 var scamble_noise = new Audio("sounds/bubbles2.wav")
 var ID_array=["11","12","13","14","15","16","17","18","21","22","23","24","25","26","27","28","31","32","33","34","35","36","37","38","41","42","43","44","45","46","47","48","51","52","53","54","55","56","57","58","61","62","63","64","65","66","67","68","71","72","73","74","75","76","77","78","81","82","83","84","85","86","87","88"]
 
@@ -287,7 +288,7 @@ var new_score=0;
 var submit = function(){
     if((dictionary.indexOf(word)>=0)&&(word.length>1))
     {
-     var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
+     // var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
       hit_noise.play()
       used_words+=" "+word+" "
       new_score = player_score+word.length
