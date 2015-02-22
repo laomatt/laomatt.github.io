@@ -75,7 +75,7 @@ overflow: scroll;
   background-color: transparent;
   height: 20%;
   width: 40%;
-  font-size: 20pt;
+  font-size: 12pt;
   /*color: red;*/
   border: none;
 }
@@ -121,7 +121,7 @@ padding-left: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
   text-align: center;
-  font-size: 200pt;
+  font-size: 100pt;
 }
 
 #instructions{
@@ -134,8 +134,9 @@ padding-left: 2%;
   padding-top: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
-height: 40%;
-width: 15%
+height: 60%;
+width: 15%;
+overflow: scroll;
 }
 
 .shufflebutton{
