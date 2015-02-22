@@ -1,7 +1,9 @@
 
 var alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 var player_score=0
-
+var noise_array=["crash1","crash2","crash3","crash4","crash5","crash6"]
+// var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
+var scamble_noise = new Audio("sounds/bubbles2.wav")
 var ID_array=["11","12","13","14","15","16","17","18","21","22","23","24","25","26","27","28","31","32","33","34","35","36","37","38","41","42","43","44","45","46","47","48","51","52","53","54","55","56","57","58","61","62","63","64","65","66","67","68","71","72","73","74","75","76","77","78","81","82","83","84","85","86","87","88"]
 
 var ID_array_ripple=["55","54","44","45","46","56","66","65","64","63","53","43","33","34","35","36","37","47","57","67","77","76","75","74","73","72","62","52","42","32","22","23","24","25","26","27","28","38","48","58","68","78","88","87","86","85","84","83","82","81","71","61","51","41","31","21","11","12","13","14","15","16","17","18"]
@@ -25,6 +27,7 @@ var current_color="white";
 var colors=["white", "#E6E0F8", "#E0F8F7", "#ECF6CE","#F5F6CE","#CEE3F6","#8FFDEB","#FDBB8F","#E2FD8F","#CD8FFD"]
 
 var scamble_and_preserve = function(){
+    scamble_noise.play()
 current_color=colors[Math.floor(Math.random()*colors.length)]
         // shock_wave()
         // player_score=0
@@ -60,6 +63,7 @@ current_color=colors[Math.floor(Math.random()*colors.length)]
 
 
 var scamble = function(){
+  scamble_noise.play()
   current_color=colors[Math.floor(Math.random()*colors.length)]
         // shock_wave()
         player_score=0
@@ -129,7 +133,46 @@ var shake = function(indexID){
     }
 }
 
-function slide(){}
+var slide_down = function(indexID){
+  var initial=0
+  var incre=0
+  quibble()
+    function quibble(){
+      if(incre<=3)
+      {
+        if(incre==3)
+          {initial=0}
+        else
+          {initial+=1}
+        document.getElementById(indexID).style.top=initial+"%"
+        incre+=1
+        setTimeout(quibble,20)
+      }
+    }
+   // document.getElementById(indexID).style.top='0%'
+}
+
+var shake_side_ways = function(indexID){
+  var initial=0
+  var incre=0
+  quibble()
+    function quibble(){
+      if(incre<20)
+      {
+        if(incre%2==0)
+          {
+            initial+=5
+          }
+        else
+          {
+            initial-=5
+          }
+        document.getElementById(indexID).style.left=initial+"%"
+        incre+=1
+        setTimeout(quibble,20)
+      }
+    }
+}
 
 var time_inc=0
 var load = function(){
@@ -152,7 +195,7 @@ var load = function(){
                   // document.getElementById("score").innerHTML=current
               }
             })
-        shake(ID_array[time_inc])
+        shake_side_ways(ID_array[time_inc])
             document.getElementById('podium').innerHTML="Free Jumbles <br>"+jumbles_array.join("")
 
         time_inc+=1
@@ -202,7 +245,7 @@ function drop_blox(){
                           document.getElementById(ID_array[t+8]).innerHTML=""
                           }
                           document.getElementById(ID_array[t]).innerHTML=temp_letter
-                          shake(ID_array[t])
+                          slide_down(ID_array[t])
                         }
                       t+=1
                       setTimeout(the_drop,20)
@@ -244,6 +287,8 @@ var new_score=0;
 var submit = function(){
     if((dictionary.indexOf(word)>=0)&&(word.length>1))
     {
+     var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
+      hit_noise.play()
       used_words+=" "+word+" "
       new_score = player_score+word.length
       document.getElementById("wordbank").innerHTML=used_words
