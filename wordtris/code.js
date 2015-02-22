@@ -197,14 +197,14 @@ var generate_free_jumbles = function(){
   {
     letter_array.push('a')
   }
-  while(letter_array.length<=20)
+  while(letter_array.length<=15)
   {
     letter_array.push('b')
   }
 
   var ran_letter=letter_array[Math.floor(Math.random()*letter_array.length)]
 
-  if(ran_letter!='z')
+  if(ran_letter!='b')
   {
     jumbles_array.push("<button id=\"free_j\" style=\"color:"+current_button_color+"\" onclick=\"scamble_and_preserve()\">JuMbLe mE!</button>")
     document.getElementById('podium').innerHTML="Free Jumbles <br>"+jumbles_array.join("")
