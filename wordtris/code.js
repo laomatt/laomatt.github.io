@@ -280,13 +280,13 @@ var generate_free_jumbles = function(){
 
   if(ran_letter=='a')
   {
-    jumbles_array.push("<button id=\"free_j\" style=\"color:"+current_button_color+"\" onclick=\"scamble_and_preserve()\">JuMbLe mE!</button>")
+    jumbles_array.push("<button id=\"free_j\" style=\"color:"+current_button_color+"\" onclick=\"scamble_and_preserve()\"><img src=\"images/jumbleme.png\" class=\"stamp_image\"></button>")
 
     document.getElementById('podium').innerHTML="STAMPs <br>"+jumbles_array.join("")+arma_array.join("")
   }
   if (ran_letter=='c')
   {
-        arma_array.push("<button id=\"free_j\" style=\"color:yellow\" onclick=\"armageddon()\">JUMBLEGGEDON!</button>")
+        arma_array.push("<button id=\"free_j\" style=\"color:yellow\" onclick=\"armageddon()\"><img src=\"images/jumgeddon.png\" class=\"stamp_image\"></button>")
     // jumbles_array.push("<button id=\"free_j\" style=\"color:"+yellow+"\" onclick=\"armageddon()\">JUMBLEGGEDON!</button>")
     document.getElementById('podium').innerHTML="STAMPs <br>"+jumbles_array.join("")+arma_array.join("")
   }
