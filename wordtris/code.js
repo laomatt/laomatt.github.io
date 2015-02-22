@@ -210,7 +210,7 @@ function drop_blox(){
                   }
                   g+=1
                   // document.getElementById("score").innerHTML=g
-                  setTimeout(the_loop,900)
+                  setTimeout(the_loop,300)
                 }
         }
 }
