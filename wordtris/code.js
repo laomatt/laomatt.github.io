@@ -32,11 +32,11 @@ var scamble_and_preserve = function(){
 current_color=colors[Math.floor(Math.random()*colors.length)]
         // shock_wave()
         // player_score=0
-        // used_words=""
+        // used_words=[]
         curr=[]
         current=""
         document.getElementById("score").innerHTML=player_score
-        document.getElementById("wordbank").innerHTML=used_words
+        document.getElementById("wordbank").innerHTML=used_words.reverse().join(", ")
     var ten=0
     var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animation.length)]
     assign_and_shake()
@@ -68,11 +68,11 @@ var scamble = function(){
   current_color=colors[Math.floor(Math.random()*colors.length)]
         // shock_wave()
         player_score=0
-        used_words=""
+        used_words=[]
         curr=[]
         current=""
         document.getElementById("score").innerHTML=player_score
-        document.getElementById("wordbank").innerHTML=used_words
+        document.getElementById("wordbank").innerHTML=used_words.reverse().join(", ")
     var ten=0
     var random_animation=ID_arays_animation[Math.floor(Math.random()*ID_arays_animation.length)]
     assign_and_shake()
@@ -220,7 +220,7 @@ var load = function(){
   }
 var first_row=["81","82","83","84","85","86","87","88"]
 var last_row=["11","12","13","14","15","16","17","18"]
-var used_words="";
+var used_words=[];
 //this is a double recursive function to drop my letters
 function drop_blox(){
     var g=0
@@ -317,9 +317,9 @@ var submit = function(){
     {
      // var hit_noise = new Audio("sounds/"+noise_array[Math.floor(Math.random()*noise_array.length)]+".wav")
       hit_noise.play()
-      used_words+=" "+word+" "
+      used_words.push(""+word+"")
       new_score = player_score+word.length
-      document.getElementById("wordbank").innerHTML=used_words
+      document.getElementById("wordbank").innerHTML=used_words.reverse().join(", ")
       document.getElementById("word").innerHTML="Score! +"+word.length+"pts"
       slide_score()
       generate_free_jumbles()
