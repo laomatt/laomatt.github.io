@@ -81,6 +81,8 @@ var id_array=["card1","card2","card3","card4","card5"]
     }
     //now we have to create a loop that deals out cards for every number in pool
    hand=[]
+    xpositions=[]
+    ypositions=[]
     for(var r in pool)
     {
       hand.push(cards[pool[r]])
@@ -94,18 +96,20 @@ var id_array=["card1","card2","card3","card4","card5"]
     for(var g in hand)
     {
     // var width_random=Math.floor(Math.random()*100)
-
-    var x_random=Math.floor(Math.random()*100)
+    var x_random=rule[Math.floor(Math.random()*rule.length)]
+    var y_random=ruley[Math.floor(Math.random()*ruley.length)]
+    // var x_random=Math.floor(Math.random()*100)
     xpositions.push(x_random)
-    var y_random=Math.floor(Math.random()*100)
+    // var y_random=Math.floor(Math.random()*100)
     ypositions.push(y_random)
-      hand_accum+="<div id=\""+id_array[g]+"\" class=\"card\" style=\"left:"+x_random+"%;top:"+y_random+"%\"><img src=\""+hand[g].file+"\" width=\""+width_random+"%\"></div>"
+      hand_accum+="<div id=\""+id_array[g]+"\" class=\"card\" style=\"left:"+x_random+"px;top:"+y_random+"px\"><img src=\""+hand[g].file+"\" width=\""+width_random+"%\"></div>"
       total+=hand[g].value
     }
 
   document.getElementById("table").innerHTML=hand_accum
   // document.getElementById("output").innerHTML=total+" on turn "+times_dealt
   document.getElementById("input").value=""
+  // shuffle()
    setInterval(shuffle,5000);
  }
 
@@ -122,6 +126,8 @@ function inputKeyUp(e) {
 }
 
 
+var rule=[-50,-40,-30,30,40,50,70,80,100,150,200,220,250,330,360,400]
+var ruley=[10,20,30,40,50,60,70,80,90,100]
 /*This function shuffles the current cards on the table*/
 function shuffle()
 {
@@ -131,15 +137,18 @@ function shuffle()
    // hand_shake()
   for(var t in vurr_cards)
   {
-    var mod_by=100
-    var mult=Math.floor(Math.random()*10)
-    var rule=[-5,-4,-3,3,4,5]
+    // var mod_by=100
+    // var mult=Math.floor(Math.random()*10)
+    // var rule=[-5,-4,-3,3,4,5]
     var x_random=rule[Math.floor(Math.random()*rule.length)]
-    var y_random=rule[Math.floor(Math.random()*rule.length)]
-    slide(id_array[t], xpositions[t], (xpositions[t]+x_random*mult)%mod_by, ypositions[t], (ypositions[t]+y_random*mult)%mod_by);
+    var y_random=ruley[Math.floor(Math.random()*ruley.length)]
+    // slide(id_array[t], xpositions[t], (xpositions[t]+x_random*mult)%mod_by, ypositions[t], (ypositions[t]+y_random*mult)%mod_by);
+    slide(id_array[t], xpositions[t], x_random, ypositions[t], y_random);
 
-    ypositions[t]=(ypositions[t]+y_random*mult)%mod_by
-    xpositions[t]=(xpositions[t]+x_random*mult)%mod_by
+    // ypositions[t]=(ypositions[t]+y_random*mult)%mod_by
+    // xpositions[t]=(xpositions[t]+x_random*mult)%mod_by
+    ypositions[t]=y_random
+    xpositions[t]=x_random
       // document.getElementById("output").innerHTML=total+" on turn "+times_dealt+" x:"+x_random+ "y: "+y_random
   }
 }
@@ -246,10 +255,10 @@ var windowQuake = function()
                       {starty-=1}
                     else
                       {starty+=0}
-                    card_of_context.style.left=startx+"%"
-                    card_of_context.style.top=starty+"%"
+                    card_of_context.style.left=startx+"px"
+                    card_of_context.style.top=starty+"px"
                   }
-                      setTimeout(slider,2)
+                      setTimeout(slider,5)
               }
 
                slider()
