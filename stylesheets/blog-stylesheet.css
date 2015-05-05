@@ -447,7 +447,7 @@ opacity: 0.90;
 color: white;
 font-family:"Lucida Console", Monaco, monospace;
 font-size: 16px;
-padding: 3% 3% 3% 3%;
+padding: 3%;
 margin-left: 10%;
 float: left;
 width: 50%;
@@ -456,7 +456,7 @@ margin-top: 1%;
 }
 
 .app_picture{
-  position: absolute;
+  position: relative;
   float: right;
   width: 40%;
 }
