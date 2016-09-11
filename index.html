@@ -1,44 +1,480 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Matt Lao: DBC student</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Matt Lao - Web Dev</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/overwrite.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
-<html>
+<body id="page-top" class="index">
 
-<div id="middle_column">
-        <div id="social_main"></div>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Matt Lao</a>
+            </div>
 
-
-<body id="middle" onload="show_social()">
-
-    <div id = "index_home">
-      <center><h1>Matt Lao: DBC Homepage</h1></center>
-
-      <p>Welcome and thank you for taking the time to visit my DevBootCamp web page.  I have been working very hard at making a presentable and professional website, and filling it with fun, interactive content.  Allow me to introduce myself in my <a href="about.html">About section</a>.  </p>
-
-      <p>My mission statement: to gain professional real-world coding experience by working hard, and being an asset to a creative team developing a digital product.</p>
-
-
-</div>
-</body>
-</div>
-
-
-
-
-        <div id="navbar">
-          <a id="navbarlinks" href="index.html">Home</a> -
-          <a id="navbarlinks" href="portfolio.html">Portfolio</a> -
-          <a id="navbarlinks" href="blog/bloghome.html">Blogs</a> -
-          <a id="navbarlinks" href="contact.html">Contact</a> -
-          <a id="navbarlinks" href="about.html">About</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <div class="intro-text">
+                        <span class="name">Matt Lao</span>
+                        <hr class="star-light">
+                        <span class="skills">Web Developer - Software Engineer - User Experience Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Portfolio</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/card_count.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/dinnerwinner.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/dropblox.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/dailyquicks.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/hangman.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="images/word_safari.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>I am a team oriented, highly motivated individual with full stack application knowledge as well as illustrating experience offering to use acquired skills to design and create user friendly web apps.   Proficient in Java SE, JavaScript, Ruby on Rails and SQL languages with ability to quickly learn other programming languages. Working knowledge of model view controller convention (MVC) with object orientated programming and test driven development. </p>
+                </div>
+                <div class="col-lg-4">
+                    <p>I possess good communication skills as well as prior experience in service industry interacting with multi-cultural clientele.  Currently looking for opportunities to contribute to an organization's server-side and client-side web application needs.</p>
+
+                  <ul>
+                    <li>Programming Languages : Ruby, Unix/Linux , Java SE, JavaScript, jQuery, SQL (PostgreSQL and SQlite), ActiveRecord, AJAX, JSON, shell scripting (BASH) , git</li>
+                    <li>Frameworks : Sinatra, Ruby on Rails</li>
+                    <li>Web : Ruby on Rails, XML, HTML, CSS</li>
+                    <li>Adobe Suite Programs - Adobe Photoshop, Flash. Dreamweaver.</li>
+                    <li>Deployment-Platforms - Heroku and Firebase.</li>
+
+                  </ul>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="resume.pdf" class="btn btn-lg btn-outline" download>
+                        <i class="fa fa-download"></i> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
 
 
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://plus.google.com/u/0/115046235123468150722" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/LaoMatt" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/laomatt" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Email</h3>
+                        <p><a href="mailto:laomatt1@gmail.com">laomatt1@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Thanks for visiting
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </section>
 
-    <script type="text/javascript" src="main_code.js"></script>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Card Counter Pro</h2>
+                            <hr class="star-primary">
+                            <img src="images/card_count2.png" class="img-responsive img-centered" alt="">
+                            <p>In this game, your quickness with numbers will be tested as you must add up Randomly thrown cards, while they continiously move on the table from time to time.</p>
+                            <ul class="list-inline item-details">
+                                <li>Date:
+                                    <strong>April 2014
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="cards/index.html" target='_blank'>Lets Play!</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Project Title</h2>
+                            <hr class="star-primary">
+                            <img src="images/dinnerwinner2.png" class="img-responsive img-centered" alt="">
+                            <p>A notification platform that matches dining patrons with local restaurants based on customer dining preference and restaurant offered deals. Created application using Ruby in Rails, Javascript and JQuery.  Implemented Oauth, Google and Devise gems and Twillio APIs.  Launched application on Heroku.</p>
+                            <ul class="list-inline item-details">
+                                <li>Code:
+                                    <strong><a href="https://github.com/codemecurtis/dinnerwinner" target='_blank'>GitHub</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>March 2015
+                                    </strong>
+                                </li>
+                                <li>Live:
+                                    <strong><a href="http://ancient-tor-7726.herokuapp.com" target='_blank'>Link</a>
+                                    </strong>
+                                </li>
+                                <li>Demo:
+                                    <strong><a href="https://www.youtube.com/watch?v=1iijtEWD-tw&t=65m0s" target='_blank'>You tube link</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Drop Blox</h2>
+                            <hr class="star-primary">
+                            <img src="images/dropblox2.png" class="img-responsive img-centered" alt="">
+                            <p>A Tetris style game that involves blocks of numbers, dropping from the top of the game board and building up as the player must match consecutively numbered blocks to eliminate them from the game board.  Built in Sinatra and Javascript.</p>
+                            <ul class="list-inline item-details">
+                                <li>Code:
+                                    <strong><a href="https://github.com/laomatt/p-10-project" target='_blank'>GitHub</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>Febuary 2015
+                                    </strong>
+                                </li>
+                                <li>Live:
+                                    <strong><a href="https://dropbloxlaomatt.herokuapp.com/" target='_blank'>Play</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Daily Quick Studies</h2>
+                            <hr class="star-primary">
+                            <img src="images/dailyquicks2.png" class="img-responsive img-centered" alt="">
+                            <p>A platform for uploading and viewing reference photos in sets of poses for artists to draw.</p>
+                            <ul class="list-inline item-details">
+                                <li>Code:
+                                    <strong><a href="https://github.com/laomatt/studies" target='_blank'>GitHub</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>March 2016
+                                    </strong>
+                                </li>
+                                <li>Live:
+                                    <strong> <a href="https://dailyquicks.herokuapp.com/" target='_blank'>Website</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Battle-Hangman</h2>
+                            <hr class="star-primary">
+                            <img src="images/hangman2.png" class="img-responsive img-centered" alt="">
+                            <p>In this game you must guess you're opponents word letter by letter while your opponent does the same with a word that you pick, all the while wagering points on hit and misses.  When one word is guessed, the game ends and the person who guessed the game gets a bonus in points, but doesn't nessesarily win, victory is decided by who has the most points at end-game.</p>
+                            <ul class="list-inline item-details">
+                                <li>Date:
+                                    <strong>December 2014
+                                    </strong>
+                                </li>
+                                <li>Live:
+                                    <strong><a href="wordgame/index.html" target='_blank'>Play</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Word Jumble Safari</h2>
+                            <hr class="star-primary">
+                            <img src="images/word_safari2.png" class="img-responsive img-centered" alt="">
+                            <p>In this game, you must find words hidden in a grid of random letters, the longer the length word you find, the more points you get.</p>
+                            <ul class="list-inline item-details">
+                                <li>Date:
+                                    <strong>December 2014
+                                    </strong>
+                                </li>
+                                <li>Live:
+                                    <strong><a href="wordtris/index.html" target='_blank'>Play</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
 
 </body>
 
