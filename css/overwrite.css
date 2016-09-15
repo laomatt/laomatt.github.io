@@ -17,6 +17,7 @@ header, #contact  {
 .portrait {
   border-color: white;
   border-style: solid;
+  height: 200px;
   border-width: 2px;
   border-radius: 500px;
 }
