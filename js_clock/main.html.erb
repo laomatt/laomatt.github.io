@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+</head>
+<body>
+<div class="container clock-holder input-holder">
+	<div class="row">
+		<div class="col-sm-9">
+		<form id='con-panel'>
+			<div class="form-group">
+				<label for='datepicker'>Please select a target date</label>
+				<input class="datepicker form-control wid" data-date-format="mm/dd/yyyy" placeholder="Select a date to count down to" style="width: 20%">
+				<input class="timepicker form-control wid time-pick" type='time' placeholder="HOUR" style="width: 20%">
+				<a href="#" id='submit_the_date' class='wid btn btn-lg btn-primary'>Start Countdown!</a>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+<div class="container clock-holder">
+<div class="row">
+    <div class="clock-slot col-sm-3 clock-label" id='hours-to-shake-label'>
+      Hours
+    </div>
+    <div class="clock-slot col-sm-3 clock-label" id='minutes-to-shake-label'>
+      Mins
+    </div>
+    <div class="clock-slot col-sm-3 clock-label" id='seconds-to-shake-label'>
+      Secs
+    </div>
+  </div>
+  <div class="row">
+    <div class="clock-slot col-sm-3 hours" id='hours-to-shake'>
+      00
+    </div>
+    <div class="clock-slot col-sm-3 minutes" id='minutes-to-shake'>
+      00
+    </div>
+    <div class="clock-slot col-sm-3 seconds" id='seconds-to-shake'>
+      00
+    </div>
+  </div>
+</div>
+</body>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" type="text/css" href="datepicker.css">
+
+<style type="text/css">
+	body {
+		background-color: #ffd09d;
+	}
+
+	.clock-holder {
+		padding: 5%;
+		width: 100%;
+		position: relative;
+	}
+	.clock-slot {
+	 background-color: #e4cfff;
+    padding: 3%;
+    border-radius: 10px;
+    margin: 2px;
+    font-size: 100px;
+    width: 32%;
+	}
+
+	.input-holder {
+    background-color: #e4cfff;
+	}
+
+	.wid {
+		display: inline-block;
+	}
+
+	@media (max-width: 900px) {
+    .clock-label {
+    	display: none;
+    }
+
+    .clock-slot {
+    	width: 100%;
+    }
+	}
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker-en-CA.min.js"></script> -->
+<!-- https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.standalone.min.css -->
+<script type="text/javascript">
+		var tot_time;
+		var countDownTo;
+		var currentTime;
+		$('.datepicker').datepicker({ format: "yyyy/mm/dd" });
+
+		$('body').on('click', '#submit_the_date', function(event) {
+			event.preventDefault();
+			var target = $(this).parent().find('.datepicker').val();
+			var time = $('.time-pick').val();
+			var hrs = time.split(':')[0];
+			var mns = time.split(':')[1];
+			if (hrs == "" || hrs == undefined) {
+				hrs = "00";
+			}
+
+			if (mns == "" || mns == undefined) {
+				mns = "00";
+			}
+			var year = target.split('/')[2];
+			var month = parseInt(target.split('/')[0]) - 1;
+			var day = target.split('/')[1];
+
+			$('#con-panel').fadeOut('200', function() {
+				$('#con-panel').html("<h2>Couting down to:  "+ target + ":" + time + "</h2>");
+				$('#con-panel').fadeIn(200, function() {});
+			});
+			var date = new Date(year, month, day, hrs, mns, 00, 00);
+			startCountDown(date);
+		});
+
+
+
+    function startCountDown(date){
+    	var countDownTo = date;
+			var currentTime = new Date();
+			var diff = Math.abs(countDownTo - currentTime);
+      load();
+			countDown(diff/1000);
+    }
+
+    function countDown(top){
+        tot_time = top
+        // split top integer into hours, minutes and seconds
+        var hours = Math.floor(tot_time / 3600);
+		    var minutes = Math.floor(tot_time % 3600 / 60);
+		    var seconds = Math.floor(tot_time % 3600 % 60);
+        setTimeout(function(){
+          if(tot_time > 0){
+					    display(hours,minutes,seconds);
+              countDown(tot_time - 1);
+          } else {
+          		endingAnimation();
+          }
+        }, 1000)
+      }
+
+
+      function endingAnimation(){
+      	var array = ['hours-to-shake-label','hours-to-shake','minutes-to-shake-label','minutes-to-shake','seconds-to-shake-label','seconds-to-shake'];
+      	var i = array.length - 1;
+      	while(i>=0) {
+      		shake_side_ways(array[i],10);
+      		i -= 1;
+      	}
+      	display("00","00","00");
+      }
+
+      function display(hours,minutes,seconds){
+      	var origHours = $('.hours').text();
+      	var origMins = $('.minutes').text();
+      	var origSecs = $('.seconds').text();
+
+      	if (origHours != hours) {
+	      	shake_side_ways('hours-to-shake',25);
+	        $('.hours').text(hours);
+      	}
+
+      	if (origMins != minutes) {
+	      	shake_side_ways('minutes-to-shake',10);
+	        $('.minutes').text(minutes);
+	      }
+
+        if (origSecs != seconds) {
+	      	shake_side_ways('seconds-to-shake',2);
+	        $('.seconds').text(seconds);
+        }
+      }
+
+
+      var time_inc=0;
+			var ID_array=['hours-to-shake','minutes-to-shake','seconds-to-shake'];
+      function load(){
+        if(time_inc<ID_array.length){
+	        shake_side_ways(ID_array[time_inc])
+	      	$("#" + ID_array[time_inc]).animate({backgroundColor: "#ece4f7"}, 5000)
+	      	$('body').animate({backgroundColor: "#ffb668"}, 4000)
+	        time_inc+=1
+	        setTimeout(load,2000)
+        }
+			}
+
+      var shake_side_ways = function(indexID,level){
+		  var initial=0
+		  var incre=20
+		  quibble()
+		    function quibble(){
+		      if(incre>0)
+		      {
+		        if(incre%2==0)
+		          {
+		            initial+=level
+		          }
+		        else
+		          {
+		            initial-=level
+		          }
+		        document.getElementById(indexID).style.top=initial+"px"
+		        incre-=1
+		        setTimeout(quibble,20)
+		      }
+		    }
+		}
+
+</script>
+
+
+
+
+</html>
